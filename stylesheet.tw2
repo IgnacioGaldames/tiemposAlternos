@@ -1,0 +1,6 @@
+::MyCoolStylesheet [sass stylesheet]
+body
+	background: blue
+tw-passage
+	tw-link
+		color: red

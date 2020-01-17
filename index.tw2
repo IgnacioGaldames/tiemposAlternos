@@ -1,9 +1,12 @@
 ::StoryTitle
 steviaEngine
 
-
 ::StoryIFID[twee2]
 Twee2::build_config.story_ifid = '8cca3ea1-bb76-4fdf-aab7-bf031c0ef8a5'
 
-::Start
-steviaEngine
+::Configuration [twee2]
+Twee2::build_config.story_format = './storyFormats/sugarcube-2'
+
+::StoryIncludes
+_start.tw2
+stylesheet.tw2
