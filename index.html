@@ -101,12 +101,18 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
 	<tw-storydata name="steviaEngine" startnode="6" creator="Twee2" creator-version="0.5.0" ifid="8cca3ea1-bb76-4fdf-aab7-bf031c0ef8a5" format="./storyFormats/sugarcube-2" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
-  background: blue; }
+  background: darkblue; }
 
 tw-passage tw-link {
   color: red; }
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="StoryBanner" tags="" position="">&lt;img src="https://twinery.org/homepage/img/logo.svg" width="64" height="64"&gt;</tw-passagedata><tw-passagedata pid="2" name="StorySubtitle" tags="" position="">Version 1.0</tw-passagedata><tw-passagedata pid="3" name="StoryCaption" tags="" position="">&lt;&lt;set $health = 75;&gt;&gt;
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">Config.addVisitedLinkClass = true;
+
+Config.cleanupWikifierOutput = true;
+
+Config.history.controls = false;
+
+</script><tw-passagedata pid="1" name="StoryBanner" tags="" position="">&lt;img src="https://twinery.org/homepage/img/logo.svg" width="64" height="64"&gt;</tw-passagedata><tw-passagedata pid="2" name="StorySubtitle" tags="" position="">Version 1.0</tw-passagedata><tw-passagedata pid="3" name="StoryCaption" tags="" position="">&lt;&lt;set $health = 75;&gt;&gt;
 &lt;progress @value="$health" max="100"&gt;&lt;/progress&gt;
 &lt;meter @value="$health" min="0" max="100"&gt;&lt;/meter&gt;</tw-passagedata><tw-passagedata pid="4" name="StoryShare" tags="" position="">[[Twinery|https://twinery.org/]]</tw-passagedata><tw-passagedata pid="5" name="StoryMenu" tags="" position="">&lt;&lt;set $showInventario = true; $showMercado = true;&gt;&gt;
 &lt;&lt;if $showInventario is true&gt;&gt;
