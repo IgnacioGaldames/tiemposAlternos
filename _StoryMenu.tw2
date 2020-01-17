@@ -1,0 +1,8 @@
+::StoryMenu
+<<set $showInventario = true; $showMercado = true;>>
+<<if $showInventario is true>>
+   [[Mi Inventario->Inventario]]
+<</if>>
+<<if $showMercado is true>>
+	[[Mi Mercado->Mercado]]
+<</if>>
