@@ -1,2 +1,8 @@
-::Start
-steviaEngine
+::Start[haml]
+%h1
+  steviaEngine
+
+::@include incl-botones.tw2
+:coffeescript
+  $ ->
+   alert "CoffeScript Alerta"
