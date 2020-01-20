@@ -1,0 +1,23 @@
+{
+  "name": "steviaengine",
+  "version": "1.0.0",
+  "description": "Engine con sugarcube y custom macros",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgnacioGaldames/steviaEngine.git"
+  },
+  "author": "I.A. Galdames",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IgnacioGaldames/steviaEngine/issues"
+  },
+  "homepage": "https://github.com/IgnacioGaldames/steviaEngine#readme",
+  "devDependencies": {
+    "child_process": "^1.0.2",
+    "gulp": "^4.0.2"
+  }
+}

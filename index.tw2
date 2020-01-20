@@ -5,16 +5,16 @@ Twee2::build_config.story_ifid = '8cca3ea1-bb76-4fdf-aab7-bf031c0ef8a5'
 Twee2::build_config.story_format = './storyFormats/sugarcube-2'
 
 ::StoryIncludes
-_StoryBanner.tw2
-_StoryTitle.tw2
-_StorySubtitle.tw2
-_StoryCaption.tw2
-_StoryShare.tw2
-_StoryMenu.tw2
+Story/StoryBanner.tw2
+Story/StoryTitle.tw2
+Story/StorySubtitle.tw2
+Story/StoryCaption.tw2
+Story/StoryShare.tw2
+Story/StoryMenu.tw2
 
--start.tw2
--mercado.tw2
--inventario.tw2
+Passages/Start.tw2
+Passages/Mercado.tw2
+Passages/Inventario.tw2
 
-stylesheet.tw2
-javascript.tw2
+assets/stylesheet.tw2
+assets/javascript.tw2
