@@ -13,9 +13,13 @@ Story/StoryCaption.tw2
 Story/StoryShare.tw2
 Story/StoryMenu.tw2
 
+Passages/PassageHeader.tw2
+
 Passages/Start.tw2
 Passages/Inventory.tw2
 Passages/Market.tw2
+
+Passages/PassageFooter.tw2
 
 assets/stylesheet.tw2
 assets/javascript.tw2

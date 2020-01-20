@@ -1,0 +1,3 @@
+::PassageFooter[haml]
+%footer
+    %p footer

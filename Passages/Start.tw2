@@ -1,6 +1,6 @@
 ::Start[haml]
 %h1
-  steviaEngine
+  Story.title
 
 ::@include Includes/botones-start.tw2
 :coffeescript
