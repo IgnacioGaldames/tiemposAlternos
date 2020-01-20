@@ -1,0 +1,6 @@
+::StoryInterface
+<div id="interface">
+	<div id="menu" data-passage="Menu"></div>
+	<div id="notifications" data-passage="Notifications"></div>
+	<div id="passages"></div>
+</div>

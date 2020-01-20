@@ -5,6 +5,7 @@ Twee2::build_config.story_ifid = '8cca3ea1-bb76-4fdf-aab7-bf031c0ef8a5'
 Twee2::build_config.story_format = './storyFormats/sugarcube-2'
 
 ::StoryIncludes
+Story/StoryInit.tw2
 Story/StoryBanner.tw2
 Story/StoryTitle.tw2
 Story/StorySubtitle.tw2
@@ -13,8 +14,11 @@ Story/StoryShare.tw2
 Story/StoryMenu.tw2
 
 Passages/Start.tw2
-Passages/Mercado.tw2
-Passages/Inventario.tw2
+Passages/Inventory.tw2
+Passages/Market.tw2
 
 assets/stylesheet.tw2
 assets/javascript.tw2
+assets/coffee/es.coffee
+assets/coffee/config.coffee
+assets/coffee/settings.coffee
