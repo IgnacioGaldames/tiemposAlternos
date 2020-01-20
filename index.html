@@ -343,9 +343,12 @@ importStyles(googleFonts).then(function() {
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $showInventory is true&gt;&gt;
    [[$goInventory-&gt;$linkInventory]]
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $showLog is true&gt;&gt;
 	[[$goLog-&gt;$linkLog]]
+=======
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; Initial commit
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="PassageHeader" tags="" position="">&lt;header&gt;&lt;p&gt;&lt;&lt;print Story.title &gt;&gt;&lt;/p&gt;&lt;/header&gt;&lt;hr&gt;</tw-passagedata><tw-passagedata pid="8" name="Start" tags="" position="">&lt;h1 class='d-block d-md-none display-4 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-md-block d-lg-none display-3 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-lg-block display-1 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;btn class='btn btn-danger mt-4 mr-2'&gt;&lt;&lt;link [[Nuevo Juego|Inicio]]&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.autosave.has()){Save.autosave.delete();}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;if Save.autosave.has()&gt;&gt;&lt;btn class='btn btn-success mt-4 ml-2' id='btn-continuar'&gt;&lt;&lt;link "Continuar"&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.autosave.has()){Save.autosave.load();}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
 &lt;script&gt;
   $(function() {
