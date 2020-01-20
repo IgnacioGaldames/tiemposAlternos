@@ -10,4 +10,5 @@ twee2 build Passages/index.tw2 index.html --format=./storyFormats/sugarcube-2
 file:///home/ignacio/.rvm/gems/ruby-2.4.3/gems/twee2-0.5.0 reemplazar por https://github.com/Dan-Q/twee2/archive/master.zip
 
 npm install
+gem install bundler --version '1.6.7'
 bundle _1.6.7_ install
