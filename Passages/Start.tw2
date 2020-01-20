@@ -1,0 +1,8 @@
+::Start[haml]
+%h1
+  Story.title
+
+::@include Includes/botones-start.tw2
+:coffeescript
+  $ ->
+   alert "CoffeScript Alerta"

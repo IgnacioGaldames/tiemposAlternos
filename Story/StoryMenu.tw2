@@ -1,0 +1,13 @@
+::StoryMenu
+<<set $nameStart to "Inicio"; $nameMarket to "Mercado"; $nameInventory to "Inventario">>
+<<set $goStart to $nameStart; $linkStart to "Start">>
+<<set $goMarket to $nameInventory; $linkMarket to "Market">>
+<<set $goInventory to $nameMarket; $linkInventory to "Inventory">>
+<<set $showInventory = true; $showMarket = true;>>
+[[$goStart|$linkStart]]
+<<if $showMarket is true>>
+	[[$goMarket->$linkMarket]]
+<</if>>
+<<if $showInventory is true>>
+   [[$goInventory->$linkInventory]]
+<</if>>
