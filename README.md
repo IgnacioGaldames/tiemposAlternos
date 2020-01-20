@@ -12,3 +12,7 @@ file:///home/ignacio/.rvm/gems/ruby-2.4.3/gems/twee2-0.5.0 reemplazar por https:
 npm install
 gem install bundler --version '1.6.7'
 bundle _1.6.7_ install
+
+git remote add template https://github.com/IgnacioGaldames/latteEngine.git
+git fetch --all
+git merge template/master --allow-unrelated-histories
