@@ -16,3 +16,4 @@ bundle _1.6.7_ install
 git remote add template https://github.com/IgnacioGaldames/latteEngine.git
 git fetch --all
 git merge template/master --allow-unrelated-histories
+git rebase template/master
