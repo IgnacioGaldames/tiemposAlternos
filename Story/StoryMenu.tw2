@@ -11,7 +11,10 @@
 <</if>>
 <<if $showInventory is true>>
    [[$goInventory->$linkInventory]]
+<<<<<<< HEAD
 <</if>>
 <<if $showLog is true>>
 	[[$goLog->$linkLog]]
+=======
+>>>>>>> Initial commit
 <</if>>
