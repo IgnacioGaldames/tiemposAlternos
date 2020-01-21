@@ -1,6 +1,4 @@
 ::Sass [sass stylesheet]
-body
-	background: darkblue
-tw-passage
-	tw-link
-		color: red
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css')
+::@include assets/sass/colores.sass
+::@include assets/sass/stylesheet.sass

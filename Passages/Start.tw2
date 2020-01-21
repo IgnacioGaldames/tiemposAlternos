@@ -1,8 +1,7 @@
 ::Start[haml]
-%h1
-  Story.title
-
+%h1.display-4.font-weight-bold.text-break
+	Story.title
 ::@include Includes/botones-start.tw2
 :coffeescript
-  $ ->
-   console.log "CoffeScript Log"
+	$ ->
+		console.log "CoffeScript Log"

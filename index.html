@@ -100,13 +100,14 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="latteEngine" startnode="8" creator="Twee2" creator-version="0.5.0" ifid="8cca3ea1-bb76-4fdf-aab7-bf031c0ef8a5" format="./storyFormats/sugarcube-2" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
-  background: darkblue; }
+	<tw-storydata name="latteEngine" startnode="8" creator="Twee2" creator-version="0.5.0" ifid="8cca3ea1-bb76-4fdf-aab7-bf031c0ef8a5" format="./storyFormats/sugarcube-2" options=""><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url("https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css");
+body {
+  font-family: "Source Code Pro", monospace; }
 
-tw-passage tw-link {
-  color: red; }
+#ui-bar, #ui-dialog-body, #ui-dialog-title {
+  color: var(--white); }
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">var env, fontawesomeAPi, googleFonts, googlefontURL, lsLockCSS, lsLockFontAwesome, lsLockMoment;
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">var bootstrapJs, cloudflare, env, fontawesomeAPi, googleFonts, googlefontURL, lsLockBootstrap, lsLockCSS, lsLockFontAwesome, lsLockMoment, momentJs;
 
 env = 'staging';
 
@@ -190,6 +191,20 @@ Setting.addList("difficulty", {
   "default": "Normal"
 });
 
+lsLockBootstrap = LoadScreen.lock();
+
+bootstrapJs = ["https://code.jquery.com/jquery-3.4.1.min.js", "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js", "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"];
+
+importScripts(bootstrapJs).then(function() {
+  LoadScreen.unlock(lsLockBootstrap);
+  moment.locale('es');
+  if (env === 'staging') {
+    console.log('Bootstrap js cargado');
+  }
+})["catch"](function(err) {
+  console.log(err);
+});
+
 lsLockFontAwesome = LoadScreen.lock();
 
 fontawesomeAPi = "64318bc47a";
@@ -205,7 +220,11 @@ importScripts('https://kit.fontawesome.com/' + fontawesomeAPi + '.js').then(func
 
 lsLockMoment = LoadScreen.lock();
 
-importScripts("https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js", "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es.js").then(function() {
+cloudflare = "https://cdnjs.cloudflare.com/ajax/libs/";
+
+momentJs = [cloudflare + "moment.js/2.24.0/moment.min.js", cloudflare + "moment.js/2.24.0/locale/es.js"];
+
+importScripts(momentJs).then(function() {
   LoadScreen.unlock(lsLockMoment);
   moment.locale('es');
   if (env === 'staging') {
@@ -222,14 +241,9 @@ googlefontURL = "https://fonts.googleapis.com/css?family=";
 googleFonts = [googlefontURL + "Source+Code+Pro:200,400,900&display=swap", googlefontURL + "Satisfy&display=swap"];
 
 importStyles(googleFonts).then(function() {
-  var googleFont, i, len;
   LoadScreen.unlock(lsLockCSS);
   if (env === 'staging') {
     console.log('Google Fonts cargados');
-    for (i = 0, len = googleFonts.length; i < len; i++) {
-      googleFont = googleFonts[i];
-      console.log(googleFont);
-    }
   }
 })["catch"](function(err) {
   console.log(err);
@@ -239,8 +253,8 @@ importStyles(googleFonts).then(function() {
 &lt;progress @value="$health" max="100"&gt;&lt;/progress&gt;
 &lt;meter @value="$health" min="0" max="100"&gt;&lt;/meter&gt;</tw-passagedata><tw-passagedata pid="5" name="StoryShare" tags="" position="">[[Twinery|https://twinery.org/]]</tw-passagedata><tw-passagedata pid="6" name="StoryMenu" tags="" position="">&lt;&lt;set $nameStart to "Inicio"; $nameMarket to "Mercado"; $nameInventory to "Inventario"&gt;&gt;
 &lt;&lt;set $goStart to $nameStart; $linkStart to "Start"&gt;&gt;
-&lt;&lt;set $goMarket to $nameInventory; $linkMarket to "Market"&gt;&gt;
-&lt;&lt;set $goInventory to $nameMarket; $linkInventory to "Inventory"&gt;&gt;
+&lt;&lt;set $goMarket to $nameMarket; $linkMarket to "Market"&gt;&gt;
+&lt;&lt;set $goInventory to $nameInventory; $linkInventory to "Inventory"&gt;&gt;
 &lt;&lt;set $showInventory = true; $showMarket = true;&gt;&gt;
 [[$goStart|$linkStart]]
 &lt;&lt;if $showMarket is true&gt;&gt;
@@ -248,8 +262,7 @@ importStyles(googleFonts).then(function() {
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $showInventory is true&gt;&gt;
    [[$goInventory-&gt;$linkInventory]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="PassageHeader" tags="" position="">&lt;header&gt;&lt;p&gt;header&lt;/p&gt;&lt;/header&gt;&lt;hr&gt;</tw-passagedata><tw-passagedata pid="8" name="Start" tags="" position="">&lt;h1&gt;Story.title&lt;/h1&gt;Juego Nuevo
-Continuar
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="PassageHeader" tags="" position="">&lt;header&gt;&lt;p&gt;header&lt;/p&gt;&lt;/header&gt;&lt;hr&gt;</tw-passagedata><tw-passagedata pid="8" name="Start" tags="" position="">&lt;h1 class='display-4 font-weight-bold text-break'&gt;Story.title&lt;/h1&gt;&lt;btn class='btn btn-danger'&gt;Juego Nuevo&lt;/btn&gt;Continuar
 &lt;script&gt;
   $(function() {
     return console.log("CoffeScript Log");

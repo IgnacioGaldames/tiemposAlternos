@@ -12,7 +12,6 @@ importStyles(googleFonts).then(->
   LoadScreen.unlock lsLockCSS
   if env == 'staging'
     console.log 'Google Fonts cargados'
-    console.log googleFont for googleFont in googleFonts 
   return
 ).catch (err) ->
   # There was an error loading the script, log it to the console.
