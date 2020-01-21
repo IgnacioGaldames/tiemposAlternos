@@ -104,7 +104,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 body {
   font-family: "Source Code Pro", monospace; }
 
-#ui-bar, #ui-dialog-body, #ui-dialog-title {
+#ui-bar, #ui-dialog-body, #ui-dialog-title, #debug-bar-watch {
   color: var(--light); }
 
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">var bootstrapJs, cloudflare, env, fontawesomeAPi, googleFonts, googlefontURL, lsLockBootstrap, lsLockCSS, lsLockFontAwesome, lsLockMoment, momentJs;
@@ -180,6 +180,10 @@ Config.addVisitedLinkClass = true;
 Config.cleanupWikifierOutput = true;
 
 Config.history.controls = false;
+
+if (env === 'staging') {
+  Config.debug = true;
+}
 
 Setting.addToggle("mature", {
   label: "Content for mature audiences?"

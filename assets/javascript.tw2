@@ -1,2 +1,3 @@
 ::CoffeScript [coffee script]
+#env = 'production'
 env = 'staging'
