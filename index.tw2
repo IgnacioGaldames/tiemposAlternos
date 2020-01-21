@@ -28,4 +28,6 @@ assets/coffee/es.coffee
 assets/coffee/config.coffee
 assets/coffee/settings.coffee
 assets/coffee/font-awesome.coffee
+assets/coffee/moment-js.coffee
+
 assets/coffee/google-fonts.coffee

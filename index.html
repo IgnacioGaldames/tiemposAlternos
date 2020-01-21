@@ -106,7 +106,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 tw-passage tw-link {
   color: red; }
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">var env, fontawesomeAPi, googleFonts, googlefontURL, lsLockCSS, lsLockFontAwesome;
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">var env, fontawesomeAPi, googleFonts, googlefontURL, lsLockCSS, lsLockFontAwesome, lsLockMoment;
 
 env = 'staging';
 
@@ -203,6 +203,18 @@ importScripts('https://kit.fontawesome.com/' + fontawesomeAPi + '.js').then(func
   console.log(err);
 });
 
+lsLockMoment = LoadScreen.lock();
+
+importScripts("https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js", "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/es.js").then(function() {
+  LoadScreen.unlock(lsLockMoment);
+  moment.locale('es');
+  if (env === 'staging') {
+    console.log('MomentJs cargado');
+  }
+})["catch"](function(err) {
+  console.log(err);
+});
+
 lsLockCSS = LoadScreen.lock();
 
 googlefontURL = "https://fonts.googleapis.com/css?family=";
@@ -210,9 +222,14 @@ googlefontURL = "https://fonts.googleapis.com/css?family=";
 googleFonts = [googlefontURL + "Source+Code+Pro:200,400,900&display=swap", googlefontURL + "Satisfy&display=swap"];
 
 importStyles(googleFonts).then(function() {
+  var googleFont, i, len;
   LoadScreen.unlock(lsLockCSS);
   if (env === 'staging') {
     console.log('Google Fonts cargados');
+    for (i = 0, len = googleFonts.length; i < len; i++) {
+      googleFont = googleFonts[i];
+      console.log(googleFont);
+    }
   }
 })["catch"](function(err) {
   console.log(err);
