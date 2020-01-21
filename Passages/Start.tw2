@@ -5,4 +5,4 @@
 ::@include Includes/botones-start.tw2
 :coffeescript
   $ ->
-   alert "CoffeScript Alerta"
+   console.log "CoffeScript Log"

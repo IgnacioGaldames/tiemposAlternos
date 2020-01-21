@@ -1,3 +1,4 @@
 ::PassageHeader[haml]
 %header
     %p header
+%hr

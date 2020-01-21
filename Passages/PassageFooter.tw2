@@ -1,3 +1,4 @@
 ::PassageFooter[haml]
+%hr
 %footer
     %p footer

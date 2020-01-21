@@ -1,1 +1,2 @@
 ::CoffeScript [coffee script]
+env = 'staging'
