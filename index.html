@@ -234,6 +234,36 @@ importScripts(momentJs).then(function() {
   console.log(err);
 });
 
+$(document).one(':passageinit', function(ev) {
+  if (env === 'staging') {
+    console.log('passage init');
+  }
+});
+
+$(document).one(':passagestart', function(ev) {
+  if (env === 'staging') {
+    console.log('passage start');
+  }
+});
+
+$(document).one(':passagerender', function(ev) {
+  if (env === 'staging') {
+    console.log('passage render');
+  }
+});
+
+$(document).one(':passagedisplay', function(ev) {
+  if (env === 'staging') {
+    console.log('passage display');
+  }
+});
+
+$(document).one(':passageend', function(ev) {
+  if (env === 'staging') {
+    console.log('passage end');
+  }
+});
+
 lsLockCSS = LoadScreen.lock();
 
 googlefontURL = "https://fonts.googleapis.com/css?family=";

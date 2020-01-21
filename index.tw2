@@ -31,4 +31,10 @@ assets/coffee/bootstrap-js.coffee
 assets/coffee/font-awesome.coffee
 assets/coffee/moment-js.coffee
 
+assets/coffee/passage-init.coffee
+assets/coffee/passage-start.coffee
+assets/coffee/passage-render.coffee
+assets/coffee/passage-display.coffee
+assets/coffee/passage-end.coffee
+
 assets/coffee/google-fonts.coffee
