@@ -5,7 +5,7 @@ lsLockCSS = LoadScreen.lock();
 googlefontURL = "https://fonts.googleapis.com/css?family="
 googleFonts = [
   googlefontURL + "Source+Code+Pro:200,400,900&display=swap"
-  googlefontURL + "Satisfy&display=swap"
+  googlefontURL + "Indie+Flower|Permanent+Marker&display=swap"
   ]
 importStyles(googleFonts).then(->
   # Code that depends on the script goes here.
