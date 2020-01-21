@@ -1,5 +1,5 @@
 %btn.btn.btn-danger.mt-4.mr-2
-	<<link "Continuar">> <<script>>if (Save.autosave.has()){Save.autosave.delete();}<</script>> <</link>>
+	<<link [[Nuevo Juego|Inicio]]>> <<script>>if (Save.autosave.has()){Save.autosave.delete();}<</script>> <</link>>
 <<if Save.autosave.has()>>
 %btn.btn.btn-success.mt-4.ml-2#btn-continuar
 	<<link "Continuar">> <<script>>if (Save.autosave.has()){Save.autosave.load();}<</script>> <</link>>
