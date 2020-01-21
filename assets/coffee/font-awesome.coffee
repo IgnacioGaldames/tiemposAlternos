@@ -2,7 +2,8 @@
 lsLockFontAwesome = LoadScreen.lock()
 # Import a script while using the returned Promise to ensure that
 # the script has been fully loaded before executing dependent code
-importScripts('https://kit.fontawesome.com/64318bc47a.js').then(->
+fontawesomeAPi = "64318bc47a"
+importScripts('https://kit.fontawesome.com/' + fontawesomeAPi + '.js').then(->
   # Code that depends on the script goes here.
   LoadScreen.unlock lsLockFontAwesome
   if env == 'staging'

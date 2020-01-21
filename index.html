@@ -106,7 +106,7 @@ var saveAs=saveAs||navigator.msSaveBlob&&navigator.msSaveBlob.bind(navigator)||f
 tw-passage tw-link {
   color: red; }
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">var env, lsLockFontAwesome;
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">var env, fontawesomeAPi, googleFonts, googlefontURL, lsLockCSS, lsLockFontAwesome;
 
 env = 'staging';
 
@@ -192,10 +192,27 @@ Setting.addList("difficulty", {
 
 lsLockFontAwesome = LoadScreen.lock();
 
-importScripts('https://kit.fontawesome.com/64318bc47a.js').then(function() {
+fontawesomeAPi = "64318bc47a";
+
+importScripts('https://kit.fontawesome.com/' + fontawesomeAPi + '.js').then(function() {
   LoadScreen.unlock(lsLockFontAwesome);
   if (env === 'staging') {
     console.log('Font Awesome cargado');
+  }
+})["catch"](function(err) {
+  console.log(err);
+});
+
+lsLockCSS = LoadScreen.lock();
+
+googlefontURL = "https://fonts.googleapis.com/css?family=";
+
+googleFonts = [googlefontURL + "Source+Code+Pro:200,400,900&display=swap", googlefontURL + "Satisfy&display=swap"];
+
+importStyles(googleFonts).then(function() {
+  LoadScreen.unlock(lsLockCSS);
+  if (env === 'staging') {
+    console.log('Google Fonts cargados');
   }
 })["catch"](function(err) {
   console.log(err);
