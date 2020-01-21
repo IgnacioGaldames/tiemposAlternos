@@ -27,6 +27,8 @@ assets/javascript.tw2
 assets/coffee/es.coffee
 assets/coffee/config.coffee
 assets/coffee/settings.coffee
+assets/coffee/SaveAPI.coffee
+
 assets/coffee/bootstrap-js.coffee
 assets/coffee/font-awesome.coffee
 assets/coffee/moment-js.coffee
