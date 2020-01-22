@@ -1,4 +1,2 @@
 ::StoryCaption
-<<set $health = 75;>>
-<progress @value="$health" max="100"></progress>
-<meter @value="$health" min="0" max="100"></meter>
+<<if $nombreCapitulo>> <<print $nombreCapitulo>> <</if>>
