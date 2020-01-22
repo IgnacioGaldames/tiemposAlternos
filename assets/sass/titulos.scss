@@ -1,3 +1,11 @@
+$blur : blur(10px);
+.titulo {
+  -webkit-background-clip: text;
+  background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-webkit-backdrop-filter: $blur;
+    backdrop-filter: $blur;
+}
 span[data-text] {
   display:inline-block;
   position:relative;
