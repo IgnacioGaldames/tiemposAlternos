@@ -4,17 +4,14 @@
 <<set $goMarket to $nameMarket; $linkMarket to "Market">>
 <<set $goInventory to $nameInventory; $linkInventory to "Inventory">>
 <<set $goLog to $nameLog; $linkLog to "Log">>
-<<set $showInventory = true; $showMarket = true;; $showLog= true;>>
+<<set $showInventory = false; $showMarket = false;; $showLog= false;>>
 [[$goStart|$linkStart]]
 <<if $showMarket is true>>
 	[[$goMarket->$linkMarket]]
 <</if>>
 <<if $showInventory is true>>
    [[$goInventory->$linkInventory]]
-<<<<<<< HEAD
 <</if>>
 <<if $showLog is true>>
 	[[$goLog->$linkLog]]
-=======
->>>>>>> Initial commit
 <</if>>
