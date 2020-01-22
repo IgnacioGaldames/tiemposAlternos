@@ -7,6 +7,7 @@ Twee2::build_config.story_format = './storyFormats/sugarcube-2'
 ::StoryIncludes
 Story/StoryInit.tw2
 Story/StoryBanner.tw2
+Story/StoryAuthor.tw2
 Story/StoryTitle.tw2
 Story/StorySubtitle.tw2
 Story/StoryCaption.tw2
