@@ -4,4 +4,4 @@ Config.history.controls = false
 if env == 'staging'
 	Config.debug = true
 #Passages Settings
-Config.passages.nobr = true
+Config.passages.nobr = false

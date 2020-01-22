@@ -1,2 +1,10 @@
 ::Inicio[bookmark]
-Inicio
+<<nobr>>
+<<set $nombreCapitulo = "Capitulo I: ''À terre''">>
+<<run UIBar.stow();>>
+<<timed 0s t8n>>Tu Hogar y en el, <<print either($emocional)>>.<</timed>>
+<</nobr>>
+<<timed 4s t8n>>Frente a ti, <<print either($peligro)>>.<</timed>>
+<<timed 8s t8n>><<print either($ataque)>>.<</timed>>
+<<timed 12s t8n>><<print either($apocalipsis)>>.<</timed>>
+<<timed 16s t8n>>La ''gran'' guerra contra las máquinas...<</timed>>

@@ -1,4 +1,4 @@
 ::PassageHeader[haml]
 %header
-    %p <<print Story.title >>
+    %p  <<print Story.title >> 
 %hr
