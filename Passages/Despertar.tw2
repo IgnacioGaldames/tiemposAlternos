@@ -1,0 +1,8 @@
+::Despertar[bookmark]
+TOC TOC
+<<timed 2s t8n>>Alguien toca tu puerta<</timed>>
+<<timed 4s t8n>>Miras a tu alrededor. Estás en una pequeña habitación.<</timed>>
+<<timed 6s t8n>>
+[[Seguir Durmiendo->Inicio]]
+[[Levantarse->Levantarse]]
+<</timed>>
