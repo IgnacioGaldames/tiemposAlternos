@@ -16,6 +16,9 @@ Story/StoryMenu.tw2
 
 Passages/PassageHeader.tw2
 
+Passages/PassageReady.tw2
+Passages/PassageDone.tw2
+
 Passages/Start.tw2
 Passages/Inventory.tw2
 Passages/Market.tw2
