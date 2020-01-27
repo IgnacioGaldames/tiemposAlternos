@@ -1,2 +1,4 @@
 ::StoryCaption
 <<if $nombreCapitulo>> <<print $nombreCapitulo>> <</if>>
+<hr>
+<<if $playerName>> <<print $playerName>> <</if>>

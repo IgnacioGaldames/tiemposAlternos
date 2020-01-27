@@ -1,0 +1,9 @@
+::Name[]
+<label>Cuál es tu nombre?
+<<if $playerName>>
+<<textbox '$playerName' $playerName 'Player' autofocus>>
+<<else>>
+<<textbox '$playerName' 'Nombre' 'Player' autofocus>>
+<</if>>
+
+</label>

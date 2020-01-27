@@ -1,0 +1,8 @@
+::Player
+<strong>
+<<if $playerName>>
+<<textbox '$playerName' $playerName>>
+<<else>>
+<<textbox '$playerName' 'Nombre'>>
+<</if>>
+</strong>
