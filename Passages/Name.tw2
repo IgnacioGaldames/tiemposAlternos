@@ -1,4 +1,5 @@
 ::Name[]
+<<set $chapterName = "Capitulo II">>
 <label>Cuál es tu nombre?
 <<if $playerName>>
 <<textbox '$playerName' $playerName 'Player' autofocus>>
