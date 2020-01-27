@@ -1,6 +1,6 @@
 ::Inicio[suenos]
 <<nobr>>
-<<set $nombreCapitulo = "Capitulo I: ''À terre''">>
+<<set $chapterName = "Capitulo I: ''À terre''">>
 <<unset $playerName>>
 <<run UIBar.stow();>>
 <<timed 0s t8n>>Es la mitad de la noche.<</timed>>
