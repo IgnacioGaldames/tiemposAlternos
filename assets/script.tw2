@@ -18,3 +18,5 @@ env = 'staging'
 ::@include assets/coffee/passage-end.coffee
 
 ::@include assets/coffee/google-fonts.coffee
+
+::Javascript [script]
