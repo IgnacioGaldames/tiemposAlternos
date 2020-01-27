@@ -23,6 +23,7 @@ Passages/Start.tw2
 Passages/Inventory.tw2
 Passages/Market.tw2
 Passages/Log.tw2
+Passages/Player.tw2
 
 Passages/Inicio.tw2
 Passages/Despertar.tw2
@@ -30,22 +31,6 @@ Passages/Levantarse.tw2
 
 Passages/PassageFooter.tw2
 
+Passages/Widgets.tw2
 assets/stylesheet.tw2
-
-assets/javascript.tw2
-assets/coffee/es.coffee
-assets/coffee/config.coffee
-assets/coffee/settings.coffee
-assets/coffee/SaveAPI.coffee
-
-assets/coffee/bootstrap-js.coffee
-assets/coffee/font-awesome.coffee
-assets/coffee/moment-js.coffee
-
-assets/coffee/passage-init.coffee
-assets/coffee/passage-start.coffee
-assets/coffee/passage-render.coffee
-assets/coffee/passage-display.coffee
-assets/coffee/passage-end.coffee
-
-assets/coffee/google-fonts.coffee
+assets/script.tw2

@@ -1,0 +1,22 @@
+::CoffeScript [coffee script]
+#env = 'production'
+env = 'staging'
+
+::@include assets/coffee/es.coffee
+::@include assets/coffee/config.coffee
+::@include assets/coffee/settings.coffee
+::@include assets/coffee/SaveAPI.coffee
+
+::@include assets/coffee/bootstrap-js.coffee
+::@include assets/coffee/font-awesome.coffee
+::@include assets/coffee/moment-js.coffee
+
+::@include assets/coffee/passage-init.coffee
+::@include assets/coffee/passage-start.coffee
+::@include assets/coffee/passage-render.coffee
+::@include assets/coffee/passage-display.coffee
+::@include assets/coffee/passage-end.coffee
+
+::@include assets/coffee/google-fonts.coffee
+
+::Javascript [script]

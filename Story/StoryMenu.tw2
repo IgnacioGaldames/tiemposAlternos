@@ -15,3 +15,6 @@
 <<if $showLog is true>>
 	[[$goLog->$linkLog]]
 <</if>>
+<<if $showPlayer is true>>
+	[[$goPlayer->$linkPlayer]]
+<</if>>

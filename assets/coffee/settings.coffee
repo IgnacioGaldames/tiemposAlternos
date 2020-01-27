@@ -1,6 +1,8 @@
-Setting.addToggle "mature", {label : "Content for mature audiences?"}
+#Setting.addHeader "My Settings", "The settings for the game"
+Setting.addToggle "matureContent", {label : "¿Contenido para audiencias maduras?"}
 Setting.addList("difficulty", {
-	label   : "Choose a difficulty level.",
-	list    : ["Easy", "Normal", "Hard", "INSANE"],
+	label   : "Elige un nivel de dificultd.",
+	list    : ["Fácil", "Normal", "Difícil", "Ultradifícil"],
 	default : "Normal"
 });
+Setting.save()

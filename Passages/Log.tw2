@@ -1,4 +1,5 @@
-::Log[bookmark log]
-!$nameLog
-
-lorem ipsum
+::Log[bookmark log haml]
+%h1
+    $nameLog de $playerName
+#log
+    log
