@@ -33,19 +33,3 @@ Passages/PassageFooter.tw2
 assets/stylesheet.tw2
 
 assets/coffeescript.tw2
-assets/coffee/es.coffee
-assets/coffee/config.coffee
-assets/coffee/settings.coffee
-assets/coffee/SaveAPI.coffee
-
-assets/coffee/bootstrap-js.coffee
-assets/coffee/font-awesome.coffee
-assets/coffee/moment-js.coffee
-
-assets/coffee/passage-init.coffee
-assets/coffee/passage-start.coffee
-assets/coffee/passage-render.coffee
-assets/coffee/passage-display.coffee
-assets/coffee/passage-end.coffee
-
-assets/coffee/google-fonts.coffee
