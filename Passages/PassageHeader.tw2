@@ -3,5 +3,5 @@
 	%small
 		%p 
 			<<print Story.title >> / 
-			%span#capitulo
+			%span#chapter
 %hr

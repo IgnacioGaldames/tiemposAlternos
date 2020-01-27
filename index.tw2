@@ -32,7 +32,7 @@ Passages/PassageFooter.tw2
 
 assets/stylesheet.tw2
 
-assets/javascript.tw2
+assets/coffeescript.tw2
 assets/coffee/es.coffee
 assets/coffee/config.coffee
 assets/coffee/settings.coffee
