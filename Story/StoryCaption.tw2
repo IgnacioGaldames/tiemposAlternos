@@ -1,13 +1,17 @@
 ::StoryCaption
-<<if $chapterName>> <<print $chapterName>> <</if>>
-<hr>
+<<nobr>>
+<<if $chapterName>> <<print $chapterName>><hr><</if>>
 <span id="playerName">
-<<if $playerName>> <<print $playerName>> <</if>>
+<<if $playerName>> <<print $playerName>><hr><</if>>
 </span>
-<hr>
+<span id="playerName">
 <<if settings.matureContent == true>>
 Contenido para adultos
 <</if>>
-<span id="difficulty">
-Dicultad: <strong><<print settings.difficulty >></strong>
 </span>
+<span id="difficulty">
+<<if settings.difficulty>> 
+Dicultad: <strong><<print settings.difficulty >></strong><hr>
+<</if>>
+</span>
+<</nobr>>
