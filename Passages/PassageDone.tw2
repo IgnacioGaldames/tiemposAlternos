@@ -1,4 +1,4 @@
 ::PassageDone
- <<if $nombreCapitulo>>
- <<append "#chapter">> $nombreCapitulo <</append>>
+ <<if $chapterName>>
+ <<append "#chapter">> $chapterName <</append>>
  <</if>>

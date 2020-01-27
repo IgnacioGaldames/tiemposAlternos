@@ -1,8 +1,8 @@
 ::Player
 <strong>
 <<if $playerName>>
-<<textbox '$playerName' $playerName>>
+<<textbox '$playerName' $playerName 'Player'>>
 <<else>>
-<<textbox '$playerName' 'Nombre'>>
+<<textbox '$playerName' 'Nombre' 'Player'>>
 <</if>>
 </strong>

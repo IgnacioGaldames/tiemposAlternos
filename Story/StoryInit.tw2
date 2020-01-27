@@ -1,1 +1,2 @@
 ::StoryInit
+<<set $log to []>>
