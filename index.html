@@ -383,7 +383,7 @@ Dicultad: &lt;strong&gt;&lt;&lt;print settings.difficulty &gt;&gt;&lt;/strong&gt
     return console.log("CoffeScript Log");
   });
 &lt;/script&gt;
-</tw-passagedata><tw-passagedata pid="12" name="Inventory" tags="bookmark" position="">!$nameInventory</tw-passagedata><tw-passagedata pid="13" name="Market" tags="bookmark" position="">!$nameMarket</tw-passagedata><tw-passagedata pid="14" name="Log" tags="bookmark log" position="">&lt;h1&gt;$nameLog de $playerName&lt;/h1&gt;&lt;div id='log'&gt;log&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="Player" tags="" position="">&lt;&lt;back&gt;&gt;
+</tw-passagedata><tw-passagedata pid="12" name="Inventory" tags="bookmark" position="">!$nameInventory</tw-passagedata><tw-passagedata pid="13" name="Market" tags="bookmark" position="">!$nameMarket</tw-passagedata><tw-passagedata pid="14" name="Log" tags="bookmark log" position="">&lt;h1&gt;$nameLog de $playerName&lt;/h1&gt;&lt;div id='log'&gt;log&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="Player" tags="" position="">&lt;&lt;back &gt;&gt;&lt;br&gt;
 &lt;&lt;nobr&gt;&gt;
 &lt;strong&gt;
 &lt;&lt;if $playerName&gt;&gt;
@@ -393,7 +393,7 @@ Dicultad: &lt;strong&gt;&lt;&lt;print settings.difficulty &gt;&gt;&lt;/strong&gt
 &lt;&lt;/if&gt;&gt;
 &lt;/strong&gt;&lt;hr&gt;
 Nivel de sueño: $playerIndiceSueno 
-&lt;meter min="0" low="30" optimum="80" high="50" max="100" @value="$playerIndiceSueno" title=""&gt;&lt;/meter&gt;
+&lt;meter @min="$playerIndiceSuenoMin" @low="$playerIndiceSuenoLow" @optimum="$playerIndiceSuenoOptimum" @high="$playerIndiceSuenoHigh" @max="$playerIndiceSuenoMax" @value="$playerIndiceSueno" title=""&gt;&lt;/meter&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="Inicio" tags="bookmark" position="">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set $chapterName = "Capitulo I"&gt;&gt;
 &lt;&lt;unset $playerName&gt;&gt;

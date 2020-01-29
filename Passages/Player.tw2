@@ -1,5 +1,5 @@
 ::Player
-<<back>>
+<<back >><br>
 <<nobr>>
 <strong>
 <<if $playerName>>
@@ -9,5 +9,5 @@
 <</if>>
 </strong><hr>
 Nivel de sueño: $playerIndiceSueno 
-<meter min="0" low="30" optimum="80" high="50" max="100" @value="$playerIndiceSueno" title=""></meter>
+<meter @min="$playerIndiceSuenoMin" @low="$playerIndiceSuenoLow" @optimum="$playerIndiceSuenoOptimum" @high="$playerIndiceSuenoHigh" @max="$playerIndiceSuenoMax" @value="$playerIndiceSueno" title=""></meter>
 <</nobr>>
