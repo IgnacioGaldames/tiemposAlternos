@@ -5,6 +5,6 @@
 
 <<set $showInventory = true; $showMarket = true; $showLog= true;$showPlayer= true;>>
 
-<<set $playerIndiceSueno to 100; $playerIndiceSuenoMin="0"; $playerIndiceSuenoLow="30"; $playerIndiceSuenoOptimum="80"; $playerIndiceSuenoHigh="50"; $playerIndiceSuenoMax="100";>>
+<<set $playerIndiceSueno to 10; $playerIndiceSuenoMin to 0; $playerIndiceSuenoLow to 40; $playerIndiceSuenoOptimum to 80; $playerIndiceSuenoHigh to 60; $playerIndiceSuenoMax to 100;>>
 
 <<set $log to []>>
