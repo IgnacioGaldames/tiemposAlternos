@@ -1,0 +1,8 @@
+::Inicio[bookmark]
+<<nobr>>
+<<set $chapterName = "Capitulo I">>
+<<unset $playerName>>
+<<run UIBar.stow();>>
+<</nobr>>
+Inicio
+[[Nombre->Name]]
