@@ -1,13 +1,5 @@
 ::Abrir Puerta
 <<set $playerRank to "Capitán">>
 //- Hola, soy el nuevo. Es usted el capitán Zero?//
-<<nobr>>
-//- No, Zero murió. Soy
-<label>
-<<if $playerName>>
-<<textbox '$playerName' $playerName 'Presentación' autofocus>>
-<<else>>
-<<textbox '$playerName' 'Nombre' 'Presentación' autofocus>>
-<</if>>
-</label>//
-<</nobr>>
+[[Si->Presentación][$playerName to "Zero"]]
+[[No->Presentación][]]

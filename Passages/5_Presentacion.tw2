@@ -1,2 +1,19 @@
 ::Presentación
-$playerRank $playerName
+<<nobr>>
+<<if $playerName == "Zero">>
+//-Si, soy yo. Pero puedes decirme 
+<label>
+<<textbox '$playerName' $playerName 'Presentación' autofocus>>
+</label>//
+<<elseif $playerName>>
+//- No, Zero murió. Soy
+<label>
+<<textbox '$playerName' $playerName 'Presentación' autofocus>>
+</label>//
+<<else>>
+//- No, Zero murió. Soy
+<label>
+<<textbox '$playerName' 'Nombre' 'Presentación' autofocus>>
+</label>//
+<</if>>
+<</nobr>>
