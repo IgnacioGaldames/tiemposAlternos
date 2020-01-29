@@ -25,12 +25,12 @@ Passages/Market.tw2
 Passages/Log.tw2
 Passages/Player.tw2
 
-Passages/0_Inicio.tw2
-Passages/1_Despertar.tw2
-Passages/2_Levantarse.tw2
-Passages/3_Vestirse.tw2
-Passages/4_Abrir-Puerta.tw2
-Passages/5_Presentacion.tw2
+PassagesGame/0_Inicio.tw2
+PassagesGame/1_Despertar.tw2
+PassagesGame/2_Levantarse.tw2
+PassagesGame/3_Vestirse.tw2
+PassagesGame/4_Abrir-Puerta.tw2
+PassagesGame/5_Presentacion.tw2
 
 Passages/PassageFooter.tw2
 

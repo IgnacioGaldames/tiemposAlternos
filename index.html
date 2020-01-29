@@ -393,7 +393,6 @@ importStyles(googleFonts).then(function() {
 });
 
 
-<<<<<<< HEAD
 </script><tw-passagedata pid="1" name="StoryInit" tags="" position="">&lt;&lt;set $emocional= ["tu familia", "tus amigos", "el amor de tu vida", "tus padres", "tus abuelos", "tus hijos", "tus compañeros de escuela", "tus compañeros de trabajo", "tú mismo", "tu mascota", "tu primer gato", "tu primer perro", "tu hermana gemela", "tu cantanto favorito", "tu maestra de primaria",""]; &gt;&gt;
 
 &lt;&lt;set $peligro= ["Ojos rojos y brillantes", "una mano de metal con un arma", "una figura humanoide", "un robot encapuchado", "un robot con la piel de tu rostro", "un espejo", "una figura misteriosa", "tú mismo", "un demonio de ojos rojos", "un demonio de metal", "una sombra con ojos brillantes", "un monstruo",""];&gt;&gt;
@@ -401,9 +400,6 @@ importStyles(googleFonts).then(function() {
 &lt;&lt;set $ataque= ["Un disparo en la obscuridad", "Un grito en medio de la noche", "Alguien muere", "Un asesinato", "BANG!", "El Flash de un disparo", "Una pistola explota", "Olor a pólvora", "una pequeña explosión"];&gt;&gt;
 
 &lt;&lt;set $apocalipsis= ["Drones kamikazes", "Tanques autónomos bombardeando", "Sátelites cayendo desde el espacio", "Submarinos nucleares sin control humano", "Aviones no tripulados chocando contra edificios", "Vehículos eléctricos a toda velocidad", "jugueras sin control"];&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryBanner" tags="" position="">&lt;img src="https://twinery.org/homepage/img/logo.svg" width="64" height="64"&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryAuthor" tags="" position="">!!I. A. Galdames</tw-passagedata><tw-passagedata pid="4" name="StorySubtitle" tags="" position="">Version 1.0</tw-passagedata><tw-passagedata pid="5" name="StoryCaption" tags="" position="">&lt;&lt;nobr&gt;&gt;
-=======
-</script><tw-passagedata pid="1" name="StoryInit" tags="" position="">&lt;&lt;set $log to []&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryBanner" tags="" position="">&lt;img src="https://twinery.org/homepage/img/logo.svg" width="64" height="64"&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryAuthor" tags="" position="">!!I. A. Galdames</tw-passagedata><tw-passagedata pid="4" name="StorySubtitle" tags="" position="">Version 1.0</tw-passagedata><tw-passagedata pid="5" name="StoryCaption" tags="" position="">&lt;&lt;nobr&gt;&gt;
->>>>>>> template/master
 &lt;&lt;if $chapterName&gt;&gt; &lt;&lt;print $chapterName&gt;&gt;&lt;hr&gt;&lt;&lt;/if&gt;&gt;
 &lt;span id="playerName"&gt;
 &lt;&lt;if $playerName&gt;&gt; &lt;&lt;print $playerName&gt;&gt;&lt;hr&gt;&lt;&lt;/if&gt;&gt;
@@ -418,23 +414,12 @@ Contenido para adultos
 Dicultad: &lt;strong&gt;&lt;&lt;print settings.difficulty &gt;&gt;&lt;/strong&gt;&lt;hr&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;/span&gt;
-<<<<<<< HEAD
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="StoryShare" tags="" position="">[[Twinery|https://twinery.org/]]</tw-passagedata><tw-passagedata pid="7" name="StoryMenu" tags="" position="">&lt;&lt;set $nameStart to "Inicio"; $nameMarket to "Mercado"; $nameInventory to "Inventario"; $nameLog to "Diario"&gt;&gt;
 &lt;&lt;set $goStart to $nameStart; $linkStart to "Start"&gt;&gt;
 &lt;&lt;set $goMarket to $nameMarket; $linkMarket to "Market"&gt;&gt;
 &lt;&lt;set $goInventory to $nameInventory; $linkInventory to "Inventory"&gt;&gt;
 &lt;&lt;set $goLog to $nameLog; $linkLog to "Log"&gt;&gt;
 &lt;&lt;set $showInventory = false; $showMarket = false;; $showLog= false;&gt;&gt;
-=======
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="StoryShare" tags="" position="">[[Twinery|https://twinery.org/]]</tw-passagedata><tw-passagedata pid="7" name="StoryMenu" tags="" position="">&lt;&lt;set $nameStart to "Inicio"; $nameMarket to "Mercado"; $nameInventory to "Inventario"; $nameLog to "Diario"; $namePlayer to "Jugador"&gt;&gt;
-&lt;&lt;set $linkStart to "Start"; $linkMarket to "Market"; $linkInventory to "Inventory"; $linkLog to "Log"; $linkPlayer to "Player"&gt;&gt;
-&lt;&lt;set $goStart to $nameStart; &gt;&gt;
-&lt;&lt;set $goMarket to $nameMarket; &gt;&gt;
-&lt;&lt;set $goInventory to $nameInventory&gt;&gt;
-&lt;&lt;set $goLog to $nameLog&gt;&gt;
-&lt;&lt;set $goPlayer to $namePlayer&gt;&gt;
-&lt;&lt;set $showInventory = true; $showMarket = true; $showLog= true;$showPlayer= true;&gt;&gt;
->>>>>>> template/master
 [[$goStart|$linkStart]]
 &lt;&lt;if $showMarket is true&gt;&gt;
 	[[$goMarket-&gt;$linkMarket]]
