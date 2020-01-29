@@ -1,5 +1,0 @@
-::Abrir Puerta
-<<set $playerRank to "Capitán">>
-//- Hola, soy el nuevo. Es usted el capitán Zero?//
-[[Si->Presentación][$playerName to "Zero"]]
-[[No->Presentación][]]

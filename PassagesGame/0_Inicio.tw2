@@ -1,6 +1,6 @@
 ::Inicio[suenos]
 <<nobr>>
-<<set $chapterName = "Capitulo I: ''À terre''">>
+<<set $chapterName = "Capitulo I: ''À terre''"; >>
 <<unset $playerName>>
 <<run UIBar.stow();>>
 <<timed 0s t8n>>Es la mitad de la noche.<</timed>>
@@ -12,4 +12,4 @@
 <<print either($apocalipsis)>>.<</timed>>
 <<timed 14s t8n>>-------------
 La ''gran'' guerra contra las máquinas...<</timed>>
-<<timed 18s>><<goto "Despertar";>><<set $miPosicionExterna = "Refugio Subterraneo"; $miPosicionInterna = "dormitorio";>><</timed>>
+<<timed 18s>><<goto "Despertar";>><<set $miPosicionExterna = "Refugio Subterraneo"; $miPosicionInterna = "dormitorio"; $playerIndiceSueno = $playerIndiceSueno + 10 >><</timed>>

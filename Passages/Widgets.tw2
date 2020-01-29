@@ -1,1 +1,14 @@
 ::Widgets[widget]
+<<nobr>>
+<<widget "he">>
+<<if $playerGender eq "male">>el
+<<elseif $playerGender eq "female">>la
+<</if>>
+<</widget>>
+<<widget "rank">>
+<<if $playerGender eq "male" && $playerRank eq "Cap">>capitán
+<<elseif $playerGender eq "female" && $playerRank eq "Cap">>capitana
+<<else>>$playerRank
+<</if>>
+<</widget>>
+<</nobr>>

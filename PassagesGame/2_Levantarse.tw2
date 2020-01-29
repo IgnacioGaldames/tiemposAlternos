@@ -1,5 +1,10 @@
 ::Levantarse[autosave]
-//- Espera un momento//
+<<set $playerRank to "Cap">>
+//- Es usted la capitana Zero?
 
-[[Vestirse-> Vestirse]]
-[[Abrir la puerta-> Abrir Puerta]]
+[[-Si, soy ella->Abrir Puerta][$playerName to "Zero"; $playerGender to "female";]]
+[[-Si, pero soy el capitán->Abrir Puerta][$playerName to "Zero"; $playerGender to "male";]]
+
+[[-No, soy la nueva capitana->Abrir Puerta][; $playerGender to "female";]]
+[[-No, soy el nuevo capitán->Abrir Puerta][; $playerGender to "male";]]
+//

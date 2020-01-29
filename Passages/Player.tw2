@@ -1,8 +1,13 @@
 ::Player
-<strong>
+<<back>><br>
+<<nobr>>
+<<rank>><strong>
 <<if $playerName>>
 <<textbox '$playerName' $playerName 'Player'>>
 <<else>>
 <<textbox '$playerName' 'Nombre' 'Player'>>
 <</if>>
-</strong>
+</strong><hr>
+Nivel de sueño: $playerIndiceSueno 
+<meter @min="$playerIndiceSuenoMin" @low="$playerIndiceSuenoLow" @optimum="$playerIndiceSuenoOptimum" @high="$playerIndiceSuenoHigh" @max="$playerIndiceSuenoMax" @value="$playerIndiceSueno" title=""></meter>
+<</nobr>>

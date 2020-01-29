@@ -1,0 +1,19 @@
+::Abrir Puerta
+<<nobr>>
+<<if $playerName == "Zero">>
+//-Si, soy yo. Pero puedes decirme 
+<label>
+<<textbox '$playerName' $playerName 'Abrir Puerta' autofocus>>
+</label>//
+<<elseif $playerName>>
+//- Zero murió. Soy <<he>> <<rank>>
+<label>
+<<textbox '$playerName' $playerName 'Abrir Puerta'>>
+</label>//
+<<else>>
+//- Zero murió. Soy <<he>> <<rank>>
+<label>
+<<textbox '$playerName' 'Nombre' 'Abrir Puerta' autofocus>>
+</label>//
+<</if>>
+<</nobr>>

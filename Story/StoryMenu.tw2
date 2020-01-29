@@ -1,20 +1,14 @@
 ::StoryMenu
-<<set $nameStart to "Inicio"; $nameMarket to "Mercado"; $nameInventory to "Inventario"; $nameLog to "Diario">>
-<<set $goStart to $nameStart; $linkStart to "Start">>
-<<set $goMarket to $nameMarket; $linkMarket to "Market">>
-<<set $goInventory to $nameInventory; $linkInventory to "Inventory">>
-<<set $goLog to $nameLog; $linkLog to "Log">>
-<<set $showInventory = false; $showMarket = false;; $showLog= false;>>
-[[$goStart|$linkStart]]
+[[$nameStart|$linkStart]]
 <<if $showMarket is true>>
-	[[$goMarket->$linkMarket]]
+	[[$nameMarket->$linkMarket]]
 <</if>>
 <<if $showInventory is true>>
-   [[$goInventory->$linkInventory]]
+   [[$nameInventory->$linkInventory]]
 <</if>>
 <<if $showLog is true>>
-	[[$goLog->$linkLog]]
+	[[$nameLog->$linkLog]]
 <</if>>
 <<if $showPlayer is true>>
-	[[$goPlayer->$linkPlayer]]
+	[[$namePlayer->$linkPlayer]]
 <</if>>

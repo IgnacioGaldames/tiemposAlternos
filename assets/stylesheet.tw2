@@ -7,6 +7,6 @@
 ::@include assets/sass/links.sass
 
 ::Scss [scss stylesheet]
-::@include assets/sass/colores.scss
-::@include assets/sass/titulos.scss
+::@include assets/scss/colores.scss
+::@include assets/scss/titulos.scss
 
