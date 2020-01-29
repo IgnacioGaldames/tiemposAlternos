@@ -2,7 +2,9 @@
 <<nobr>>
 <<if $chapterName>> <<print $chapterName>><hr><</if>>
 <span id="playerName">
-<<if $playerName>> <<print $playerName>><hr><</if>>
+<<if $playerName>>
+[[$playerName->$linkPlayer]]<hr>
+<</if>>
 </span>
 <span id="playerName">
 <<if settings.matureContent == true>>

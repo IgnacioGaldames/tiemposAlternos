@@ -1,2 +1,10 @@
 ::StoryInit
+<<set $nameStart to "Inicio"; $nameMarket to "Mercado"; $nameInventory to "Inventario"; $nameLog to "Diario"; $namePlayer to "Jugador">>
+
+<<set $linkStart to "Start"; $linkMarket to "Market"; $linkInventory to "Inventory"; $linkLog to "Log"; $linkPlayer to "Player">>
+
+<<set $showInventory = true; $showMarket = true; $showLog= true;$showPlayer= true;>>
+
+<<set $playerIndiceSueno to 100; $playerIndiceSuenoMin="0"; $playerIndiceSuenoLow="30"; $playerIndiceSuenoOptimum="80"; $playerIndiceSuenoHigh="50"; $playerIndiceSuenoMax="100";>>
+
 <<set $log to []>>

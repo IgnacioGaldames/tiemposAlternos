@@ -338,10 +338,20 @@ importStyles(googleFonts).then(function() {
 });
 
 
-</script><tw-passagedata pid="1" name="StoryInit" tags="" position="">&lt;&lt;set $log to []&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryBanner" tags="" position="">&lt;img src="https://twinery.org/homepage/img/logo.svg" width="64" height="64"&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryAuthor" tags="" position="">!!I. A. Galdames</tw-passagedata><tw-passagedata pid="4" name="StorySubtitle" tags="" position="">Version 1.0</tw-passagedata><tw-passagedata pid="5" name="StoryCaption" tags="" position="">&lt;&lt;nobr&gt;&gt;
+</script><tw-passagedata pid="1" name="StoryInit" tags="" position="">&lt;&lt;set $nameStart to "Inicio"; $nameMarket to "Mercado"; $nameInventory to "Inventario"; $nameLog to "Diario"; $namePlayer to "Jugador"&gt;&gt;
+
+&lt;&lt;set $linkStart to "Start"; $linkMarket to "Market"; $linkInventory to "Inventory"; $linkLog to "Log"; $linkPlayer to "Player"&gt;&gt;
+
+&lt;&lt;set $showInventory = true; $showMarket = true; $showLog= true;$showPlayer= true;&gt;&gt;
+
+&lt;&lt;set $playerIndiceSueno to 100; $playerIndiceSuenoMin="0"; $playerIndiceSuenoLow="30"; $playerIndiceSuenoOptimum="80"; $playerIndiceSuenoHigh="50"; $playerIndiceSuenoMax="100";&gt;&gt;
+
+&lt;&lt;set $log to []&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryBanner" tags="" position="">&lt;img src="https://twinery.org/homepage/img/logo.svg" width="64" height="64"&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryAuthor" tags="" position="">!!I. A. Galdames</tw-passagedata><tw-passagedata pid="4" name="StorySubtitle" tags="" position="">Version 1.0</tw-passagedata><tw-passagedata pid="5" name="StoryCaption" tags="" position="">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;if $chapterName&gt;&gt; &lt;&lt;print $chapterName&gt;&gt;&lt;hr&gt;&lt;&lt;/if&gt;&gt;
 &lt;span id="playerName"&gt;
-&lt;&lt;if $playerName&gt;&gt; &lt;&lt;print $playerName&gt;&gt;&lt;hr&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $playerName&gt;&gt;
+[[$playerName-&gt;$linkPlayer]]&lt;hr&gt;
+&lt;&lt;/if&gt;&gt;
 &lt;/span&gt;
 &lt;span id="playerName"&gt;
 &lt;&lt;if settings.matureContent == true&gt;&gt;
@@ -353,26 +363,18 @@ Contenido para adultos
 Dicultad: &lt;strong&gt;&lt;&lt;print settings.difficulty &gt;&gt;&lt;/strong&gt;&lt;hr&gt;
 &lt;&lt;/if&gt;&gt;
 &lt;/span&gt;
-&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="StoryShare" tags="" position="">[[Twinery|https://twinery.org/]]</tw-passagedata><tw-passagedata pid="7" name="StoryMenu" tags="" position="">&lt;&lt;set $nameStart to "Inicio"; $nameMarket to "Mercado"; $nameInventory to "Inventario"; $nameLog to "Diario"; $namePlayer to "Jugador"&gt;&gt;
-&lt;&lt;set $linkStart to "Start"; $linkMarket to "Market"; $linkInventory to "Inventory"; $linkLog to "Log"; $linkPlayer to "Player"&gt;&gt;
-&lt;&lt;set $goStart to $nameStart; &gt;&gt;
-&lt;&lt;set $goMarket to $nameMarket; &gt;&gt;
-&lt;&lt;set $goInventory to $nameInventory&gt;&gt;
-&lt;&lt;set $goLog to $nameLog&gt;&gt;
-&lt;&lt;set $goPlayer to $namePlayer&gt;&gt;
-&lt;&lt;set $showInventory = true; $showMarket = true; $showLog= true;$showPlayer= true;&gt;&gt;
-[[$goStart|$linkStart]]
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="StoryShare" tags="" position="">[[Twinery|https://twinery.org/]]</tw-passagedata><tw-passagedata pid="7" name="StoryMenu" tags="" position="">[[$nameStart|$linkStart]]
 &lt;&lt;if $showMarket is true&gt;&gt;
-	[[$goMarket-&gt;$linkMarket]]
+	[[$nameMarket-&gt;$linkMarket]]
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $showInventory is true&gt;&gt;
-   [[$goInventory-&gt;$linkInventory]]
+   [[$nameInventory-&gt;$linkInventory]]
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $showLog is true&gt;&gt;
-	[[$goLog-&gt;$linkLog]]
+	[[$nameLog-&gt;$linkLog]]
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $showPlayer is true&gt;&gt;
-	[[$goPlayer-&gt;$linkPlayer]]
+	[[$namePlayer-&gt;$linkPlayer]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="PassageHeader" tags="" position="">&lt;header class='text-secondary'&gt;&lt;small&gt;&lt;p&gt;&lt;&lt;print Story.title &gt;&gt; /&lt;span id='chapter'&gt;&lt;/span&gt;&lt;/p&gt;&lt;/small&gt;&lt;/header&gt;&lt;hr&gt;</tw-passagedata><tw-passagedata pid="9" name="PassageReady" tags="" position=""></tw-passagedata><tw-passagedata pid="10" name="PassageDone" tags="" position="">&lt;&lt;if $chapterName&gt;&gt;
  &lt;&lt;append "#chapter"&gt;&gt; $chapterName &lt;&lt;/append&gt;&gt;
  &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Start" tags="" position="">&lt;h1 class='d-block d-md-none display-4 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-md-block d-lg-none display-3 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-lg-block display-1 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;btn class='btn btn-danger mt-4 mr-2'&gt;&lt;&lt;link [[Nuevo Juego|Inicio]]&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.autosave.has()){Save.autosave.delete();}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;if Save.autosave.has()&gt;&gt;&lt;btn class='btn btn-success mt-4 ml-2' id='btn-continuar'&gt;&lt;&lt;link "Continuar"&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.autosave.has()){Save.autosave.load();}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
@@ -381,13 +383,18 @@ Dicultad: &lt;strong&gt;&lt;&lt;print settings.difficulty &gt;&gt;&lt;/strong&gt
     return console.log("CoffeScript Log");
   });
 &lt;/script&gt;
-</tw-passagedata><tw-passagedata pid="12" name="Inventory" tags="bookmark" position="">!$nameInventory</tw-passagedata><tw-passagedata pid="13" name="Market" tags="bookmark" position="">!$nameMarket</tw-passagedata><tw-passagedata pid="14" name="Log" tags="bookmark log" position="">&lt;h1&gt;$nameLog de $playerName&lt;/h1&gt;&lt;div id='log'&gt;log&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="Player" tags="" position="">&lt;strong&gt;
+</tw-passagedata><tw-passagedata pid="12" name="Inventory" tags="bookmark" position="">!$nameInventory</tw-passagedata><tw-passagedata pid="13" name="Market" tags="bookmark" position="">!$nameMarket</tw-passagedata><tw-passagedata pid="14" name="Log" tags="bookmark log" position="">&lt;h1&gt;$nameLog de $playerName&lt;/h1&gt;&lt;div id='log'&gt;log&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="Player" tags="" position="">&lt;&lt;back&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
+&lt;strong&gt;
 &lt;&lt;if $playerName&gt;&gt;
 &lt;&lt;textbox '$playerName' $playerName 'Player'&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;textbox '$playerName' 'Nombre' 'Player'&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;/strong&gt;</tw-passagedata><tw-passagedata pid="16" name="Inicio" tags="bookmark" position="">&lt;&lt;nobr&gt;&gt;
+&lt;/strong&gt;&lt;hr&gt;
+Nivel de sueño: $playerIndiceSueno 
+&lt;meter min="0" low="30" optimum="80" high="50" max="100" @value="$playerIndiceSueno" title=""&gt;&lt;/meter&gt;
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="Inicio" tags="bookmark" position="">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set $chapterName = "Capitulo I"&gt;&gt;
 &lt;&lt;unset $playerName&gt;&gt;
 &lt;&lt;run UIBar.stow();&gt;&gt;
