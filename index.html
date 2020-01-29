@@ -400,6 +400,7 @@ importStyles(googleFonts).then(function() {
 
 &lt;&lt;set $linkStart to "Start"; $linkMarket to "Market"; $linkInventory to "Inventory"; $linkLog to "Log"; $linkPlayer to "Player"&gt;&gt;
 
+<<<<<<< HEAD
 &lt;&lt;set $showInventory = false; $showMarket = false; $showLog= false;$showPlayer= false;&gt;&gt;
 
 &lt;&lt;set $playerIndiceSueno to 10; $playerIndiceSuenoMin to 0; $playerIndiceSuenoLow to 40; $playerIndiceSuenoOptimum to 80; $playerIndiceSuenoHigh to 60; $playerIndiceSuenoMax to 100;&gt;&gt;
@@ -413,6 +414,13 @@ importStyles(googleFonts).then(function() {
 &lt;&lt;set $ataque= ["Un disparo en la obscuridad", "Un grito en medio de la noche", "Alguien muere", "Un asesinato", "BANG!", "El Flash de un disparo", "Una pistola explota", "Olor a pólvora", "una pequeña explosión"];&gt;&gt;
 
 &lt;&lt;set $apocalipsis= ["Drones kamikazes", "Tanques autónomos bombardeando", "Sátelites cayendo desde el espacio", "Submarinos nucleares sin control humano", "Aviones no tripulados chocando contra edificios", "Vehículos eléctricos a toda velocidad", "jugueras sin control"];&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryBanner" tags="" position="">&lt;img src="https://twinery.org/homepage/img/logo.svg" width="64" height="64"&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryAuthor" tags="" position="">!!I. A. Galdames</tw-passagedata><tw-passagedata pid="4" name="StorySubtitle" tags="" position="">Version 1.0</tw-passagedata><tw-passagedata pid="5" name="StoryCaption" tags="" position="">&lt;&lt;nobr&gt;&gt;
+=======
+&lt;&lt;set $showInventory = true; $showMarket = true; $showLog= true;$showPlayer= true;&gt;&gt;
+
+&lt;&lt;set $playerIndiceSueno to 10; $playerIndiceSuenoMin to 0; $playerIndiceSuenoLow to 40; $playerIndiceSuenoOptimum to 80; $playerIndiceSuenoHigh to 60; $playerIndiceSuenoMax to 100;&gt;&gt;
+
+&lt;&lt;set $log to []&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryBanner" tags="" position="">&lt;img src="https://twinery.org/homepage/img/logo.svg" width="64" height="64"&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryAuthor" tags="" position="">!!I. A. Galdames</tw-passagedata><tw-passagedata pid="4" name="StorySubtitle" tags="" position="">Version 1.0</tw-passagedata><tw-passagedata pid="5" name="StoryCaption" tags="" position="">&lt;&lt;nobr&gt;&gt;
+>>>>>>> template/master
 &lt;&lt;if $chapterName&gt;&gt; &lt;&lt;print $chapterName&gt;&gt;&lt;hr&gt;&lt;&lt;/if&gt;&gt;
 &lt;span id="playerName"&gt;
 &lt;&lt;if $playerName&gt;&gt;
@@ -449,9 +457,15 @@ Dicultad: &lt;strong&gt;&lt;&lt;print settings.difficulty &gt;&gt;&lt;/strong&gt
     return console.log("CoffeScript Log");
   });
 &lt;/script&gt;
+<<<<<<< HEAD
 </tw-passagedata><tw-passagedata pid="12" name="Inventory" tags="bookmark" position="">!$nameInventory</tw-passagedata><tw-passagedata pid="13" name="Market" tags="bookmark" position="">!$nameMarket</tw-passagedata><tw-passagedata pid="14" name="Log" tags="bookmark log" position="">&lt;h1&gt;$nameLog de $playerName&lt;/h1&gt;&lt;div id='log'&gt;log&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="Player" tags="" position="">&lt;&lt;back&gt;&gt;&lt;br&gt;
 &lt;&lt;nobr&gt;&gt;
 &lt;&lt;rank&gt;&gt;&lt;strong&gt;
+=======
+</tw-passagedata><tw-passagedata pid="12" name="Inventory" tags="bookmark" position="">!$nameInventory</tw-passagedata><tw-passagedata pid="13" name="Market" tags="bookmark" position="">!$nameMarket</tw-passagedata><tw-passagedata pid="14" name="Log" tags="bookmark log" position="">&lt;h1&gt;$nameLog de $playerName&lt;/h1&gt;&lt;div id='log'&gt;log&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="Player" tags="" position="">&lt;&lt;back &gt;&gt;&lt;br&gt;
+&lt;&lt;nobr&gt;&gt;
+&lt;strong&gt;
+>>>>>>> template/master
 &lt;&lt;if $playerName&gt;&gt;
 &lt;&lt;textbox '$playerName' $playerName 'Player'&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -460,8 +474,13 @@ Dicultad: &lt;strong&gt;&lt;&lt;print settings.difficulty &gt;&gt;&lt;/strong&gt
 &lt;/strong&gt;&lt;hr&gt;
 Nivel de sueño: $playerIndiceSueno 
 &lt;meter @min="$playerIndiceSuenoMin" @low="$playerIndiceSuenoLow" @optimum="$playerIndiceSuenoOptimum" @high="$playerIndiceSuenoHigh" @max="$playerIndiceSuenoMax" @value="$playerIndiceSueno" title=""&gt;&lt;/meter&gt;
+<<<<<<< HEAD
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="Inicio" tags="suenos" position="">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set $chapterName = "Capitulo I: ''À terre''"; &gt;&gt;
+=======
+&lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="Inicio" tags="bookmark" position="">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set $chapterName = "Capitulo I"&gt;&gt;
+>>>>>>> template/master
 &lt;&lt;unset $playerName&gt;&gt;
 &lt;&lt;run UIBar.stow();&gt;&gt;
 &lt;&lt;timed 0s t8n&gt;&gt;Es la mitad de la noche.&lt;&lt;/timed&gt;&gt;

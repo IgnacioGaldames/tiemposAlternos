@@ -1,7 +1,7 @@
 ::Player
-<<back>><br>
+<<back >><br>
 <<nobr>>
-<<rank>><strong>
+<strong>
 <<if $playerName>>
 <<textbox '$playerName' $playerName 'Player'>>
 <<else>>
