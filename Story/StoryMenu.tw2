@@ -1,14 +1,14 @@
 ::StoryMenu
-[[$nameStart|$linkStart]]
+[[$nameStart->Start]]
 <<if $showMarket is true>>
-	[[$nameMarket->$linkMarket]]
+	[[$nameMarket->Market]]
 <</if>>
 <<if $showInventory is true>>
-   [[$nameInventory->$linkInventory]]
+   [[$nameInventory->Inventory]]
 <</if>>
 <<if $showLog is true>>
-	[[$nameLog->$linkLog]]
+	[[$nameLog->Log]]
 <</if>>
 <<if $showPlayer is true>>
-	[[$namePlayer->$linkPlayer]]
+	[[$namePlayer->Player]]
 <</if>>

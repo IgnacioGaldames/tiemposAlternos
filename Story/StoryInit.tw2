@@ -1,7 +1,6 @@
 ::StoryInit
-<<set $nameStart to "Inicio"; $nameMarket to "Mercado"; $nameInventory to "Inventario"; $nameLog to "Diario"; $namePlayer to "Jugador">>
 
-<<set $linkStart to "Start"; $linkMarket to "Market"; $linkInventory to "Inventory"; $linkLog to "Log"; $linkPlayer to "Player">>
+<<set $nameStart to "Inicio"; $nameMarket to "Mercado"; $nameInventory to "Inventario"; $nameLog to "Diario"; $namePlayer to "Jugador">>
 
 <<set $showInventory = false; $showMarket = false; $showLog= false;$showPlayer= false;>>
 
