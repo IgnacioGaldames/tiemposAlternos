@@ -337,7 +337,20 @@ importStyles(googleFonts).then(function() {
   console.log(err);
 });
 
-
+$(document).on(':passageinit', function (ev) {
+    //state.variables["versionjuego"] = $miVersionJuego;
+    var indiceSueno = State.variables.playerIndiceSueno / 10 ;
+    var indiceBlur = 10 - indiceSueno ;
+    var cssBlur = '0px 0px ' + indiceBlur + 'px rgba(255,255,255,1)';
+ 
+    console.log(indiceSueno);
+    console.log(indiceBlur);
+    console.log(cssBlur);
+    $(" #menu").css({
+        'color': 'transparent',
+        'text-shadow':  cssBlur
+    });
+});
 </script><tw-passagedata pid="1" name="StoryInit" tags="" position="">&lt;&lt;set $nameStart to "Inicio"; $nameMarket to "Mercado"; $nameInventory to "Inventario"; $nameLog to "Diario"; $namePlayer to "Jugador"&gt;&gt;
 
 &lt;&lt;set $linkStart to "Start"; $linkMarket to "Market"; $linkInventory to "Inventory"; $linkLog to "Log"; $linkPlayer to "Player"&gt;&gt;
