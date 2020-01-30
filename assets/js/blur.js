@@ -11,25 +11,40 @@ $(document).on(':passageend', function (ev) {
         importScripts(letteringJs).then(function () {
             LoadScreen.unlock(lsLockLettering);
             $(".lettering").lettering();
-            //state.variables["versionjuego"] = $miVersionJuego;
             var indiceSueno = State.variables.playerIndiceSueno / 10;
             var indiceBlur = 10 - indiceSueno;
+            var velocidadBlur = indiceBlur * 200;
             var cssBlur = '0px 0px ' + indiceBlur + 'px rgba(255,255,255,1)';
             var cssBlur2 = '0px 0px ' + (indiceBlur / 2) + 'px rgba(255,255,255,1)';
-            var text = $(".lettering"),
-                // assuming lettering() has already been called on it
-                numLetters = text.find("span").length; // how many letters?
+            var totalSpan = $(".lettering").find("span").length;
+            var totalRandomBlur2 = Math.round((totalSpan / 3));
 
-            $(".lettering span").css({
-                'color': 'transparent',
-                'text-shadow': cssBlur
-            });
+            function letteringLetters() {
+                $(".lettering span").css({
+                    'color': 'transparent',
+                    'text-shadow': cssBlur
+                });
+            }
+            function randomLetter() {
+                $(".lettering span:nth-child(" + (Math.floor(Math.random() * totalSpan) + 1) + ")").css({
+                    'color': 'transparent',
+                    'text-shadow': cssBlur2
+                });
+                setTimeout(randomLetter, velocidadBlur);
+            }
+
+            letteringLetters();
+            randomLetter();
 
             if (env == 'staging') {
-                console.log(numLetters);
-                console.log(indiceSueno);
-                console.log(indiceBlur);
-                console.log(cssBlur);
+                
+                console.log("velocidad blur " + velocidadBlur);
+                console.log("random " + random);
+                console.log("total spans " + totalSpan);
+                console.log("total random blur " + totalRandomBlur2);
+                console.log("indice sueño " + indiceSueno);
+                console.log("indice blur " + indiceBlur);
+                console.log("css blur " + cssBlur);
             }
             if (env === 'staging') {
                 console.log('letteringJs cargado');

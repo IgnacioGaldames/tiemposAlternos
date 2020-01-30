@@ -424,25 +424,40 @@ $(document).on(':passageend', function (ev) {
         importScripts(letteringJs).then(function () {
             LoadScreen.unlock(lsLockLettering);
             $(".lettering").lettering();
-            //state.variables["versionjuego"] = $miVersionJuego;
             var indiceSueno = State.variables.playerIndiceSueno / 10;
             var indiceBlur = 10 - indiceSueno;
+            var velocidadBlur = indiceBlur * 200;
             var cssBlur = '0px 0px ' + indiceBlur + 'px rgba(255,255,255,1)';
             var cssBlur2 = '0px 0px ' + (indiceBlur / 2) + 'px rgba(255,255,255,1)';
-            var text = $(".lettering"),
-                // assuming lettering() has already been called on it
-                numLetters = text.find("span").length; // how many letters?
+            var totalSpan = $(".lettering").find("span").length;
+            var totalRandomBlur2 = Math.round((totalSpan / 3));
 
-            $(".lettering span").css({
-                'color': 'transparent',
-                'text-shadow': cssBlur
-            });
+            function letteringLetters() {
+                $(".lettering span").css({
+                    'color': 'transparent',
+                    'text-shadow': cssBlur
+                });
+            }
+            function randomLetter() {
+                $(".lettering span:nth-child(" + (Math.floor(Math.random() * totalSpan) + 1) + ")").css({
+                    'color': 'transparent',
+                    'text-shadow': cssBlur2
+                });
+                setTimeout(randomLetter, velocidadBlur);
+            }
+
+            letteringLetters();
+            randomLetter();
 
             if (env == 'staging') {
-                console.log(numLetters);
-                console.log(indiceSueno);
-                console.log(indiceBlur);
-                console.log(cssBlur);
+                
+                console.log("velocidad blur " + velocidadBlur);
+                console.log("random " + random);
+                console.log("total spans " + totalSpan);
+                console.log("total random blur " + totalRandomBlur2);
+                console.log("indice sueño " + indiceSueno);
+                console.log("indice blur " + indiceBlur);
+                console.log("css blur " + cssBlur);
             }
             if (env === 'staging') {
                 console.log('letteringJs cargado');
@@ -503,7 +518,7 @@ Dicultad: &lt;strong&gt;&lt;&lt;print settings.difficulty &gt;&gt;&lt;/strong&gt
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="PassageHeader" tags="" position="">&lt;header class='lettering chapter'&gt;&lt;small&gt;&lt;p&gt;&lt;&lt;print Story.title &gt;&gt; /&lt;span id='chapter'&gt;&lt;/span&gt;&lt;/p&gt;&lt;/small&gt;&lt;/header&gt;&lt;hr&gt;</tw-passagedata><tw-passagedata pid="9" name="PassageReady" tags="" position=""></tw-passagedata><tw-passagedata pid="10" name="PassageDone" tags="" position="">&lt;&lt;if $chapterName&gt;&gt;
  &lt;&lt;append "#chapter"&gt;&gt; $chapterName &lt;&lt;/append&gt;&gt;
  &lt;&lt;/if&gt;&gt;
- &lt;&lt;script&gt;&gt;console.log("Passage Done")&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Start" tags="" position="">&lt;h1 class='d-block d-md-none display-4 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-md-block d-lg-none display-3 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-lg-block display-1 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;btn class='btn btn-danger mt-4 mr-2'&gt;&lt;&lt;link [[Nuevo Juego|Inicio]]&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.autosave.has()){Save.autosave.delete();}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;if Save.autosave.has()&gt;&gt;&lt;btn class='btn btn-success mt-4 ml-2' id='btn-continuar'&gt;&lt;&lt;link "Continuar"&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.autosave.has()){Save.autosave.load();}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
+ &lt;&lt;script&gt;&gt;console.log("Passage Done")&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Start" tags="" position="">&lt;h1 class='d-block d-md-none display-4 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-md-block d-lg-none display-3 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-lg-block display-1 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;btn class='btn btn-danger mt-4 mr-2'&gt;&lt;&lt;link [[Nuevo Juego|Inicio]]&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.autosave.has()){Save.autosave.delete();Engine.restart();}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;if Save.autosave.has()&gt;&gt;&lt;btn class='btn btn-success mt-4 ml-2' id='btn-continuar'&gt;&lt;&lt;link "Continuar"&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.autosave.has()){Save.autosave.load();}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
 &lt;script&gt;
   $(function() {
     return console.log("CoffeScript Log");
@@ -523,8 +538,8 @@ Nivel de sueño: $playerIndiceSueno
 &lt;meter @min="$playerIndiceSuenoMin" @low="$playerIndiceSuenoLow" @optimum="$playerIndiceSuenoOptimum" @high="$playerIndiceSuenoHigh" @max="$playerIndiceSuenoMax" @value="$playerIndiceSueno" title=""&gt;&lt;/meter&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="Inicio" tags="suenos" position="">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set $chapterName = "Capitulo I: ''À terre''"; &gt;&gt;
-&lt;&lt;unset $playerName&gt;&gt;
-&lt;&lt;run UIBar.stow();&gt;&gt;
+&lt;&lt;unset $playerName;&gt;&gt;
+&lt;&lt;run UIBar.stow(); &gt;&gt;
 &lt;&lt;timed 0s t8n&gt;&gt;Es la mitad de la noche.&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 2s t8n&gt;&gt;Estás en tu Hogar y junto a ti, &lt;&lt;print either($emocional)&gt;&gt;.&lt;&lt;/timed&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
@@ -540,7 +555,7 @@ La ''gran'' guerra contra las máquinas...&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 6s t8n&gt;&gt;&lt;&lt;nobr&gt;&gt;
 &lt;&lt;if $playerIndiceSuenoOptimum&gt; $playerIndiceSueno &gt;&gt;[[Seguir Durmiendo-&gt;Inicio][$playerIndiceSueno = $playerIndiceSueno + 10]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
-[[Levantarse-&gt;Levantarse]]
+[[Levantarse-&gt;Levantarse][$playerIndiceSueno = $playerIndiceSueno + 40]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="Levantarse" tags="autosave" position="">&lt;&lt;set $playerRank to "Cap"&gt;&gt;
 //- Es usted la capitana Zero?
 

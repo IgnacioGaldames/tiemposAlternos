@@ -5,5 +5,5 @@ TOC TOC
 <<timed 6s t8n>><<nobr>>
 <<if $playerIndiceSuenoOptimum> $playerIndiceSueno >>[[Seguir Durmiendo->Inicio][$playerIndiceSueno = $playerIndiceSueno + 10]]<</if>>
 <</nobr>>
-[[Levantarse->Levantarse]]
+[[Levantarse->Levantarse][$playerIndiceSueno = $playerIndiceSueno + 40]]
 <</timed>>
