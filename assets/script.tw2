@@ -10,6 +10,7 @@ env = 'staging'
 ::@include assets/coffee/bootstrap-js.coffee
 ::@include assets/coffee/font-awesome.coffee
 ::@include assets/coffee/moment-js.coffee
+::@include assets/coffee/lettering-js.coffee
 
 ::@include assets/coffee/passage-init.coffee
 ::@include assets/coffee/passage-start.coffee

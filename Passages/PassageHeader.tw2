@@ -1,7 +1,7 @@
 ::PassageHeader[haml]
-%header.text-secondary
+%header.lettering
 	%small
-		%p 
+		%p
 			<<print Story.title >> / 
 			%span#chapter
 %hr
