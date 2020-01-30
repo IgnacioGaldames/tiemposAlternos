@@ -1,4 +1,4 @@
-$(document).on(':passageinit', function (ev) {
+$(document).on(':passageend', function (ev) {
     //state.variables["versionjuego"] = $miVersionJuego;
     var indiceSueno = State.variables.playerIndiceSueno / 10;
     var indiceBlur = 10 - indiceSueno;
