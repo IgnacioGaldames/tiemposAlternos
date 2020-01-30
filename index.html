@@ -412,21 +412,48 @@ importStyles(googleFonts).then(function() {
 });
 
 $(document).on(':passageend', function (ev) {
-    //state.variables["versionjuego"] = $miVersionJuego;
-    var indiceSueno = State.variables.playerIndiceSueno / 10;
-    var indiceBlur = 10 - indiceSueno;
-    var cssBlur = '0px 0px ' + indiceBlur + 'px rgba(255,255,255,1)';
+    (function () {
+        var cloudflare, letteringJs, lsLockLettering;
 
-    $(".lettering").css({
-        'color': 'transparent',
-        'text-shadow': cssBlur
-    });
+        lsLockLettering = LoadScreen.lock();
 
-    if (env == 'staging') {
-        console.log(indiceSueno);
-        console.log(indiceBlur);
-        console.log(cssBlur);
-    }
+        cloudflare = "https://cdnjs.cloudflare.com/ajax/libs/";
+
+        letteringJs = [cloudflare + "lettering.js/0.7.0/jquery.lettering.min.js"];
+
+        importScripts(letteringJs).then(function () {
+            LoadScreen.unlock(lsLockLettering);
+            $(".lettering").lettering();
+            //state.variables["versionjuego"] = $miVersionJuego;
+            var indiceSueno = State.variables.playerIndiceSueno / 10;
+            var indiceBlur = 10 - indiceSueno;
+            var cssBlur = '0px 0px ' + indiceBlur + 'px rgba(255,255,255,1)';
+            var cssBlur2 = '0px 0px ' + (indiceBlur / 2) + 'px rgba(255,255,255,1)';
+            var text = $(".lettering"),
+                // assuming lettering() has already been called on it
+                numLetters = text.find("span").length; // how many letters?
+
+            $(".lettering span").css({
+                'color': 'transparent',
+                'text-shadow': cssBlur
+            });
+
+            if (env == 'staging') {
+                console.log(numLetters);
+                console.log(indiceSueno);
+                console.log(indiceBlur);
+                console.log(cssBlur);
+            }
+            if (env === 'staging') {
+                console.log('letteringJs cargado');
+            }
+        })["catch"](function (err) {
+            console.log(err);
+        });
+
+    }).call(this);
+
+
 });
 </script><tw-passagedata pid="1" name="StoryInit" tags="" position="">&lt;&lt;set $nameStart to "Inicio"; $nameMarket to "Mercado"; $nameInventory to "Inventario"; $nameLog to "Diario"; $namePlayer to "Jugador"&gt;&gt;
 
@@ -475,7 +502,8 @@ Dicultad: &lt;strong&gt;&lt;&lt;print settings.difficulty &gt;&gt;&lt;/strong&gt
 	[[$namePlayer-&gt;$linkPlayer]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="PassageHeader" tags="" position="">&lt;header class='lettering chapter'&gt;&lt;small&gt;&lt;p&gt;&lt;&lt;print Story.title &gt;&gt; /&lt;span id='chapter'&gt;&lt;/span&gt;&lt;/p&gt;&lt;/small&gt;&lt;/header&gt;&lt;hr&gt;</tw-passagedata><tw-passagedata pid="9" name="PassageReady" tags="" position=""></tw-passagedata><tw-passagedata pid="10" name="PassageDone" tags="" position="">&lt;&lt;if $chapterName&gt;&gt;
  &lt;&lt;append "#chapter"&gt;&gt; $chapterName &lt;&lt;/append&gt;&gt;
- &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Start" tags="" position="">&lt;h1 class='d-block d-md-none display-4 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-md-block d-lg-none display-3 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-lg-block display-1 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;btn class='btn btn-danger mt-4 mr-2'&gt;&lt;&lt;link [[Nuevo Juego|Inicio]]&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.autosave.has()){Save.autosave.delete();}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;if Save.autosave.has()&gt;&gt;&lt;btn class='btn btn-success mt-4 ml-2' id='btn-continuar'&gt;&lt;&lt;link "Continuar"&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.autosave.has()){Save.autosave.load();}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
+ &lt;&lt;/if&gt;&gt;
+ &lt;&lt;script&gt;&gt;console.log("Passage Done")&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Start" tags="" position="">&lt;h1 class='d-block d-md-none display-4 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-md-block d-lg-none display-3 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-lg-block display-1 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;btn class='btn btn-danger mt-4 mr-2'&gt;&lt;&lt;link [[Nuevo Juego|Inicio]]&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.autosave.has()){Save.autosave.delete();}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;if Save.autosave.has()&gt;&gt;&lt;btn class='btn btn-success mt-4 ml-2' id='btn-continuar'&gt;&lt;&lt;link "Continuar"&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.autosave.has()){Save.autosave.load();}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
 &lt;script&gt;
   $(function() {
     return console.log("CoffeScript Log");
