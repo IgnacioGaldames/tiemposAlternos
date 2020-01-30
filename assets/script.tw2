@@ -20,3 +20,4 @@ env = 'staging'
 ::@include assets/coffee/google-fonts.coffee
 
 ::Javascript [script]
+::@include assets/js/blur.js

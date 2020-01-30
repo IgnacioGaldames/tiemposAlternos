@@ -351,6 +351,8 @@ importScripts(momentJs).then(function() {
 });
 
 $(document).one(':passageinit', function(ev) {
+  var indiceSueno;
+  indiceSueno = State.variables.playerIndiceSueno;
   if (env === 'staging') {
     console.log('passage init');
   }
@@ -395,16 +397,37 @@ importStyles(googleFonts).then(function() {
   console.log(err);
 });
 
-
+$(document).on(':passageinit', function (ev) {
+    //state.variables["versionjuego"] = $miVersionJuego;
+    var indiceSueno = State.variables.playerIndiceSueno / 10 ;
+    var indiceBlur = 10 - indiceSueno ;
+    var cssBlur = '0px 0px ' + indiceBlur + 'px rgba(255,255,255,1)';
+ 
+    console.log(indiceSueno);
+    console.log(indiceBlur);
+    console.log(cssBlur);
+    $(" #menu").css({
+        'color': 'transparent',
+        'text-shadow':  cssBlur
+    });
+});
 </script><tw-passagedata pid="1" name="StoryInit" tags="" position="">&lt;&lt;set $nameStart to "Inicio"; $nameMarket to "Mercado"; $nameInventory to "Inventario"; $nameLog to "Diario"; $namePlayer to "Jugador"&gt;&gt;
 
 &lt;&lt;set $linkStart to "Start"; $linkMarket to "Market"; $linkInventory to "Inventory"; $linkLog to "Log"; $linkPlayer to "Player"&gt;&gt;
 
-&lt;&lt;set $showInventory = true; $showMarket = true; $showLog= true;$showPlayer= true;&gt;&gt;
+&lt;&lt;set $showInventory = false; $showMarket = false; $showLog= false;$showPlayer= false;&gt;&gt;
 
 &lt;&lt;set $playerIndiceSueno to 10; $playerIndiceSuenoMin to 0; $playerIndiceSuenoLow to 40; $playerIndiceSuenoOptimum to 80; $playerIndiceSuenoHigh to 60; $playerIndiceSuenoMax to 100;&gt;&gt;
 
-&lt;&lt;set $log to []&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryBanner" tags="" position="">&lt;img src="https://twinery.org/homepage/img/logo.svg" width="64" height="64"&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryAuthor" tags="" position="">!!I. A. Galdames</tw-passagedata><tw-passagedata pid="4" name="StorySubtitle" tags="" position="">Version 1.0</tw-passagedata><tw-passagedata pid="5" name="StoryCaption" tags="" position="">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set $log to []&gt;&gt;
+
+&lt;&lt;set $emocional= ["tu familia", "tus amigos", "el amor de tu vida", "tus padres", "tus abuelos", "tus hijos", "tus compañeros de escuela", "tus compañeros de trabajo", "tú mismo", "tu mascota", "tu primer gato", "tu primer perro", "tu primera mascota", "tu hermana gemela", "tu cantante favorito", "tu maestra de primaria", "tu antiguo jefe"]; &gt;&gt;	
+
+&lt;&lt;set $peligro= ["Ojos rojos y brillantes", "una mano de metal con un arma", "una figura humanoide", "un robot encapuchado", "un robot con la piel de tu rostro", "un espejo", "una figura misteriosa", "tú mismo", "un demonio de ojos rojos", "un demonio de metal", "una sombra con ojos brillantes", "un monstruo"];&gt;&gt;	
+
+&lt;&lt;set $ataque= ["Un disparo en la obscuridad", "Un grito en medio de la noche", "Alguien muere", "Un asesinato", "BANG!", "El Flash de un disparo", "Una pistola explota", "Olor a pólvora", "una pequeña explosión"];&gt;&gt;	
+
+&lt;&lt;set $apocalipsis= ["Drones kamikazes", "Tanques autónomos bombardeando", "Sátelites cayendo desde el espacio", "Submarinos nucleares sin control humano", "Aviones no tripulados chocando contra edificios", "Vehículos eléctricos a toda velocidad", "jugueras sin control"];&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryBanner" tags="" position="">&lt;img src="https://twinery.org/homepage/img/logo.svg" width="64" height="64"&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryAuthor" tags="" position="">!!I. A. Galdames</tw-passagedata><tw-passagedata pid="4" name="StorySubtitle" tags="" position="">Version 1.0</tw-passagedata><tw-passagedata pid="5" name="StoryCaption" tags="" position="">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;if $chapterName&gt;&gt; &lt;&lt;print $chapterName&gt;&gt;&lt;hr&gt;&lt;&lt;/if&gt;&gt;
 &lt;span id="playerName"&gt;
 &lt;&lt;if $playerName&gt;&gt;
@@ -470,7 +493,7 @@ La ''gran'' guerra contra las máquinas...&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 2s t8n&gt;&gt;Alguien toca tu puerta&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 4s t8n&gt;&gt;Miras a tu alrededor. Estás en una pequeña habitación.&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 6s t8n&gt;&gt;&lt;&lt;nobr&gt;&gt;
-&lt;&lt;if $playerIndiceSuenoLow &gt; $playerIndiceSueno &gt;&gt;[[Seguir Durmiendo-&gt;Inicio][$playerIndiceSueno = $playerIndiceSueno + 10]]&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $playerIndiceSuenoOptimum&gt; $playerIndiceSueno &gt;&gt;[[Seguir Durmiendo-&gt;Inicio][$playerIndiceSueno = $playerIndiceSueno + 10]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 [[Levantarse-&gt;Levantarse]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="Levantarse" tags="autosave" position="">&lt;&lt;set $playerRank to "Cap"&gt;&gt;

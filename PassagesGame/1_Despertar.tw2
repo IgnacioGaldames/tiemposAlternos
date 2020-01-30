@@ -3,7 +3,7 @@ TOC TOC
 <<timed 2s t8n>>Alguien toca tu puerta<</timed>>
 <<timed 4s t8n>>Miras a tu alrededor. Estás en una pequeña habitación.<</timed>>
 <<timed 6s t8n>><<nobr>>
-<<if $playerIndiceSuenoLow > $playerIndiceSueno >>[[Seguir Durmiendo->Inicio][$playerIndiceSueno = $playerIndiceSueno + 10]]<</if>>
+<<if $playerIndiceSuenoOptimum> $playerIndiceSueno >>[[Seguir Durmiendo->Inicio][$playerIndiceSueno = $playerIndiceSueno + 10]]<</if>>
 <</nobr>>
 [[Levantarse->Levantarse]]
 <</timed>>
