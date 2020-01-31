@@ -306,7 +306,7 @@ Setting.addList("difficulty", {
 
 Setting.save();
 
-Config.saves.autoload = true;
+Config.saves.autoload = "prompt";
 
 Config.saves.autosave = ["bookmark", "autosave"];
 
@@ -315,6 +315,12 @@ Config.saves.id = "a-big-huge-story-part-1";
 Config.saves.slots = 1;
 
 Config.saves.version = 1;
+
+if (Save.slots.has(0)) {
+  State.variables.slotA = true;
+} else {
+  State.variables.slotA = false;
+}
 
 lsLockBootstrap = LoadScreen.lock();
 
@@ -528,9 +534,10 @@ Dicultad: &lt;strong&gt;&lt;&lt;print settings.difficulty &gt;&gt;&lt;/strong&gt
  &lt;&lt;script&gt;&gt;console.log("Passage Done")&lt;&lt;/script&gt;&gt;
  &lt;&lt;if $playerIndiceSueno gte $playerIndiceSuenoMax&gt;&gt;
     &lt;&lt;set $playerIndiceSueno to $playerIndiceSuenoMax&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Start" tags="" position="">&lt;h1 class='d-block d-md-none display-4 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-md-block d-lg-none display-3 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-lg-block display-1 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;btn class='btn btn-danger mt-4 mr-2'&gt;&lt;&lt;link [[Nuevo Juego|Inicio]]&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.autosave.has()){Save.autosave.delete();}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;if Save.autosave.has()&gt;&gt;&lt;btn class='btn btn-success mt-4 ml-2' id='btn-continuar'&gt;&lt;&lt;link "Continuar"&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.autosave.has()){Save.autosave.load();}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Start" tags="" position="">&lt;&lt;back &gt;&gt;&lt;br&gt;&lt;h1 class='d-block d-md-none display-4 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-md-block d-lg-none display-3 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-lg-block display-1 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;btn class='btn btn-danger mt-4 mr-2'&gt;&lt;&lt;link [[Nuevo Juego|Inicio]]&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.autosave.has()){Save.autosave.delete();}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;if Save.autosave.has()&gt;&gt;&lt;btn class='btn btn-success mt-4 ml-2' id='btn-continuar'&gt;&lt;&lt;link "Continuar"&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.autosave.has()){Save.autosave.load();}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if Save.ok()&gt;&gt;&lt;btn class='btn btn-success mt-4 ml-2' id='btn-cargar'&gt;&lt;&lt;link "Cargar"&gt;&gt; &lt;&lt;script&gt;&gt;UISystem.saves()&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
-&lt;script&gt;
+&lt;hr&gt;
+&lt;&lt;if $slotA is true&gt;&gt;&lt;btn class='btn btn-success mt-4 ml-2'&gt;The first game slot exists! (This session was most likely reloaded from a game save.)&lt;/btn&gt;&lt;&lt;/if&gt;&gt;&lt;btn class='btn btn-success mt-4 ml-2' id='btn-guardar'&gt;&lt;&lt;link "Guardar"&gt;&gt;&lt;&lt;script&gt;&gt;if (Save.slots.ok()) { Save.slots.save(0);}&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;btn class='btn btn-success mt-4 ml-2' id='btn-cargar'&gt;&lt;&lt;link "Cargar"&gt;&gt;&lt;&lt;script&gt;&gt;if (Save.slots.has(0)) { Save.slots.load(0);} &lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;btn class='btn btn-success mt-4 ml-2' id='btn-reiniciar'&gt;&lt;&lt;link "Reiniciar"&gt;&gt;&lt;&lt;script&gt;&gt;if (Save.slots.has(0)) { Save.slots.delete(0);Engine.restart();}  &lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;script&gt;
   $(function() {
     return console.log("CoffeScript Log");
   });

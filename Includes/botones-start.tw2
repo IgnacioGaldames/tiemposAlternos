@@ -8,3 +8,14 @@
 %btn.btn.btn-success.mt-4.ml-2#btn-cargar
 	<<link "Cargar">> <<script>>UISystem.saves()<</script>> <</link>>
 <</if>>
+<hr>
+<<if $slotA is true>>
+%btn.btn.btn-success.mt-4.ml-2
+	The first game slot exists! (This session was most likely reloaded from a game save.)
+<</if>>
+%btn.btn.btn-success.mt-4.ml-2#btn-guardar
+	<<link "Guardar">><<script>>if (Save.slots.ok()) { Save.slots.save(0);}<</script>><</link>>
+%btn.btn.btn-success.mt-4.ml-2#btn-cargar
+	<<link "Cargar">><<script>>if (Save.slots.has(0)) { Save.slots.load(0);} <</script>><</link>>
+%btn.btn.btn-success.mt-4.ml-2#btn-reiniciar
+	<<link "Reiniciar">><<script>>if (Save.slots.has(0)) { Save.slots.delete(0);Engine.restart();}  <</script>><</link>>
