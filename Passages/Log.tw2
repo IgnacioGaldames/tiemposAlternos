@@ -1,5 +1,5 @@
 ::Log[bookmark log haml]
 %h1
-    $nameLog de $playerName
+    $nameLog <<if $playerName>><de $playerName<</if>>
 #log
-    log
+    lorem ipsum dolor sit amet

@@ -3,7 +3,7 @@
 <<if $chapterName>> <<print $chapterName>><hr><</if>>
 <span id="playerName">
 <<if $playerName>>
-[[$playerName->$linkPlayer]]<hr>
+[[$playerName->Player]]<hr>
 <</if>>
 </span>
 <span id="playerName">

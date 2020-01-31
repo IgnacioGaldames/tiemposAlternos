@@ -2,7 +2,7 @@
 
 <<set $nameStart to "Inicio"; $nameMarket to "Mercado"; $nameInventory to "Inventario"; $nameLog to "Diario"; $namePlayer to "Jugador">>
 
-<<set $showInventory = false; $showMarket = false; $showLog= false;$showPlayer= false;>>
+<<set $showInventory = false; $showMarket = false; $showLog = true; $showPlayer = false;>>
 
 <<set $playerIndiceSueno to 10; $playerIndiceSuenoMin to 0; $playerIndiceSuenoLow to 40; $playerIndiceSuenoOptimum to 80; $playerIndiceSuenoHigh to 60; $playerIndiceSuenoMax to 100;>>
 

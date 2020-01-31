@@ -4,3 +4,7 @@
 %btn.btn.btn-success.mt-4.ml-2#btn-continuar
 	<<link "Continuar">> <<script>>if (Save.autosave.has()){Save.autosave.load();}<</script>> <</link>>
 <</if>>
+<<if Save.ok()>>
+%btn.btn.btn-success.mt-4.ml-2#btn-cargar
+	<<link "Cargar">> <<script>>UISystem.saves()<</script>> <</link>>
+<</if>>

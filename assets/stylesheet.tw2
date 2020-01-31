@@ -5,6 +5,7 @@
 ::@include assets/sass/stylesheet.sass
 ::@include assets/sass/media-queries.sass
 ::@include assets/sass/links.sass
+::@include assets/sass/passages.sass
 
 ::Scss [scss stylesheet]
 ::@include assets/scss/colores.scss
