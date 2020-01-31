@@ -173,12 +173,14 @@ footer {
 .suenos {
   text-shadow: 0px 0px 20px var(--light), 0px 0px 10px var(--light), 0px 0px 2px var(--light); }
 
-.log {
+body.log {
   background-image: url(assets/img/textured_paper_@2X.png);
   background-repeat: repeat;
   background-size: contain;
   color: var(--gray-dark);
-  text-shadow: 2px -2px 5px rgba(52, 58, 64, 0.3), -2px 2px 5px rgba(52, 58, 64, 0.3); }
+  text-shadow: 2px -2px 3px rgba(52, 58, 64, 0.2), -2px 2px 3px rgba(52, 58, 64, 0.2); }
+  body.log #story {
+    font-size: 1.25rem; }
 
 .titulo {
   -webkit-background-clip: text;
@@ -569,7 +571,7 @@ La ''gran'' guerra contra las máquinas...&lt;&lt;/timed&gt;&gt;
 //- Es usted la capitana Zero?
 
 [[-Si, soy ella-&gt;Abrir Puerta][$playerName to "Zero"; $playerGender to "female";]]
-[[-Si, pero soy el capitán-&gt;Abrir Puerta][$playerName to "Zero"; $playerGender to "male";]]
+[[-Si, soy él-&gt;Abrir Puerta][$playerName to "Zero"; $playerGender to "male";]]
 
 [[-No, soy la nueva capitana-&gt;Abrir Puerta][; $playerGender to "female";]]
 [[-No, soy el nuevo capitán-&gt;Abrir Puerta][; $playerGender to "male";]]
