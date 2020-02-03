@@ -1,4 +1,4 @@
 $(document).one ':passageend', (ev) ->
-  if env == 'staging'
-    console.log 'passage end'
-  return
+	if env == 'staging'
+		console.log 'passage end'
+	return

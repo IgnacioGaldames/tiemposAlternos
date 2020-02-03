@@ -1,6 +1,6 @@
 ::PassageDone
  <<if $chapterName>>
- <<append "#chapter">> $chapterName <</append>>
+<<append ".chapter">> $chapterName <</append>>
  <</if>>
  <<script>>console.log("Passage Done")<</script>>
  <<if $playerIndiceSueno gte $playerIndiceSuenoMax>>

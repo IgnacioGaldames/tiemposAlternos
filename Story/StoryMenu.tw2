@@ -1,5 +1,6 @@
 ::StoryMenu
 [[$nameStart->Start]]
+<<link "Guardado Rápido">><<script>>if (Save.slots.ok()) { Save.slots.save(0);}<</script>><</link>>
 <<if $showMarket is true>>
 	[[$nameMarket->Market]]
 <</if>>
