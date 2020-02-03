@@ -20,7 +20,7 @@ if (Save.autosave.has()) { State.variables.slotA = true } else { State.variables
 %btn.btn.btn-primary.mt-2.mr-2.font-weight-light
 	<<link [[Nuevo Juego|Inicio]]>> <<script>>if (Save.autosave.has()){Save.autosave.delete();}<</script>> <</link>>
 <</if>>
-<<if $_init is false && $slot0 == false or $_init is false && $slotA == false>>
+<<if $_init is false >>
 %btn.btn.btn-primary.mt-2.mr-2.font-weight-light
 	<<link [[Nuevo Juego|Inicio]]>> <<script>>if (Save.autosave.has()){Save.autosave.delete();}<</script>> <</link>>
 <</if>>
