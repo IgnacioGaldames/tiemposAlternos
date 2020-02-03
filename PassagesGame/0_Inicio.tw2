@@ -2,6 +2,7 @@
 <<nobr>>
 <<set $chapterName = "Capitulo I: ''À terre''"; >>
 <<set $_init to true>>
+<<set $miPosicionExterna = "Tu hogar"; $miPosicionInterna = "dormitorio";>>
 <<run UIBar.stow(); >>
 <<timed 0s t8n>>Es la mitad de la noche.<</timed>>
 <<timed 2s t8n>>Estás en tu Hogar y junto a ti, <<print either($emocional)>>.<</timed>>
@@ -12,4 +13,4 @@
 <<print either($apocalipsis)>>.<</timed>>
 <<timed 14s t8n>>-------------
 La ''gran'' guerra contra las máquinas...<</timed>>
-<<timed 18s>><<goto "Despertar";>><<set $miPosicionExterna = "Refugio Subterraneo"; $miPosicionInterna = "dormitorio"; $playerIndiceSueno = $playerIndiceSueno + 10 >><</timed>>
+<<timed 18s>><<goto "Despertar";>><<set $miPosicionExterna = "Refugio Subterráneo"; $miPosicionInterna = "dormitorio"; $playerIndiceSueno = $playerIndiceSueno + 10 >><</timed>>

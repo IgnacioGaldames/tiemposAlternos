@@ -182,9 +182,6 @@ body.log {
   body.log #story {
     font-size: 1.25rem; }
 
-body.bookmark, body.autosave {
-  background: red !important; }
-
 .titulo {
   -webkit-background-clip: text;
   background-clip: text;
@@ -528,11 +525,17 @@ Dicultad: &lt;strong&gt;&lt;&lt;print settings.difficulty &gt;&gt;&lt;/strong&gt
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $showPlayer is true&gt;&gt;
 	[[$namePlayer-&gt;Player]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="PassageHeader" tags="" position="">&lt;header class='lettering'&gt;&lt;small&gt;&lt;p&gt;&lt;&lt;print Story.title &gt;&gt; /&lt;spans class='chapter'&gt;&lt;/spans&gt;&lt;/p&gt;&lt;/small&gt;&lt;/header&gt;&lt;hr&gt;</tw-passagedata><tw-passagedata pid="9" name="PassageReady" tags="" position=""></tw-passagedata><tw-passagedata pid="10" name="PassageDone" tags="" position="">&lt;&lt;if $chapterName&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="PassageHeader" tags="" position="">&lt;header class='lettering text-muted'&gt;&lt;small&gt;&lt;p&gt;&lt;&lt;print Story.title &gt;&gt; /&lt;spans class='chapter'&gt;&lt;/spans&gt;&lt;/p&gt;&lt;/small&gt;&lt;/header&gt;&lt;hr&gt;</tw-passagedata><tw-passagedata pid="9" name="PassageReady" tags="" position=""></tw-passagedata><tw-passagedata pid="10" name="PassageDone" tags="" position="">&lt;&lt;if $chapterName&gt;&gt;
 &lt;&lt;append ".chapter"&gt;&gt; $chapterName &lt;&lt;/append&gt;&gt;
- &lt;&lt;/if&gt;&gt;
- &lt;&lt;script&gt;&gt;console.log("Passage Done")&lt;&lt;/script&gt;&gt;
- &lt;&lt;if $playerIndiceSueno gte $playerIndiceSuenoMax&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $miPosicionExterna&gt;&gt;
+&lt;&lt;append ".posicionExterna"&gt;&gt; $miPosicionExterna &lt;&lt;/append&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $miPosicionInterna&gt;&gt;
+&lt;&lt;append ".posicionInterna"&gt;&gt; $miPosicionInterna &lt;&lt;/append&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;script&gt;&gt;console.log("Passage Done")&lt;&lt;/script&gt;&gt;
+&lt;&lt;if $playerIndiceSueno gte $playerIndiceSuenoMax&gt;&gt;
     &lt;&lt;set $playerIndiceSueno to $playerIndiceSuenoMax&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Start" tags="" position="">&lt;h1 class='d-block d-md-none display-4 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-md-block d-lg-none display-3 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-lg-block display-1 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h2 class='text-break font-weight-light'&gt;&lt;span class="chapter" id="subtitulo"&gt;&lt;/span&gt;&lt;/h2&gt;&lt;hr&gt;
 &lt;&lt;nobr&gt;&gt;
@@ -553,7 +556,7 @@ if (Save.autosave.has()) { State.variables.slotA = true } else { State.variables
     return console.log("CoffeScript Log");
   });
 &lt;/script&gt;
-</tw-passagedata><tw-passagedata pid="12" name="Inventory" tags="bookmark" position="">!$nameInventory</tw-passagedata><tw-passagedata pid="13" name="Market" tags="bookmark" position="">!$nameMarket</tw-passagedata><tw-passagedata pid="14" name="Log" tags="bookmark log" position="">&lt;h1&gt;$nameLog &lt;&lt;if $playerName&gt;&gt;&lt;de $playerName&lt;&lt;/if&gt;&gt;&lt;/h1&gt;&lt;div id='log'&gt;lorem ipsum dolor sit amet&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="Player" tags="" position="">&lt;&lt;back &gt;&gt;&lt;br&gt;
+</tw-passagedata><tw-passagedata pid="12" name="Inventory" tags="bookmark" position="">!$nameInventory</tw-passagedata><tw-passagedata pid="13" name="Market" tags="bookmark" position="">!$nameMarket</tw-passagedata><tw-passagedata pid="14" name="Log" tags="bookmark log" position="">&lt;&lt;back&gt;&gt;&lt;h1&gt;$nameLog &lt;&lt;if $playerName&gt;&gt;de $playerName&lt;&lt;/if&gt;&gt;&lt;/h1&gt;&lt;div id='log'&gt;lorem ipsum dolor sit amet&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="Player" tags="" position="">&lt;&lt;back &gt;&gt;&lt;br&gt;
 &lt;&lt;nobr&gt;&gt;
 &lt;&lt;rank&gt;&gt;
 &lt;strong&gt;
@@ -568,6 +571,7 @@ Nivel de sueño: $playerIndiceSueno
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="Inicio" tags="suenos autosave" position="">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set $chapterName = "Capitulo I: ''À terre''"; &gt;&gt;
 &lt;&lt;set $_init to true&gt;&gt;
+&lt;&lt;set $miPosicionExterna = "Tu hogar"; $miPosicionInterna = "dormitorio";&gt;&gt;
 &lt;&lt;run UIBar.stow(); &gt;&gt;
 &lt;&lt;timed 0s t8n&gt;&gt;Es la mitad de la noche.&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 2s t8n&gt;&gt;Estás en tu Hogar y junto a ti, &lt;&lt;print either($emocional)&gt;&gt;.&lt;&lt;/timed&gt;&gt;
@@ -578,7 +582,7 @@ Nivel de sueño: $playerIndiceSueno
 &lt;&lt;print either($apocalipsis)&gt;&gt;.&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 14s t8n&gt;&gt;-------------
 La ''gran'' guerra contra las máquinas...&lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 18s&gt;&gt;&lt;&lt;goto "Despertar";&gt;&gt;&lt;&lt;set $miPosicionExterna = "Refugio Subterraneo"; $miPosicionInterna = "dormitorio"; $playerIndiceSueno = $playerIndiceSueno + 10 &gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="Despertar" tags="bookmark" position="">TOC TOC
+&lt;&lt;timed 18s&gt;&gt;&lt;&lt;goto "Despertar";&gt;&gt;&lt;&lt;set $miPosicionExterna = "Refugio Subterráneo"; $miPosicionInterna = "dormitorio"; $playerIndiceSueno = $playerIndiceSueno + 10 &gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="Despertar" tags="bookmark" position="">TOC TOC
 &lt;&lt;timed 2s t8n&gt;&gt;Alguien toca tu puerta&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 4s t8n&gt;&gt;Miras a tu alrededor. Estás en una pequeña habitación.&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 6s t8n&gt;&gt;&lt;&lt;nobr&gt;&gt;
@@ -614,7 +618,7 @@ La ''gran'' guerra contra las máquinas...&lt;&lt;/timed&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 //- Lo siento. Soy nueva.//
 //- ¿Nueva? ¿Cómo es posible?//
-//</tw-passagedata><tw-passagedata pid="20" name="Presentación" tags="" position=""></tw-passagedata><tw-passagedata pid="21" name="PassageFooter" tags="" position="">&lt;hr&gt;&lt;footer&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="22" name="Widgets" tags="widget" position="">&lt;&lt;nobr&gt;&gt;
+//</tw-passagedata><tw-passagedata pid="20" name="Presentación" tags="" position=""></tw-passagedata><tw-passagedata pid="21" name="PassageFooter" tags="" position="">&lt;hr&gt;&lt;footer class='text-capitalize text-muted'&gt;&lt;small&gt;&lt;&lt;if $miPosicionExterna &amp;&amp; $miPosicionInterna&gt;&gt;&lt;span class='posicionExterna'&gt;&lt;/span&gt;&lt;span&gt;/&lt;/span&gt;&lt;span class='posicionInterna'&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;/small&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="22" name="Widgets" tags="widget" position="">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;widget "he"&gt;&gt;
 &lt;&lt;if $playerGender eq "male"&gt;&gt;el
 &lt;&lt;elseif $playerGender eq "female"&gt;&gt;la

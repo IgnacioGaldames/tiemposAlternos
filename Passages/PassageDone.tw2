@@ -1,8 +1,14 @@
 ::PassageDone
- <<if $chapterName>>
+<<if $chapterName>>
 <<append ".chapter">> $chapterName <</append>>
- <</if>>
- <<script>>console.log("Passage Done")<</script>>
- <<if $playerIndiceSueno gte $playerIndiceSuenoMax>>
+<</if>>
+<<if $miPosicionExterna>>
+<<append ".posicionExterna">> $miPosicionExterna <</append>>
+<</if>>
+<<if $miPosicionInterna>>
+<<append ".posicionInterna">> $miPosicionInterna <</append>>
+<</if>>
+<<script>>console.log("Passage Done")<</script>>
+<<if $playerIndiceSueno gte $playerIndiceSuenoMax>>
     <<set $playerIndiceSueno to $playerIndiceSuenoMax>>
 <</if>>

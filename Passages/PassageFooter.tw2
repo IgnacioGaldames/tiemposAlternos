@@ -1,3 +1,9 @@
 ::PassageFooter[haml]
 %hr
-%footer
+%footer.text-capitalize.text-muted
+	%small
+		<<if $miPosicionExterna && $miPosicionInterna>>
+		%span.posicionExterna
+		%span /
+		%span.posicionInterna
+		<</if>>

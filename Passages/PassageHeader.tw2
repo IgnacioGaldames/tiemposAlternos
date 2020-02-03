@@ -1,5 +1,5 @@
 ::PassageHeader[haml]
-%header.lettering
+%header.lettering.text-muted
 	%small
 		%p
 			<<print Story.title >> / 
