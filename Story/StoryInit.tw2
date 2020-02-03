@@ -8,6 +8,8 @@
 
 <<set $log to []>>
 
+<<set $_init to false>>
+
 <<set $emocional= ["tu familia", "tus amigos", "el amor de tu vida", "tus padres", "tus abuelos", "tus hijos", "tus compañeros de escuela", "tus compañeros de trabajo", "tú mismo", "tu mascota", "tu primer gato", "tu primer perro", "tu primera mascota", "tu hermana gemela", "tu cantante favorito", "tu maestra de primaria", "tu antiguo jefe"]; >>	
 
 <<set $peligro= ["Ojos rojos y brillantes", "una mano de metal con un arma", "una figura humanoide", "un robot encapuchado", "un robot con la piel de tu rostro", "un espejo", "una figura misteriosa", "tú mismo", "un demonio de ojos rojos", "un demonio de metal", "una sombra con ojos brillantes", "un monstruo"];>>	

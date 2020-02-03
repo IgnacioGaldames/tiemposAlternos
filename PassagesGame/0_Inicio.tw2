@@ -1,7 +1,7 @@
-::Inicio[suenos]
+::Inicio[suenos autosave]
 <<nobr>>
 <<set $chapterName = "Capitulo I: ''À terre''"; >>
-<<unset $playerName;>>
+<<set $_init to true>>
 <<run UIBar.stow(); >>
 <<timed 0s t8n>>Es la mitad de la noche.<</timed>>
 <<timed 2s t8n>>Estás en tu Hogar y junto a ti, <<print either($emocional)>>.<</timed>>

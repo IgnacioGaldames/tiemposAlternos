@@ -6,7 +6,8 @@
 %h1.d-none.d-lg-block.display-1.font-weight-bold.text-break
 	<span sc-eval:data-text="Story.title" class="titulo"></span>
 %h2.text-break.font-weight-light
-	<span class="chapter"></span>
+	<span class="chapter" id="subtitulo"></span>
+<hr>
 ::@include Includes/botones-start.tw2
 :coffeescript
 	$ ->

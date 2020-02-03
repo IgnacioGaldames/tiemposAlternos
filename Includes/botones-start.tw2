@@ -1,14 +1,14 @@
 <<nobr>>
 <<if Save.autosave.has()>>
-%btn.btn.btn-success.mt-4.mx-2#btn-continuar
+%btn.btn.btn-success.mt-2.mr-2.font-weight-light#btn-continuar
 	<<link "Autoguardado">> <<script>>if (Save.autosave.has()){Save.autosave.load();}<</script>> <</link>>
 <</if>>
 <<if Save.ok() && Save.slots.has(0)>>
-%btn.btn.btn-success.mt-4.mlx-2#btn-cargar
+%btn.btn.btn-success.mt-2.mr-2.font-weight-light#btn-cargar
 	<<link "Último Guardado">> <<script>>if (Save.slots.has(0)) { Save.slots.load(0);}<</script>> <</link>>
 <</if>>
 <<if Save.ok() && Save.autosave.has() && Save.slots.has(0)>>
-%btn.btn.btn-success.mt-4.mlx-2#btn-cargar
+%btn.btn.btn-success.mt-2.mr-2.font-weight-light#btn-cargar
 	<<link "Elegir Partida">> <<script>>UI.saves();<</script>> <</link>>
 <</if>>
 <hr>
@@ -17,17 +17,17 @@ if (Save.slots.has(0)) {State.variables.slot0 = true} else { State.variables.slo
 if (Save.autosave.has()) { State.variables.slotA = true } else { State.variables.slotA = false}
 <</script>>
 <<if $slot0 == false && $slotA == false>>
-%btn.btn.btn-primary.mt-4.mx-2
+%btn.btn.btn-primary.mt-2.mr-2.font-weight-light
 	<<link [[Nuevo Juego|Inicio]]>> <<script>>if (Save.autosave.has()){Save.autosave.delete();}<</script>> <</link>>
 <</if>>
-<<if not $chapterName >>
-%btn.btn.btn-primary.mt-4.mx-2
+<<if $_init is false && $slot0 == false or $_init is false && $slotA == false>>
+%btn.btn.btn-primary.mt-2.mr-2.font-weight-light
 	<<link [[Nuevo Juego|Inicio]]>> <<script>>if (Save.autosave.has()){Save.autosave.delete();}<</script>> <</link>>
 <</if>>
 <<if $slot0 is true or $slotA is true>>
-%btn.btn.btn-danger.mt-4.mx-2#btn-reiniciar
+%btn.btn.btn-danger.mt-2.mr-2.font-weight-light#btn-reiniciar
 	<<link "Reiniciar">><<script>>Engine.restart();<</script>><</link>>
-%btn.btn.btn-danger.mt-4.mx-2#btn-reiniciar
+%btn.btn.btn-danger.mt-2.mr-2.font-weight-light#btn-reiniciar
 	<<link "Borrar todo">><<script>>Save.autosave.delete();Save.slots.delete(0);Engine.restart();<</script>><</link>>
 <</if>>
 <</nobr>>
