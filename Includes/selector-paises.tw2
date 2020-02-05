@@ -1,0 +1,6 @@
+%form
+	.form-row
+		.col-md-6
+			%label{:for => "lista-paises"} Selecciona tu país
+			%select#lista-paises.form-control.form-control-sm.bg-light
+%hr

@@ -5,6 +5,8 @@
 	<span sc-eval:data-text="Story.title" class="titulo"></span>
 %h1.d-none.d-lg-block.display-1.font-weight-bold.text-break
 	<span sc-eval:data-text="Story.title" class="titulo"></span>
+
+::@include Includes/selector-paises.tw2
 ::@include Includes/botones-start.tw2
 :coffeescript
 	$ ->

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>API TEST</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8 col-md-offset-1">
+				<h2>Country Table</h2>
+				<hr>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-8 col-md-offset-2">
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Example select</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                    </select>
+                  </div>
+				<table class="table table-striped" id="country-table">
+					<thead>
+						<tr>
+							<th>Flag</th>
+							<th>Country Name</th>
+							<th>Currency Code</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<script
+	src="https://code.jquery.com/jquery-2.2.4.min.js"
+	integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<script type="text/javascript">
+		jQuery(document).ready(function($) {
+    $.get('//restcountries.eu/rest/v2/all', function(data) {
+        $.each(data, function(index, val) {
+
+            flag = val.flag;
+            name = val.name;
+            capital = val.capital;
+            region = val.region;
+            subregion = val.subregion;
+            timezones = val.timezones;
+            nativeName = val.nativeName;
+
+            var testhtml = '<tr>';
+            testhtml += '<td><img src="'+ val.flag + '" alt="'+ val.name+'" width="50px"/></td>';
+            testhtml += '<td>'+ val.name +'</td>';
+            testhtml += '<td>';
+
+            $.each(val.currencies, function(index, val) {
+                if(val.code != null) {
+                    testhtml += val.code + ' ';
+                }
+            });
+            testhtml += '</td>';
+            testhtml += '</tr>';
+
+            html = '<option>'+ val.name + '</option>';
+
+            $('#country-table tbody').append(testhtml);
+            console.log(html)
+            $('#exampleFormControlSelect1').append(html);
+        });
+    });
+});
+	</script>
+</body>
+</html>
