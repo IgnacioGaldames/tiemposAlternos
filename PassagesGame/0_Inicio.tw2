@@ -11,6 +11,8 @@
 <<timed 6s t8n>><<print either($ataque)>>.<</timed>>
 <<timed 10s t8n>>-------------
 <<print either($apocalipsis)>>.<</timed>>
+<<timed 12s t8n>>
+personas muertas.<</timed>>
 <<timed 14s t8n>>-------------
 La ''gran'' guerra contra las máquinas...<</timed>>
 <<timed 18s>><<goto "Despertar";>><<set $miPosicionExterna = "Refugio Subterráneo"; $miPosicionInterna = "dormitorio"; $playerIndiceSueno = $playerIndiceSueno + 10 >><</timed>>
