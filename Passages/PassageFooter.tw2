@@ -2,8 +2,11 @@
 %hr
 %footer.text-capitalize.text-muted
 	%small
+		<<nobr>>
+		<<if $capital>>$capital, <</if>>
 		<<if $miPosicionExterna && $miPosicionInterna>>
 		%span.posicionExterna
 		%span /
 		%span.posicionInterna
 		<</if>>
+		<</nobr>>

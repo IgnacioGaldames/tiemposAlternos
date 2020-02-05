@@ -20,10 +20,10 @@ jQuery(document).ready(function ($) {
             $.each(data, function (index, val) {
                 var name = val.name;
                 var population = val.population;
+                var capital = val.capital;
                 var deathPopulation = Math.round(((population / 1000000) / 4) * 3);
-                console.log(population);
-                console.log(deathPopulation);
                 State.variables.deathPopulation= deathPopulation;
+                State.variables.capital= capital;
             });
         });
 

@@ -497,10 +497,10 @@ jQuery(document).ready(function ($) {
             $.each(data, function (index, val) {
                 var name = val.name;
                 var population = val.population;
+                var capital = val.capital;
                 var deathPopulation = Math.round(((population / 1000000) / 4) * 3);
-                console.log(population);
-                console.log(deathPopulation);
                 State.variables.deathPopulation= deathPopulation;
+                State.variables.capital= capital;
             });
         });
 
@@ -641,7 +641,10 @@ La ''gran'' guerra contra las máquinas...&lt;&lt;/timed&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 //- Lo siento. Soy nueva.//
 //- ¿Nueva? ¿Cómo es posible?//
-//</tw-passagedata><tw-passagedata pid="20" name="Presentación" tags="" position=""></tw-passagedata><tw-passagedata pid="21" name="PassageFooter" tags="" position="">&lt;hr&gt;&lt;footer class='text-capitalize text-muted'&gt;&lt;small&gt;&lt;&lt;if $miPosicionExterna &amp;&amp; $miPosicionInterna&gt;&gt;&lt;span class='posicionExterna'&gt;&lt;/span&gt;&lt;span&gt;/&lt;/span&gt;&lt;span class='posicionInterna'&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;&lt;/small&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="22" name="Widgets" tags="widget" position="">&lt;&lt;nobr&gt;&gt;
+//</tw-passagedata><tw-passagedata pid="20" name="Presentación" tags="" position=""></tw-passagedata><tw-passagedata pid="21" name="PassageFooter" tags="" position="">&lt;hr&gt;&lt;footer class='text-capitalize text-muted'&gt;&lt;small&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;if $capital&gt;&gt;$capital, &lt;&lt;/if&gt;&gt;
+&lt;&lt;if $miPosicionExterna &amp;&amp; $miPosicionInterna&gt;&gt;&lt;span class='posicionExterna'&gt;&lt;/span&gt;&lt;span&gt;/&lt;/span&gt;&lt;span class='posicionInterna'&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;&lt;/small&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="22" name="Widgets" tags="widget" position="">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;widget "he"&gt;&gt;
 &lt;&lt;if $playerGender eq "male"&gt;&gt;el
 &lt;&lt;elseif $playerGender eq "female"&gt;&gt;la
