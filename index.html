@@ -476,23 +476,34 @@ $(document).on(':passageend', function (ev) {
     }).call(this);
 });
 jQuery(document).ready(function ($) {
-    $.get('//restcountries.eu/rest/v2/all', function (data) {
+    $.get('https://restcountries.eu/rest/v2/all?fields=name;translations', function (data) {
         $.each(data, function (index, val) {
             var name = val.name;
             var es = val.translations.es;
             if (val.translations.es == null) {
                 es = name;
             }
-            var capital = val.capital;
-            var timezones = val.timezones;
-            var population = val.population;
-            var html = '<option>' + es + '</option>';
+            var html = '<option data-pais=' + name + '>' + es + '</option>';
             $('#lista-paises').append(html);
         });
     });
     $("#lista-paises").change(function () {
         var paisSelected = $(this).children("option:selected").val();
+        var paisName = $(this).children("option:selected").data( "pais" );
+
         State.variables.pais = paisSelected;
+
+        $.get('https://restcountries.eu/rest/v2/name/' + paisName, function (data) {
+            $.each(data, function (index, val) {
+                var name = val.name;
+                var population = val.population;
+                var deathPopulation = Math.round(((population / 1000000) / 4) * 3);
+                console.log(population);
+                console.log(deathPopulation);
+                State.variables.deathPopulation= deathPopulation;
+            });
+        });
+
     });
 });
 </script><tw-passagedata pid="1" name="StoryInit" tags="" position="">&lt;&lt;set $nameStart to "Inicio"; $nameMarket to "Mercado"; $nameInventory to "Inventario"; $nameLog to "Diario"; $namePlayer to "Jugador"&gt;&gt;
@@ -591,7 +602,7 @@ Nivel de sueño: $playerIndiceSueno
 &lt;&lt;timed 10s t8n&gt;&gt;-------------
 &lt;&lt;print either($apocalipsis)&gt;&gt;.&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 12s t8n&gt;&gt;
-personas muertas.&lt;&lt;/timed&gt;&gt;
+$deathPopulation millones de personas muertas.&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 14s t8n&gt;&gt;-------------
 La ''gran'' guerra contra las máquinas...&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 18s&gt;&gt;&lt;&lt;goto "Despertar";&gt;&gt;&lt;&lt;set $miPosicionExterna = "Refugio Subterráneo"; $miPosicionInterna = "dormitorio"; $playerIndiceSueno = $playerIndiceSueno + 10 &gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="Despertar" tags="bookmark" position="">TOC TOC
