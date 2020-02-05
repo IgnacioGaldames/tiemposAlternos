@@ -475,6 +475,20 @@ $(document).on(':passageend', function (ev) {
         });
     }).call(this);
 });
+jQuery(document).ready(function($) {
+    $.get('//restcountries.eu/rest/v2/all', function(data) {
+        $.each(data, function(index, val) {
+            var html = '<option>'+ val.translations.es + '</option>';
+            console.log(html)
+            $('#lista-paises').append(html);
+        });
+    });
+    $("#lista-paises").change(function(){
+        var paisSelected = $(this).children("option:selected").val();
+        alert("You have selected the country - " + paisSelected);
+        State.variables.paisSelected =  paisSelected;
+    });
+});
 </script><tw-passagedata pid="1" name="StoryInit" tags="" position="">&lt;&lt;set $nameStart to "Inicio"; $nameMarket to "Mercado"; $nameInventory to "Inventario"; $nameLog to "Diario"; $namePlayer to "Jugador"&gt;&gt;
 
 &lt;&lt;set $showInventory = false; $showMarket = false; $showLog = true; $showPlayer = false;&gt;&gt;
@@ -514,20 +528,9 @@ Dicultad: &lt;strong&gt;&lt;&lt;print settings.difficulty &gt;&gt;&lt;/strong&gt
 &lt;&lt;if $showInventory is true&gt;&gt;[[$nameInventory-&gt;Inventory]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $showLog is true&gt;&gt;[[$nameLog-&gt;Log]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $showPlayer is true&gt;&gt;[[$namePlayer-&gt;Player]]&lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="8" name="PassageHeader" tags="" position="">&lt;header class='lettering text-muted'&gt;&lt;small&gt;&lt;p&gt;&lt;&lt;print Story.title &gt;&gt; /&lt;spans class='chapter'&gt;&lt;/spans&gt;&lt;/p&gt;&lt;/small&gt;&lt;/header&gt;&lt;hr&gt;</tw-passagedata><tw-passagedata pid="9" name="PassageReady" tags="" position=""></tw-passagedata><tw-passagedata pid="10" name="PassageDone" tags="" position="">&lt;&lt;if $chapterName&gt;&gt;
-&lt;&lt;append ".chapter"&gt;&gt; $chapterName &lt;&lt;/append&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $miPosicionExterna&gt;&gt;
-&lt;&lt;append ".posicionExterna"&gt;&gt; $miPosicionExterna &lt;&lt;/append&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $miPosicionInterna&gt;&gt;
-&lt;&lt;append ".posicionInterna"&gt;&gt; $miPosicionInterna &lt;&lt;/append&gt;&gt;
-&lt;&lt;/if&gt;&gt;
-&lt;&lt;script&gt;&gt;console.log("Passage Done")&lt;&lt;/script&gt;&gt;
-&lt;&lt;if $playerIndiceSueno gte $playerIndiceSuenoMax&gt;&gt;
-    &lt;&lt;set $playerIndiceSueno to $playerIndiceSuenoMax&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Start" tags="" position="">&lt;h1 class='d-block d-md-none display-4 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-md-block d-lg-none display-3 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-lg-block display-1 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h2 class='text-break font-weight-light'&gt;&lt;span class="chapter" id="subtitulo"&gt;&lt;/span&gt;&lt;/h2&gt;&lt;hr&gt;
-&lt;&lt;nobr&gt;&gt;
+</tw-passagedata><tw-passagedata pid="8" name="PassageHeader" tags="" position="">&lt;header class='lettering'&gt;&lt;small&gt;&lt;p&gt;&lt;&lt;print Story.title &gt;&gt; /&lt;span id='chapter'&gt;&lt;/span&gt;&lt;/p&gt;&lt;/small&gt;&lt;/header&gt;&lt;hr&gt;</tw-passagedata><tw-passagedata pid="9" name="PassageReady" tags="" position=""></tw-passagedata><tw-passagedata pid="10" name="PassageDone" tags="" position="">&lt;&lt;if $chapterName&gt;&gt;
+ &lt;&lt;append "#chapter"&gt;&gt; $chapterName &lt;&lt;/append&gt;&gt;
+ &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Start" tags="" position="">&lt;h1 class='d-block d-md-none display-4 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-md-block d-lg-none display-3 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-lg-block display-1 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;form&gt;&lt;div class='form-row'&gt;&lt;div class='col-md-6'&gt;&lt;label for='lista-paises'&gt;Selecciona tu país&lt;/label&gt;&lt;select class='form-control form-control-sm bg-light' id='lista-paises'&gt;&lt;/select&gt;&lt;/div&gt;&lt;/div&gt;&lt;/form&gt;&lt;hr&gt;&lt;&lt;nobr&gt;&gt;
 &lt;&lt;if Save.autosave.has()&gt;&gt;&lt;btn class='btn btn-success mt-2 mr-2 font-weight-light' id='btn-continuar'&gt;&lt;&lt;link "Autoguardado"&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.autosave.has()){Save.autosave.load();}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if Save.ok() &amp;&amp; Save.slots.has(0)&gt;&gt;&lt;btn class='btn btn-success mt-2 mr-2 font-weight-light' id='btn-cargar'&gt;&lt;&lt;link "Último Guardado"&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.slots.has(0)) { Save.slots.load(0);}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if Save.ok() &amp;&amp; Save.autosave.has() &amp;&amp; Save.slots.has(0)&gt;&gt;&lt;btn class='btn btn-success mt-2 mr-2 font-weight-light' id='btn-cargar'&gt;&lt;&lt;link "Elegir Partida"&gt;&gt; &lt;&lt;script&gt;&gt;UI.saves();&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;

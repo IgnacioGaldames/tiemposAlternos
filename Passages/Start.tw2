@@ -8,6 +8,8 @@
 %h2.text-break.font-weight-light
 	<span class="chapter" id="subtitulo"></span>
 <hr>
+
+::@include Includes/selector-paises.tw2
 ::@include Includes/botones-start.tw2
 :coffeescript
 	$ ->
