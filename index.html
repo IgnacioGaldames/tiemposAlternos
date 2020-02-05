@@ -239,21 +239,15 @@ Setting.addList("difficulty", {
 
 Setting.save();
 
-Config.saves.autoload = "prompt";
+Config.saves.autoload = false;
 
 Config.saves.autosave = ["bookmark", "autosave"];
 
 Config.saves.id = "a-big-huge-story-part-1";
 
-Config.saves.slots = 1;
+Config.saves.slots = 2;
 
 Config.saves.version = 1;
-
-if (Save.slots.has(0)) {
-  State.variables.slotA = true;
-} else {
-  State.variables.slotA = false;
-}
 
 lsLockBootstrap = LoadScreen.lock();
 
@@ -420,7 +414,9 @@ $(document).on(':passageend', function (ev) {
 
 &lt;&lt;set $playerIndiceSueno to 10; $playerIndiceSuenoMin to 0; $playerIndiceSuenoLow to 40; $playerIndiceSuenoOptimum to 80; $playerIndiceSuenoHigh to 60; $playerIndiceSuenoMax to 100;&gt;&gt;
 
-&lt;&lt;set $log to []&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryBanner" tags="" position="">&lt;img src="https://twinery.org/homepage/img/logo.svg" width="64" height="64"&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryAuthor" tags="" position="">!!I. A. Galdames</tw-passagedata><tw-passagedata pid="4" name="StorySubtitle" tags="" position="">Version 1.0</tw-passagedata><tw-passagedata pid="5" name="StoryCaption" tags="" position="">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;set $log to []&gt;&gt;
+
+&lt;&lt;set $_init to false&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryBanner" tags="" position="">&lt;img src="https://twinery.org/homepage/img/logo.svg" width="64" height="64"&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryAuthor" tags="" position="">!!I. A. Galdames</tw-passagedata><tw-passagedata pid="4" name="StorySubtitle" tags="" position="">Version 1.0</tw-passagedata><tw-passagedata pid="5" name="StoryCaption" tags="" position="">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;if $chapterName&gt;&gt; &lt;&lt;print $chapterName&gt;&gt;&lt;hr&gt;&lt;&lt;/if&gt;&gt;
 &lt;span id="playerName"&gt;
 &lt;&lt;if $playerName&gt;&gt;
@@ -438,20 +434,34 @@ Dicultad: &lt;strong&gt;&lt;&lt;print settings.difficulty &gt;&gt;&lt;/strong&gt
 &lt;&lt;/if&gt;&gt;
 &lt;/span&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="StoryShare" tags="" position="">[[Twinery|https://twinery.org/]]</tw-passagedata><tw-passagedata pid="7" name="StoryMenu" tags="" position="">[[$nameStart|Start]]
+&lt;&lt;link "Guardado Rápido"&gt;&gt;&lt;&lt;script&gt;&gt;if (Save.slots.ok()) { Save.slots.save(0);}&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;
 &lt;&lt;if $showMarket is true&gt;&gt;[[$nameMarket-&gt;Market]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $showInventory is true&gt;&gt;[[$nameInventory-&gt;Inventory]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $showLog is true&gt;&gt;[[$nameLog-&gt;Log]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $showPlayer is true&gt;&gt;[[$namePlayer-&gt;Player]]&lt;&lt;/if&gt;&gt;
 </tw-passagedata><tw-passagedata pid="8" name="PassageHeader" tags="" position="">&lt;header class='lettering'&gt;&lt;small&gt;&lt;p&gt;&lt;&lt;print Story.title &gt;&gt; /&lt;span id='chapter'&gt;&lt;/span&gt;&lt;/p&gt;&lt;/small&gt;&lt;/header&gt;&lt;hr&gt;</tw-passagedata><tw-passagedata pid="9" name="PassageReady" tags="" position=""></tw-passagedata><tw-passagedata pid="10" name="PassageDone" tags="" position="">&lt;&lt;if $chapterName&gt;&gt;
  &lt;&lt;append "#chapter"&gt;&gt; $chapterName &lt;&lt;/append&gt;&gt;
- &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Start" tags="" position="">&lt;h1 class='d-block d-md-none display-4 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-md-block d-lg-none display-3 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-lg-block display-1 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;btn class='btn btn-danger mt-4 mr-2'&gt;&lt;&lt;link [[Nuevo Juego|Inicio]]&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.autosave.has()){Save.autosave.delete();}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;if Save.autosave.has()&gt;&gt;&lt;btn class='btn btn-success mt-4 ml-2' id='btn-continuar'&gt;&lt;&lt;link "Continuar"&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.autosave.has()){Save.autosave.load();}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;if $slotA is true&gt;&gt;&lt;btn class='btn btn-success mt-4 ml-2'&gt;The first game slot exists! (This session was most likely reloaded from a game save.)&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
-&lt;hr&gt;&lt;btn class='btn btn-success mt-4 ml-2' id='btn-guardar'&gt;&lt;&lt;link "Guardar"&gt;&gt;&lt;&lt;script&gt;&gt;if (Save.slots.ok()) { Save.slots.save(0);}&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;btn class='btn btn-success mt-4 ml-2' id='btn-cargar'&gt;&lt;&lt;link "Cargar"&gt;&gt;&lt;&lt;script&gt;&gt;if (Save.slots.has(0)) { Save.slots.load(0);} &lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;btn class='btn btn-success mt-4 ml-2' id='btn-reiniciar'&gt;&lt;&lt;link "Reiniciar"&gt;&gt;&lt;&lt;script&gt;&gt;if (Save.slots.has(0)) { Save.slots.delete(0);Engine.restart();}  &lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;script&gt;
+ &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Start" tags="" position="">&lt;h1 class='d-block d-md-none display-4 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-md-block d-lg-none display-3 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-lg-block display-1 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;if Save.autosave.has()&gt;&gt;&lt;btn class='btn btn-success mt-2 mr-2 font-weight-light' id='btn-continuar'&gt;&lt;&lt;link "Autoguardado"&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.autosave.has()){Save.autosave.load();}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if Save.ok() &amp;&amp; Save.slots.has(0)&gt;&gt;&lt;btn class='btn btn-success mt-2 mr-2 font-weight-light' id='btn-cargar'&gt;&lt;&lt;link "Último Guardado"&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.slots.has(0)) { Save.slots.load(0);}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if Save.ok() &amp;&amp; Save.autosave.has() &amp;&amp; Save.slots.has(0)&gt;&gt;&lt;btn class='btn btn-success mt-2 mr-2 font-weight-light' id='btn-cargar'&gt;&lt;&lt;link "Elegir Partida"&gt;&gt; &lt;&lt;script&gt;&gt;UI.saves();&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
+&lt;hr&gt;
+&lt;&lt;script&gt;&gt;
+if (Save.slots.has(0)) {State.variables.slot0 = true} else { State.variables.slot0 = false }
+if (Save.autosave.has()) { State.variables.slotA = true } else { State.variables.slotA = false}
+&lt;&lt;/script&gt;&gt;
+&lt;&lt;if $slot0 == false &amp;&amp; $slotA == false&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $_init is true &gt;&gt;&lt;btn class='btn btn-secondary mt-2 mr-3 font-weight-light'&gt;&lt;&lt;link "Nuevo Juego" &gt;&gt; &lt;&lt;script&gt;&gt;Engine.restart();&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $_init is false &gt;&gt;&lt;btn class='btn btn-primary mt-2 mr-3 font-weight-light'&gt;&lt;&lt;link [[Nuevo Juego|Inicio]]&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.autosave.has()){Save.autosave.delete();}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $slot0 is true or $slotA is true&gt;&gt;&lt;btn class='btn btn-danger mt-2 mr-4 font-weight-light' id='btn-reiniciar'&gt;&lt;&lt;link "Reiniciar"&gt;&gt;&lt;&lt;script&gt;&gt;Engine.restart();&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;btn class='btn btn-danger mt-2 mr-2 font-weight-light' id='btn-reiniciar'&gt;&lt;&lt;link "Borrar todo"&gt;&gt;&lt;&lt;script&gt;&gt;Save.autosave.delete();Save.slots.delete(0);Engine.restart();&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;
+&lt;script&gt;
   $(function() {
     return console.log("CoffeScript Log");
   });
 &lt;/script&gt;
-</tw-passagedata><tw-passagedata pid="12" name="Inventory" tags="bookmark" position="">!$nameInventory</tw-passagedata><tw-passagedata pid="13" name="Market" tags="bookmark" position="">!$nameMarket</tw-passagedata><tw-passagedata pid="14" name="Log" tags="bookmark log" position="">&lt;h1&gt;$nameLog de $playerName&lt;/h1&gt;&lt;div id='log'&gt;log&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="Player" tags="" position="">&lt;&lt;back &gt;&gt;&lt;br&gt;
+</tw-passagedata><tw-passagedata pid="12" name="Inventory" tags="bookmark" position="">!$nameInventory</tw-passagedata><tw-passagedata pid="13" name="Market" tags="bookmark" position="">!$nameMarket</tw-passagedata><tw-passagedata pid="14" name="Log" tags="bookmark log" position="">&lt;&lt;back&gt;&gt;&lt;h1&gt;$nameLog &lt;&lt;if $playerName&gt;&gt;de $playerName&lt;&lt;/if&gt;&gt;&lt;/h1&gt;&lt;div id='log'&gt;lorem ipsum dolor sit amet&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="Player" tags="" position="">&lt;&lt;back &gt;&gt;&lt;br&gt;
 &lt;&lt;nobr&gt;&gt;
 &lt;strong&gt;
 &lt;&lt;if $playerName&gt;&gt;
@@ -464,7 +474,7 @@ Nivel de sueño: $playerIndiceSueno
 &lt;meter @min="$playerIndiceSuenoMin" @low="$playerIndiceSuenoLow" @optimum="$playerIndiceSuenoOptimum" @high="$playerIndiceSuenoHigh" @max="$playerIndiceSuenoMax" @value="$playerIndiceSueno" title=""&gt;&lt;/meter&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata><tw-passagedata pid="16" name="Inicio" tags="bookmark" position="">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;set $chapterName = "Capitulo I"&gt;&gt;
-&lt;&lt;unset $playerName&gt;&gt;
+&lt;&lt;set $_init to true&gt;&gt;
 &lt;&lt;run UIBar.stow();&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 Inicio

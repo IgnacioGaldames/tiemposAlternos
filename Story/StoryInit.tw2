@@ -6,3 +6,5 @@
 <<set $playerIndiceSueno to 10; $playerIndiceSuenoMin to 0; $playerIndiceSuenoLow to 40; $playerIndiceSuenoOptimum to 80; $playerIndiceSuenoHigh to 60; $playerIndiceSuenoMax to 100;>>
 
 <<set $log to []>>
+
+<<set $_init to false>>
