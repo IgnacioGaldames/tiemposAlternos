@@ -1,15 +1,7 @@
-::StoryMenu
-[[$nameStart->Start]]
+::StoryMenu[haml]
+[[$nameStart|Start]]
 <<link "Guardado Rápido">><<script>>if (Save.slots.ok()) { Save.slots.save(0);}<</script>><</link>>
-<<if $showMarket is true>>
-	[[$nameMarket->Market]]
-<</if>>
-<<if $showInventory is true>>
-   [[$nameInventory->Inventory]]
-<</if>>
-<<if $showLog is true>>
-	[[$nameLog->Log]]
-<</if>>
-<<if $showPlayer is true>>
-	[[$namePlayer->Player]]
-<</if>>
+<<if $showMarket is true>>[[$nameMarket->Market]]<</if>>
+<<if $showInventory is true>>[[$nameInventory->Inventory]]<</if>>
+<<if $showLog is true>>[[$nameLog->Log]]<</if>>
+<<if $showPlayer is true>>[[$namePlayer->Player]]<</if>>

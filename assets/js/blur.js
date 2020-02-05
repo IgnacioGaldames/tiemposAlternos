@@ -37,7 +37,6 @@ $(document).on(':passageend', function (ev) {
             randomLetter();
 
             if (env == 'staging') {
-                
                 console.log("velocidad blur " + velocidadBlur);
                 console.log("random " + random);
                 console.log("total spans " + totalSpan);
@@ -52,8 +51,5 @@ $(document).on(':passageend', function (ev) {
         })["catch"](function (err) {
             console.log(err);
         });
-
     }).call(this);
-
-
 });
