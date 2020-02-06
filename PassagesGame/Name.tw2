@@ -8,3 +8,5 @@
 <</if>>
 
 </label>
+
+NPC: $reclutaName $reclutaLastName

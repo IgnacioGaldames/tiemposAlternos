@@ -23,3 +23,4 @@ env = 'staging'
 ::Javascript [script]
 ::@include assets/js/blur.js
 ::@include assets/js/restcountries.js
+::@include assets/js/npc-names.js

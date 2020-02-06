@@ -8,3 +8,5 @@
 <<set $log to []>>
 
 <<set $_init to false>>
+
+<<set $reclutaName to either($reclutaFemaleNames);$reclutaLastName to either($reclutaLastNames)>>
