@@ -2,13 +2,11 @@
 <<set $chapterName = "Capitulo I: ''À terre''"; >>
 <<nobr>>
 <<if $playerName == "Zero">>
-//-Si, soy yo. Pero puedes decirme 
+//- Si, soy yo. Pero puedes decirme 
 <label>
 <<textbox '$playerName' $playerName 'Abrir Puerta' autofocus>>
 </label>//
 <<elseif $playerName>>
-<<set $reclutaNames to ["A","B","C","D"]; $reclutaLastNames to ["a","b","c","d"]>>
-<<set $reclutaName to either($reclutaNames);$reclutaLastName to either($reclutaLastNames)>>
 //- Zero murió. Soy <<he>> <<rank>>
 <label>
 <<textbox '$playerName' $playerName 'Abrir Puerta'>>
@@ -22,4 +20,10 @@
 <</nobr>>
 //- Lo siento. Soy nueva.//
 //- ¿Quién eres tú?//
-// Soy $reclutaName $reclutaLastName
+//- Soy $reclutaName $reclutaLastName<<if $reclutaApodo>>, pero puedes decirme $reclutaApodo<</if>>
+<<if $reclutaApodo>>
+//<<link '- Me gusta $reclutaApodo' "Presentación">> <<set  $recluta to $reclutaApodo;>> <</link>> //
+//<<link '- Prefiero $reclutaName' "Presentación">> <<set  $recluta to $reclutaName;>> <</link>> //
+<<else>>
+//<<link '- Mucho gusto, $reclutaName' "Presentación">> <<set  $recluta to $reclutaName;>> <</link>> //
+<</if>>

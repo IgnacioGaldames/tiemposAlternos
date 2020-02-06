@@ -18,4 +18,28 @@
 
 <<set $apocalipsis= ["Drones kamikazes", "Tanques autónomos bombardeando", "Sátelites cayendo desde el espacio", "Submarinos nucleares sin control humano", "Aviones no tripulados chocando contra edificios", "Vehículos eléctricos a toda velocidad", "jugueras sin control"];>>
 
-<<set $reclutaName to either($reclutaFemaleNames);$reclutaLastName to either($reclutaLastNames)>>
+<<set $reclutaGender to either("male","female")>>
+<<if $reclutaGender == "female">>
+<<set $reclutaName to either($reclutaFemaleNames);$reclutaLastName to either($reclutaLastNames); >>
+<<script>>
+var theReclutaName = State.variables.reclutaName;
+var theReclutatres = theReclutaName.slice(0, 3); 
+var tres = theReclutatres.charAt(2);
+console.log(tres);
+if (tres === 'z'){
+    var theReclutatres = theReclutaName.slice(0, 2) + 'c';
+}
+console.log(theReclutatres);
+if (tres === 'a' ||
+    tres === 'e' ||
+    tres === 'i' ||
+    tres === 'o' ||
+    tres === 'u') {
+    var theReclutatres = theReclutaName.slice(0, 2);
+};
+State.variables.reclutatres = theReclutatres;
+<</script>>
+<<set $reclutaApodo to $reclutatres + "i">>
+<<else>>
+<<set $reclutaName to either($reclutaMaleNames);$reclutaLastName to either($reclutaLastNames); >>
+<</if>>
