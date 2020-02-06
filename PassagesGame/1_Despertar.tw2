@@ -1,9 +1,9 @@
 ::Despertar[bookmark]
-TOC TOC
-<<timed 2s t8n>>Alguien toca tu puerta<</timed>>
+TOC-TOC-TOC <<if $playerIndiceSueno >= $playerIndiceSuenoLow >> TOC-TOC-TOC<</if>> <<if $playerIndiceSueno >= $playerIndiceSuenoHigh >> <strong>TOC-TOC-TOC!</strong><</if>> 
+<<timed 2s t8n>>Alguien toca tu puerta <<if $playerIndiceSueno >= $playerIndiceSuenoHigh >> insistentemente.<</if>> <</timed>>
 <<timed 4s t8n>>Miras a tu alrededor. Estás en una pequeña habitación.<</timed>>
 <<timed 6s t8n>><<nobr>>
-<<if $playerIndiceSuenoOptimum> $playerIndiceSueno >>[[Seguir Durmiendo->Inicio][$playerIndiceSueno = $playerIndiceSueno + 10]]<</if>>
+<<if  $playerIndiceSueno < $playerIndiceSuenoOptimum >>[[Seguir Durmiendo->Inicio][$playerIndiceSueno = $playerIndiceSueno + 10]]<</if>>
 <</nobr>>
 [[Levantarse->Levantarse][$playerIndiceSueno = $playerIndiceSueno + 40]]
 <</timed>>

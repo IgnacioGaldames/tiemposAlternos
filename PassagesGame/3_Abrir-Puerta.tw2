@@ -7,6 +7,8 @@
 <<textbox '$playerName' $playerName 'Abrir Puerta' autofocus>>
 </label>//
 <<elseif $playerName>>
+<<set $reclutaNames to ["A","B","C","D"]; $reclutaLastNames to ["a","b","c","d"]>>
+<<set $reclutaName to either($reclutaNames);$reclutaLastName to either($reclutaLastNames)>>
 //- Zero murió. Soy <<he>> <<rank>>
 <label>
 <<textbox '$playerName' $playerName 'Abrir Puerta'>>
@@ -19,5 +21,5 @@
 <</if>>
 <</nobr>>
 //- Lo siento. Soy nueva.//
-//- ¿Nueva? ¿Cómo es posible?//
-//
+//- ¿Quién eres tú?//
+// Soy $reclutaName $reclutaLastName

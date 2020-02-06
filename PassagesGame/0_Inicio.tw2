@@ -5,7 +5,7 @@
 <<set $miPosicionExterna = "Tu hogar"; $miPosicionInterna = "dormitorio";>>
 <<run UIBar.stow(); >>
 <<timed 0s t8n>>Es la mitad de la noche.<</timed>>
-<<timed 2s t8n>>Estás en tu Hogar y junto a ti, <<print either($emocional)>>.<</timed>>
+<<timed 2s t8n>>Estás en tu cama y junto a ti, <<print either($emocional)>>.<</timed>>
 <</nobr>>
 <<timed 4s t8n>>Frente a ti, <<print either($peligro)>>.<</timed>>
 <<timed 6s t8n>><<print either($ataque)>>.<</timed>>
