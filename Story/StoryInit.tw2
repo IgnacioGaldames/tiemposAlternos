@@ -17,3 +17,5 @@
 <<set $ataque= ["Un disparo en la obscuridad", "Un grito en medio de la noche", "Alguien muere", "Un asesinato", "BANG!", "El Flash de un disparo", "Una pistola explota", "Olor a pólvora", "una pequeña explosión"];>>	
 
 <<set $apocalipsis= ["Drones kamikazes", "Tanques autónomos bombardeando", "Sátelites cayendo desde el espacio", "Submarinos nucleares sin control humano", "Aviones no tripulados chocando contra edificios", "Vehículos eléctricos a toda velocidad", "jugueras sin control"];>>
+
+<<set $reclutaName to either($reclutaFemaleNames);$reclutaLastName to either($reclutaLastNames)>>

@@ -1,5 +1,5 @@
 jQuery(document).ready(function ($) {
-    $.get('https://restcountries.eu/rest/v2/all?fields=name;translations', function (data) {
+    $.get('https://restcountries.eu/rest/v2/region/americas?fields=name;translations', function (data) {
         $.each(data, function (index, val) {
             var name = val.name;
             var es = val.translations.es;
