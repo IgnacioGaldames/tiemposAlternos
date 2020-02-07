@@ -1,6 +1,6 @@
 ::CoffeScript [coffee script]
-#env = 'production'
-env = 'staging'
+env = 'production'
+#env = 'staging'
 
 ::@include assets/coffee/es.coffee
 ::@include assets/coffee/config.coffee
@@ -24,3 +24,4 @@ env = 'staging'
 ::@include assets/js/blur.js
 ::@include assets/js/restcountries.js
 ::@include assets/js/npc-names.js
+::@include assets/js/label.js

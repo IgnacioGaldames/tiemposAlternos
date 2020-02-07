@@ -11,20 +11,11 @@
 <label>
 <<textbox '$playerName' $playerName 'Abrir Puerta'>>
 </label>//
-<<else>>
-//- Zero murió. Soy <<he>> <<rank>>
-<label>
-<<textbox '$playerName' 'Nombre' 'Abrir Puerta' autofocus>>
-</label>//
-<</if>>
+<<else>>//- Zero murió. Soy <<he>> <<rank>><label><<textbox '$playerName' 'Nombre' 'Abrir Puerta' autofocus>></label>//<</if>>
 <</nobr>>
 //- Lo siento. Soy nueva.//
 //- ¿Quién eres tú?//
-//- Soy $reclutaName $reclutaLastName<<if $reclutaApodo>>, pero puedes decirme $reclutaApodo<</if>>
-<<if $reclutaApodo>>
-//<<link '- $reclutaApodo? Me gusta.' "Presentación">> <<set  $recluta to $reclutaApodo;>> <</link>> //
-//<<link '- Prefiero $reclutaName' "Presentación">> <<set  $recluta to $reclutaName;>> <</link>> //
-<<else>>
+//- Soy $reclutaName $reclutaLastName<<if $reclutaApodo>>, pero puedes decirme $reclutaApodo<</if>>// <<if $reclutaApodo>>//<<link '- $reclutaApodo? Me gusta.' "Presentación">> <<set  $recluta to $reclutaApodo;>> <</link>> //
+//<<link '- Prefiero $reclutaName' "Presentación">> <<set  $recluta to $reclutaName;>> <</link>> //<<else>>
 //<<link '- Mucho gusto, $reclutaName' "Presentación">> <<set  $recluta to $reclutaName;>> <</link>> //
 <</if>>
-//- Prefiero decirte <label><<textbox '$recluta ' 'Nuevo Apodo' 'Presentación'>></label>//
