@@ -9,4 +9,29 @@
 
 <<set $_init to false>>
 
-<<set $reclutaName to either($reclutaFemaleNames);$reclutaLastName to either($reclutaLastNames)>>
+<<set $reclutaGender to either("male","female")>>
+<<if $reclutaGender == "female">>
+<<set $reclutaName to either($reclutaFemaleNames);$reclutaLastName to either($reclutaLastNames); >>
+<<script>>
+var theReclutaName = State.variables.reclutaName;
+var theReclutatres = theReclutaName.slice(0, 3); 
+var tres = theReclutatres.charAt(2);
+console.log(tres);
+if (tres === 'z'){
+    var theReclutatres = theReclutaName.slice(0, 2) + 'c';
+}
+console.log(theReclutatres);
+if (tres === 'a' ||
+    tres === 'e' ||
+    tres === 'i' ||
+    tres === 'o' ||
+    tres === 'u') {
+    var theReclutatres = theReclutaName.slice(0, 2);
+};
+State.variables.reclutatres = theReclutatres;
+<</script>>
+<<set $reclutaApodo to $reclutatres + "i">>
+<<else>>
+<<set $reclutaName to either($reclutaMaleNames);$reclutaLastName to either($reclutaLastNames); >>
+<</if>>
+<<set $npc1MBTI to $rndmMBTI; $npc2MBTI to $rndmMBTI; $npc3MBTI to $rndmMBTI; $npc4MBTI to $rndmMBTI>>

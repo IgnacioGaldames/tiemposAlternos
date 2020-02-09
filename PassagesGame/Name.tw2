@@ -10,3 +10,4 @@
 </label>
 
 NPC: $reclutaName $reclutaLastName
+MBTI: $npc1MBTI
