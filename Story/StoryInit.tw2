@@ -10,7 +10,6 @@
 
 <<set $_init to false>>
 
-<<<<<<< HEAD
 <<set $emocional= ["tu familia", "tus amigos", "el amor de tu vida", "tus padres", "tus abuelos", "tus hijos", "tus compañeros de escuela", "tus compañeros de trabajo", "tú mismo", "tu mascota", "tu primer gato", "tu primer perro", "tu primera mascota", "tu hermana gemela", "tu cantante favorito", "tu maestra de primaria", "tu antiguo jefe"]; >>	
 
 <<set $peligro= ["Ojos rojos y brillantes", "una mano de metal con un arma", "una figura humanoide", "un robot encapuchado", "un robot con la piel de tu rostro", "un espejo", "una figura misteriosa", "tú mismo", "un demonio de ojos rojos", "un demonio de metal", "una sombra con ojos brillantes", "un monstruo"];>>	
@@ -19,8 +18,6 @@
 
 <<set $apocalipsis= ["Drones kamikazes", "Tanques autónomos bombardeando", "Sátelites cayendo desde el espacio", "Submarinos nucleares sin control humano", "Aviones no tripulados chocando contra edificios", "Vehículos eléctricos a toda velocidad", "jugueras sin control"];>>
 
-=======
->>>>>>> template/master
 <<set $reclutaGender to either("male","female")>>
 <<if $reclutaGender == "female">>
 <<set $reclutaName to either($reclutaFemaleNames);$reclutaLastName to either($reclutaLastNames); >>
@@ -46,7 +43,3 @@ State.variables.reclutatres = theReclutatres;
 <<else>>
 <<set $reclutaName to either($reclutaMaleNames);$reclutaLastName to either($reclutaLastNames); >>
 <</if>>
-<<<<<<< HEAD
-=======
-<<set $npc1MBTI to $rndmMBTI; $npc2MBTI to $rndmMBTI; $npc3MBTI to $rndmMBTI; $npc4MBTI to $rndmMBTI>>
->>>>>>> template/master
