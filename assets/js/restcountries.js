@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 jQuery(document).ready(function ($) {
     $.get('https://restcountries.eu/rest/v2/region/americas?fields=name;translations', function (data) {
         $.each(data, function (index, val) {
@@ -7,6 +8,13 @@ jQuery(document).ready(function ($) {
                 es = name;
             }
             var html = '<option data-pais=' + name + '>' + es + '</option>';
+=======
+jQuery(document).ready(function($) {
+    $.get('//restcountries.eu/rest/v2/region/americas', function(data) {
+        $.each(data, function(index, val) {
+            var html = '<option>'+ val.translations.es + '</option>';
+            //console.log(html)
+>>>>>>> template/master
             $('#lista-paises').append(html);
         });
     });

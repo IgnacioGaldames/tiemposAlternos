@@ -24,4 +24,8 @@ env = 'production'
 ::@include assets/js/blur.js
 ::@include assets/js/restcountries.js
 ::@include assets/js/npc-names.js
+<<<<<<< HEAD
 ::@include assets/js/label.js
+=======
+::@include assets/js/npc-personalities.js
+>>>>>>> template/master
