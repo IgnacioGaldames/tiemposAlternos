@@ -41,5 +41,5 @@ State.variables.reclutatres = theReclutatres;
 <</script>>
 <<set $reclutaApodo to $reclutatres + "i">>
 <<else>>
-<<set $reclutaName to either($reclutaMaleNames);$reclutaLastName to either($reclutaLastNames); >>
+<<set $reclutaName to either($reclutaMaleNames);$reclutaLastName to either($reclutaLastNames);>>
 <</if>>
