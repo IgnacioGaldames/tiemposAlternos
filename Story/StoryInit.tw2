@@ -1,6 +1,6 @@
 ::StoryInit
 
-<<set $nameStart to "Inicio"; $nameMarket to "Mercado"; $nameInventory to "Inventario"; $nameLog to "Diario"; $namePlayer to "Jugador">>
+<<set $nameStart to "Start"; $nameMarket to "Market"; $nameInventory to "Inventary"; $nameLog to "Log"; $namePlayer to "Soldier">>
 
 <<set $showInventory = false; $showMarket = false; $showLog = false; $showPlayer = false;>>
 
@@ -10,15 +10,15 @@
 
 <<set $_init to false>>
 
-<<set $emocional= ["tu familia", "tus amigos", "el amor de tu vida", "tus padres", "tus abuelos", "tus hijos", "tus compañeros de escuela", "tus compañeros de trabajo", "tú mismo", "tu mascota", "tu primer gato", "tu primer perro", "tu primera mascota", "tu hermana gemela", "tu cantante favorito", "tu maestra de primaria", "tu antiguo jefe"]; >>	
+<<set $emocional= ["Your family", "Your friends", "the love of Your life", "Your parents", "Your grandparents", "Your school friends", "Your pet"]; >>	
 
-<<set $peligro= ["Ojos rojos y brillantes", "una mano de metal con un arma", "una figura humanoide", "un robot encapuchado", "un robot con la piel de tu rostro", "un espejo", "una figura misteriosa", "tú mismo", "un demonio de ojos rojos", "un demonio de metal", "una sombra con ojos brillantes", "un monstruo"];>>	
+<<set $peligro= ["A meteor fell from the sky","A bug cultist","An arachnid freed from his cage at a lab"];>>	
 
-<<set $ataque= ["Un disparo en la obscuridad", "Un grito en medio de la noche", "Alguien muere", "Un asesinato", "BANG!", "El Flash de un disparo", "Una pistola explota", "Olor a pólvora", "una pequeña explosión"];>>	
+<<set $ataque= ["Only the legs remained","only a hand remained","They had to run and DNA sample to check who or what it was",];>>	
 
-<<set $apocalipsis= ["Drones kamikazes", "Tanques autónomos bombardeando", "Sátelites cayendo desde el espacio", "Submarinos nucleares sin control humano", "Aviones no tripulados chocando contra edificios", "Vehículos eléctricos a toda velocidad", "jugueras sin control"];>>
+<<set $apocalipsis= ["War on Klendathu","Fights on Tango Urilla","The massacre of Planet-P"];>>
 
-<<set $reclutaGender to either("male","female")>>
+<<set $reclutaGender to either("female","female")>>
 <<if $reclutaGender == "female">>
 <<set $reclutaName to either($reclutaFemaleNames);$reclutaLastName to either($reclutaLastNames); >>
 <<script>>
@@ -43,3 +43,4 @@ State.variables.reclutatres = theReclutatres;
 <<else>>
 <<set $reclutaName to either($reclutaMaleNames);$reclutaLastName to either($reclutaLastNames);>>
 <</if>>
+<<set $trainedMorita to false; $trainedKnife to false>>

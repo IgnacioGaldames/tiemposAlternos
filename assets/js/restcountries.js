@@ -1,12 +1,9 @@
 jQuery(document).ready(function ($) {
-    $.get('https://restcountries.eu/rest/v2/region/americas?fields=name;translations', function (data) {
+    $.get('https://restcountries.eu/rest/v2/all', function (data) {
         $.each(data, function (index, val) {
             var name = val.name;
-            var es = val.translations.es;
-            if (val.translations.es == null) {
-                es = name;
-            }
-            var html = '<option data-pais=' + name + '>' + es + '</option>';
+
+            var html = '<option data-pais=' + name + '>' + name + '</option>';
             $('#lista-paises').append(html);
         });
     });

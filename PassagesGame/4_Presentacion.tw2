@@ -1,8 +1,17 @@
-::Presentación[autosave]
+::Presentación[]
 //
-- <span class="text-capitalize"><<rank>> $playerName.</span> Tenemos un problema.
-- ¿Qué pasó?
-- Atacaron a dos de nuestras patrullas. Necesito su ayuda para crear un plar de rescate.
-- Ok.
-- Prefiere que vayamos a la biblioteca para estar tranquilos o vamos a 
+- So, $recluta. What was so important.
+- General $reclutaLastName was my grandfather...
+- Was... ?
+- Yes. A Skinny betrayed us, leading the attack of Rhino Warriors. He was mauled yesterday. 
+- I see. 
+- He told me this was the best unit. So, I enlisted this morning. But my mother doesn't approve.
+- He was a good officer. He trained me on the Marauder Unit.
+- Well, $recluta. I have only one rule. Everyone fights. No one quits. You don't do your job, I'll shoot you.
+- Sir, yes, sir.
+- The battalion has already started the basic training. You are behind.
+- I know, sir. I'll do my best, sir.
+- The Federation needs Heroes like you. In honor of the general I will train you myself. If you survive the basic training, you will earn your citizenship.
+
+[[Start Training->Training]]
 //

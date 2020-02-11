@@ -1,0 +1,10 @@
+::Train Morita[]
+<<set $trainedMorita to true>>
+//
+- $recluta. This is the standard Morita Mk I rifle.
+- I know this, sir.
+- Then, you know that you are holding it on the other side. And that the hot shells will be flying to your face! I don't care that your are left handed, The Federation does not care and the Bugs don't care either!
+//
+<<if $trainedKnife == false>>[[Basic Close Quarter Combat training->Train Knife]]
+<<else>>[[Marauder training->Train Marauder]]
+<</if>>

@@ -1,22 +1,13 @@
 ::Abrir Puerta
-<<set $chapterName = "Capitulo I: ''À terre''"; >>
+<<set $chapterName = "Chapter I: ''A new meatbag''"; >>
+//
 <<nobr>>
-<<if $playerName == "Zero">>
-//- Si, soy yo. Pero puedes decirme 
-<label>
-<<textbox '$playerName' $playerName 'Abrir Puerta' autofocus>>
-</label>//
-<<elseif $playerName>>
-//- Zero murió. Soy <<he>> <<rank>>
-<label>
-<<textbox '$playerName' $playerName 'Abrir Puerta'>>
-</label>//
-<<else>>//- Zero murió. Soy <<he>> <<rank>><label><<textbox '$playerName' 'Nombre' 'Abrir Puerta' autofocus>></label>//<</if>>
+- I'm Captain <label><<textbox '$playerName' $playerName 'Abrir Puerta' autofocus>></label>
 <</nobr>>
-//- Lo siento. Soy nueva.//
-//- ¿Quién eres tú? //
-//- Soy $reclutaName $reclutaLastName <<if $reclutaApodo>>, pero puedes decirme $reclutaApodo <</if>>//
-<<if $reclutaApodo>>//<<link '- $reclutaApodo? Me gusta.' "Presentación">> <<set  $recluta to $reclutaApodo;>> <</link>> //
-//<<link '- Prefiero $reclutaName' "Presentación">> <<set  $recluta to $reclutaName;>> <</link>> //<<else>>
-//<<link '- Mucho gusto, $reclutaName' "Presentación">> <<set  $recluta to $reclutaName;>> <</link>> //
-<</if>>
+- I'm sorry, I'm new around here.
+- Who are you?
+- I'm $reclutaName $reclutaLastName, but you can call me $reclutaApodo.<br>
+<<link '- $reclutaApodo? Sounds odd, but I like it.' "Presentación">> <<set  $recluta to $reclutaApodo;>> <</link>> 
+<<link "- I'll stick with  $reclutaName." "Presentación">> <<set  $recluta to $reclutaName;>> <</link>> 
+<<link "- You are cadet $reclutaLastName until I change my mind." "Presentación">> <<set  $recluta to $reclutaLastName;>> <</link>> 
+//

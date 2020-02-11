@@ -1,18 +1,20 @@
 ::Inicio[suenos autosave]
 <<nobr>>
-<<set $chapterName = "Capitulo I: ''À terre''"; >>
+<<set $chapterName = "Chapter 0 ''Dreams of blood''"; >>
 <<set $_init to true>>
-<<set $miPosicionExterna = "Tu hogar"; $miPosicionInterna = "dormitorio";>>
+<<set $miPosicionExterna = "your home"; $miPosicionInterna = "dormitorio";>>
 <<run UIBar.stow(); >>
-<<timed 0s t8n>>Es la mitad de la noche.<</timed>>
-<<timed 2s t8n>>Estás en tu cama y junto a ti, <<print either($emocional)>>.<</timed>>
+<<timed 0s t8n>>You were watching a public execution when the news came.<</timed>>
+<<timed 2s t8n>><<print either($emocional)>> had died.<</timed>>
 <</nobr>>
-<<timed 4s t8n>>Frente a ti, <<print either($peligro)>>.<</timed>>
+<<timed 4s t8n>>It was <<print either($peligro)>>.<</timed>>
 <<timed 6s t8n>><<print either($ataque)>>.<</timed>>
 <<timed 10s t8n>>-------------
 <<print either($apocalipsis)>>.<</timed>>
 <<timed 12s t8n>>
-$deathPopulation millones de personas muertas.<</timed>>
-<<timed 14s t8n>>-------------
-La ''gran'' guerra contra las máquinas...<</timed>>
-<<timed 18s>><<goto "Despertar";>><<set $miPosicionExterna = "Refugio Subterráneo"; $miPosicionInterna = "dormitorio"; $playerIndiceSueno = $playerIndiceSueno + 10 >><</timed>>
+$deathPopulation millions deaths in $pais.<</timed>>
+<<timed 16s t8n>>-------------
+$capital is where the forces gathered to coordinate the fight with the Bugs.<</timed>>
+<<timed 18s>>
+<<link 'Wake Up' "Despertar">> <<set $miPosicionExterna = "Training facility"; $miPosicionInterna = "quarters"; $playerIndiceSueno = $playerIndiceSueno + 10 >><</link>>
+<</timed>>

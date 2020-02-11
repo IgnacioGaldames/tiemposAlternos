@@ -1,6 +1,6 @@
 %form
 	.form-row
 		.col-md-6
-			%label{:for => "lista-paises"} Selecciona tu país
+			%label{:for => "lista-paises"} Which county are you fighting for?
 			%select#lista-paises.form-control.form-control-sm.bg-light
 %hr

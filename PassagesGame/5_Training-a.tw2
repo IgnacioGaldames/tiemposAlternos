@@ -1,0 +1,36 @@
+::Train Knife[]
+<<set $trainedKnife to true>>
+//- This is the Burge Combat Knife. It's an improvement on the classic Combat Knife. It's forged with metal extracted from the caves under de jungles of Farsteldt.
+It's design allow the soldier tu cut his or her own limbs, if neccesary, with 38% less blood loss.
+- So, I carry a Knife only to do what Fleet Sargeant Ho did?
+- Please stand near the mannequins.
+- Sir?
+- Do it!
+//
+There were ten mannequins with small bugs around them.
+
+<<linkreplace "Throw Knife to $recluta" t8n>>\
+	The knife landed on top of her shoulder, in the middle of a small drawed bug.
+	<<linkreplace "//- I saved your life, $recluta//" t8n>>\
+        //- I saved your life, $recluta. I killed a Controller Saharis//
+        She stands still. A small drop of blood drops from her ear.
+        <<linkreplace "//- I's your turn//" t8n>>\
+            She throws the knife, but it lands in the middle of an eye.
+            //- $recluta!
+            - Yes, sir?
+            - Aren't you forgetting something?
+            - Not killing my friends, sir?
+            - Your mouth protector. If one of those bugs infects you, the only way to sanitize the platoon is with the Dax maneuver!
+            <<if $trainedMorita == false>>
+            [[Basic Rifle training->Train Morita]]
+            <<else>>
+            [[Marauder training->Train Marauder]]
+            <</if>>
+        <</linkreplace>>\
+	<</linkreplace>>\
+<</linkreplace>>\
+
+
+
+
+
