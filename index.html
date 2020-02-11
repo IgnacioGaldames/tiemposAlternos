@@ -524,7 +524,11 @@ $("#textbox-playername").change(function () {
     var textboxPlayername = $("#textbox-playername").val();
     State.variables.playerName = textboxPlayername;
     console.log(textboxPlayername);
+    console.log('cambio');
 });
+$("input").change(function(){
+    alert("The text has been changed.");
+  });
 var mbtiEI = ['e','i']; // Extroversion - Introversion
 var mbtiSN = ['s','n']; // Sensing - iNtuition
 var mbtiTF = ['t','f']; // Thinking - Feeling
@@ -700,11 +704,18 @@ La ''gran'' guerra contra las máquinas...&lt;&lt;/timed&gt;&gt;
 &lt;&lt;else&gt;&gt;//- Zero murió. Soy &lt;&lt;he&gt;&gt; &lt;&lt;rank&gt;&gt;&lt;label&gt;&lt;&lt;textbox '$playerName' 'Nombre' 'Abrir Puerta' autofocus&gt;&gt;&lt;/label&gt;//&lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 //- Lo siento. Soy nueva.//
-//- ¿Quién eres tú?//
-//- Soy $reclutaName $reclutaLastName&lt;&lt;if $reclutaApodo&gt;&gt;, pero puedes decirme $reclutaApodo&lt;&lt;/if&gt;&gt;// &lt;&lt;if $reclutaApodo&gt;&gt;//&lt;&lt;link '- $reclutaApodo? Me gusta.' "Presentación"&gt;&gt; &lt;&lt;set  $recluta to $reclutaApodo;&gt;&gt; &lt;&lt;/link&gt;&gt; //
+//- ¿Quién eres tú? //
+//- Soy $reclutaName $reclutaLastName &lt;&lt;if $reclutaApodo&gt;&gt;, pero puedes decirme $reclutaApodo &lt;&lt;/if&gt;&gt;//
+&lt;&lt;if $reclutaApodo&gt;&gt;//&lt;&lt;link '- $reclutaApodo? Me gusta.' "Presentación"&gt;&gt; &lt;&lt;set  $recluta to $reclutaApodo;&gt;&gt; &lt;&lt;/link&gt;&gt; //
 //&lt;&lt;link '- Prefiero $reclutaName' "Presentación"&gt;&gt; &lt;&lt;set  $recluta to $reclutaName;&gt;&gt; &lt;&lt;/link&gt;&gt; //&lt;&lt;else&gt;&gt;
 //&lt;&lt;link '- Mucho gusto, $reclutaName' "Presentación"&gt;&gt; &lt;&lt;set  $recluta to $reclutaName;&gt;&gt; &lt;&lt;/link&gt;&gt; //
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="Presentación" tags="" position="">$recluta</tw-passagedata><tw-passagedata pid="21" name="PassageFooter" tags="" position="">&lt;hr&gt;&lt;footer class='text-capitalize text-muted'&gt;&lt;small&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="Presentación" tags="autosave" position="">//
+- &lt;span class="text-capitalize"&gt;&lt;&lt;rank&gt;&gt; $playerName.&lt;/span&gt; Tenemos un problema.
+- ¿Qué pasó?
+- Atacaron a dos de nuestras patrullas. Necesito su ayuda para crear un plar de rescate.
+- Ok.
+- Prefiere que vayamos a la biblioteca para estar tranquilos o vamos a 
+//</tw-passagedata><tw-passagedata pid="21" name="PassageFooter" tags="" position="">&lt;hr&gt;&lt;footer class='text-capitalize text-muted'&gt;&lt;small&gt;&lt;&lt;nobr&gt;&gt;
 &lt;&lt;if $capital&gt;&gt;$capital, &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $miPosicionExterna &amp;&amp; $miPosicionInterna&gt;&gt;&lt;span class='posicionExterna'&gt;&lt;/span&gt;&lt;span&gt;/&lt;/span&gt;&lt;span class='posicionInterna'&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;&lt;/small&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="22" name="Widgets" tags="widget" position="">&lt;&lt;nobr&gt;&gt;
