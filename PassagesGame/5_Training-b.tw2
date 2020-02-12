@@ -5,6 +5,11 @@
 - I know this, sir.
 - Then, you know that you are holding it on the other side. And that the hot shells will be flying to your face! I don't care that your are left handed, The Federation does not care and the Bugs don't care either!
 //
+
+She was good with the rifle, but excelled with the granade launcher. Once she killed two //tigers// with only one launch.
+
+When she finished her trainig, it was time to move on.
+
 <<if $trainedKnife == false>>[[Basic Close Quarter Combat training->Train Knife]]
 <<else>>[[Marauder training->Train Marauder]]
 <</if>>

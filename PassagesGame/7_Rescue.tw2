@@ -1,8 +1,5 @@
 ::Rescue[]
-<<set $miPosicionExterna = "Training facility"; $miPosicionInterna = "field";>>
-//- $recluta. You dissobeyed me. I'm obligated by law to punish you.
-- But I was doing the right thing!
-- I know.//
+<<set $miPosicionExterna = "Training facility"; $miPosicionInterna = "field";>>//
 <<if $rescued == "civilian">>
 - He wasn't a citizen. You can't put his life over the lives of your brothers
 - But aren't we supposed to save them?Aren't we fighting a war to save the civilians?
@@ -16,6 +13,7 @@
 - His life wasn't as worth as your brother's life.
 - If not every life has the same value, then we not so different from the bugs.
 <</if>>
+//
 In the training facility, everyone watched the public whipping. The radio started it's announces.
 
 //Join the Federation. Travel to beautiful planets...//

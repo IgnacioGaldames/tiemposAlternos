@@ -2,7 +2,7 @@
 <<nobr>>
 <<set $chapterName = "Chapter 0 ''Dreams of blood''"; >>
 <<set $_init to true>>
-<<set $miPosicionExterna = "your home"; $miPosicionInterna = "dormitorio";>>
+<<set $miPosicionExterna = "your home"; $miPosicionInterna = "bedroom";>>
 <<run UIBar.stow(); >>
 <<timed 0s t8n>>You were watching a public execution when the news came.<</timed>>
 <<timed 2s t8n>><<print either($emocional)>> had died.<</timed>>

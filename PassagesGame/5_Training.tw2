@@ -1,5 +1,6 @@
 ::Training[]
 <<set $chapterName = "Chapter II: ''Training''"; >>
+<<set  $miPosicionInterna = "barracks";>>
 //- You passed the basic physical training. Now I have to decide what is your next training.
 - I thought I'll have a powered armor by now.
 //

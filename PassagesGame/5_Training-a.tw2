@@ -12,7 +12,7 @@ There were ten mannequins with small bugs around them.
 <<linkreplace "Throw Knife to $recluta" t8n>>\
 	The knife landed on top of her shoulder, in the middle of a small drawed bug.
 	<<linkreplace "//- I saved your life, $recluta//" t8n>>\
-        //- I saved your life, $recluta. I killed a Controller Saharis//
+        //- I saved your life, $recluta. I killed a Controller Sahariensis//
         She stands still. A small drop of blood drops from her ear.
         <<linkreplace "//- I's your turn//" t8n>>\
             She throws the knife, but it lands in the middle of an eye.
