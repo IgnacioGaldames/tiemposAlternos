@@ -598,8 +598,8 @@ $capital is where the forces gathered to coordinate the fight with the Bugs.&lt;
 &lt;&lt;timed 18s&gt;&gt;
 &lt;&lt;link 'Wake Up' "Despertar"&gt;&gt; &lt;&lt;set $miPosicionExterna = "Training facility"; $miPosicionInterna = "quarters"; $playerIndiceSueno = $playerIndiceSueno + 10 &gt;&gt;&lt;&lt;/link&gt;&gt;
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="Despertar" tags="bookmark" position="">KNOCK-KNOCK-KNOCK &lt;&lt;if $playerIndiceSueno &gt;= $playerIndiceSuenoLow &gt;&gt; KNOCK-KNOCK-KNOCK&lt;&lt;/if&gt;&gt; &lt;&lt;if $playerIndiceSueno &gt;= $playerIndiceSuenoHigh &gt;&gt; &lt;strong&gt;KNOCK-KNOCK-KNOCK!&lt;/strong&gt;&lt;&lt;/if&gt;&gt; 
-&lt;&lt;timed 2s t8n&gt;&gt;Somebody knocks on your door. &lt;&lt;if $playerIndiceSueno &gt;= $playerIndiceSuenoHigh &gt;&gt; heavily.&lt;&lt;/if&gt;&gt; &lt;&lt;/timed&gt;&gt;
-&lt;&lt;timed 4s t8n&gt;&gt;You look around. You are in a small room. The metal walls are rusting. There's a poster on it. "I want you to kill'em All"&lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 2s t8n&gt;&gt;Somebody knocked on your door. &lt;&lt;if $playerIndiceSueno &gt;= $playerIndiceSuenoHigh &gt;&gt; heavily.&lt;&lt;/if&gt;&gt; &lt;&lt;/timed&gt;&gt;
+&lt;&lt;timed 4s t8n&gt;&gt;You looked around. You were in a small room. The metal walls were rusting. There was a poster on it. "I want you to kill'em All"&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 6s t8n&gt;&gt;&lt;&lt;nobr&gt;&gt;
 &lt;&lt;if  $playerIndiceSueno &lt; $playerIndiceSuenoOptimum &gt;&gt;[[Keep Sleeping-&gt;Inicio][$playerIndiceSueno = $playerIndiceSueno + 10]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
@@ -679,10 +679,68 @@ There were ten mannequins with small bugs around them.
 //
 &lt;&lt;if $trainedKnife == false&gt;&gt;[[Basic Close Quarter Combat training-&gt;Train Knife]]
 &lt;&lt;else&gt;&gt;[[Marauder training-&gt;Train Marauder]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="Train Marauder" tags="autosave" position=""></tw-passagedata><tw-passagedata pid="25" name="PassageFooter" tags="" position="">&lt;hr&gt;&lt;footer class='text-capitalize text-muted'&gt;&lt;small&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="Train Marauder" tags="" position="">The radio was on.
+//Itś a  good day to die when you know the reasons why... // Buy an Anorak signed hand granade today. &lt;small&gt;three of every four hand granades are guarantized to not blow before deploying. Anoke's sign and handwriting may vary.&lt;/small&gt;
+
+Tonight, eat your dinner watching the public feeding on the Arachnids with religious disidents. Their god won't protect them from those scary jaws.
+
+In other news, theres was an attack 6 km. outside $capital. We won the battle and soon WE WILL WON THE WAR. Buy our war merchandise today and help us keep fighting.
+
+- We have an emergency. We need every hand. The bugs were killed, but there still a fire in the city.
+- But Captain $playerName, I've never been in a real Powered Armor Before
+- I know, but your progress in the simulator was perfect. You only killed civilians twice. Not even the General $reclutaLastName could have said that. I will guide you through it. Just remember that you have to ''walk normally'''
+//
+[[She Took the White Suit-&gt;Marauder][$marauderSuit to "white"]]
+[[She Took the Green Suit-&gt;Marauder][$marauderSuit to "green"]]</tw-passagedata><tw-passagedata pid="25" name="Marauder" tags="" position="">&lt;&lt;set $miPosicionExterna = "6km outside $capital"; $miPosicionInterna = "near a burning building";&gt;&gt;
+&lt;&lt;if $marauderSuit == "white"&gt;&gt;
+$recluta took the $marauderSuit Powered Armor.
+//- The white is for training. You must choose the green one.//
+[[ Take the Green Suit-&gt;Marauder][$marauderSuit to "green"]]
+&lt;&lt;else&gt;&gt;//-Good, now watch your CO2 levels. You go there, put down the fire and then you come back.//
+&lt;&lt;/if&gt;&gt;
+She went to the city. Two other Powered Suits were there.
+
+The fire engulfed an entire building. Suddenly, a big metal chunk fell over a soldier. 
+
+She went closer. One suit was destroyed. The other soldier had his legs destroyed. But she heard a scream inside the building. She leaned closer and saw a person, under the Powered Armor. SHe emptied her CO2 tanks.
+
+//- Sir, there's a civilian here.
+- Save the soldier, $recluta. The civilian is not even a citizen.
+- But the soldier was protecting him. 
+- Forget them and come back. The mission is over. You are empty. I wont lose three soldiers today.
+//
+&lt;&lt;link '$recluta chose the civilian' "Rescue"&gt;&gt;&lt;&lt;set $rescued = "civilian"; &gt;&gt;&lt;&lt;/link&gt;&gt;
+&lt;&lt;link '$recluta chose the soldier' "Rescue"&gt;&gt;&lt;&lt;set $rescued = "soldier"; &gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="Rescue" tags="" position="">&lt;&lt;set $miPosicionExterna = "Training facility"; $miPosicionInterna = "field";&gt;&gt;
+//- $recluta. You dissobeyed me. I'm obligated by law to punish you.
+- But I was doing the right thing!
+- I know.//
+&lt;&lt;if $rescued == "civilian"&gt;&gt;
+- He wasn't a citizen. You can't put his life over the lives of your brothers
+- But aren't we supposed to save them?Aren't we fighting a war to save the civilians?
+- A war, yes. But one soldier is worth as one hundred civilians.
+- If a life is not worth as other life, then maybe we are not better than the bugs.
+&lt;&lt;else&gt;&gt;
+- You choose right, but still disobeyed me.
+- I had to save him, sir.
+- I know. But I have to punish you. It's the law.
+- yes, sir. But I deserved it. I couldn't save the civilian.
+- His life wasn't as worth as your brother's life.
+- If not every life has the same value, then we not so different from the bugs.
+&lt;&lt;/if&gt;&gt;
+In the training facility, everyone watched the public whipping. The radio started it's announces
+
+//Join the Federation. Travel to beautiful planets...//
+
+It was noon. She was whipped under the hot air.
+
+//...Make new friends...//
+
+The body of the $rescued was buried in a mass grave.
+
+//And fight for the liberty!//</tw-passagedata><tw-passagedata pid="27" name="PassageFooter" tags="" position="">&lt;hr&gt;&lt;footer class='text-capitalize text-muted'&gt;&lt;small&gt;&lt;&lt;nobr&gt;&gt;
 &lt;&lt;if $capital&gt;&gt;$capital, &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $miPosicionExterna &amp;&amp; $miPosicionInterna&gt;&gt;&lt;span class='posicionExterna'&gt;&lt;/span&gt;&lt;span&gt;/&lt;/span&gt;&lt;span class='posicionInterna'&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;&lt;/small&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="26" name="Widgets" tags="widget" position="">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;&lt;/small&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="28" name="Widgets" tags="widget" position="">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;widget "he"&gt;&gt;
 &lt;&lt;if $playerGender eq "male"&gt;&gt;el
 &lt;&lt;elseif $playerGender eq "female"&gt;&gt;la

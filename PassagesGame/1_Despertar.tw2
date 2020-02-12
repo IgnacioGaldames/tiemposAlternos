@@ -1,7 +1,7 @@
 ::Despertar[bookmark]
 KNOCK-KNOCK-KNOCK <<if $playerIndiceSueno >= $playerIndiceSuenoLow >> KNOCK-KNOCK-KNOCK<</if>> <<if $playerIndiceSueno >= $playerIndiceSuenoHigh >> <strong>KNOCK-KNOCK-KNOCK!</strong><</if>> 
-<<timed 2s t8n>>Somebody knocks on your door. <<if $playerIndiceSueno >= $playerIndiceSuenoHigh >> heavily.<</if>> <</timed>>
-<<timed 4s t8n>>You look around. You are in a small room. The metal walls are rusting. There's a poster on it. "I want you to kill'em All"<</timed>>
+<<timed 2s t8n>>Somebody knocked on your door. <<if $playerIndiceSueno >= $playerIndiceSuenoHigh >> heavily.<</if>> <</timed>>
+<<timed 4s t8n>>You looked around. You were in a small room. The metal walls were rusting. There was a poster on it. "I want you to kill'em All"<</timed>>
 <<timed 6s t8n>><<nobr>>
 <<if  $playerIndiceSueno < $playerIndiceSuenoOptimum >>[[Keep Sleeping->Inicio][$playerIndiceSueno = $playerIndiceSueno + 10]]<</if>>
 <</nobr>>

@@ -1,0 +1,21 @@
+::Marauder[]
+<<set $miPosicionExterna = "6km outside $capital"; $miPosicionInterna = "near a burning building";>>
+<<if $marauderSuit == "white">>
+$recluta took the $marauderSuit Powered Armor.
+//- The white is for training. You must choose the green one.//
+[[ Take the Green Suit->Marauder][$marauderSuit to "green"]]
+<<else>>//-Good, now watch your CO2 levels. You go there, put down the fire and then you come back.//
+<</if>>
+She went to the city. Two other Powered Suits were there.
+
+The fire engulfed an entire building. Suddenly, a big metal chunk fell over a soldier. 
+
+She went closer. One suit was destroyed. The other soldier had his legs destroyed. But she heard a scream inside the building. She leaned closer and saw a person, under the Powered Armor. SHe emptied her CO2 tanks.
+
+//- Sir, there's a civilian here.
+- Save the soldier, $recluta. The civilian is not even a citizen.
+- But the soldier was protecting him. 
+- Forget them and come back. The mission is over. You are empty. I wont lose three soldiers today.
+//
+<<link '$recluta chose the civilian' "Rescue">><<set $rescued = "civilian"; >><</link>>
+<<link '$recluta chose the soldier' "Rescue">><<set $rescued = "soldier"; >><</link>>

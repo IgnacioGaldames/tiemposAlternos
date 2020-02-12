@@ -1,8 +1,14 @@
-::Train Marauder[autosave]
-//- We have an emergency. Theres was an attack 6km outside $capital. We need every hand.
-- But I've nver been in a real Battlesuit before
-- I know, but your progress in the simulator was perfect. I will guide you through it. Just remember that you have to ''walk normally'''
-//
+::Train Marauder[]
+The radio was on.
+//Itś a  good day to die when you know the reasons why... // Buy an Anorak signed hand granade today. <small>three of every four hand granades are guarantized to not blow before deploying. Anoke's sign and handwriting may vary.</small>
 
-Take green suit
-take white suit
+Tonight, eat your dinner watching the public feeding on the Arachnids with religious disidents. Their god won't protect them from those scary jaws.
+
+In other news, theres was an attack 6 km. outside $capital. We won the battle and soon WE WILL WON THE WAR. Buy our war merchandise today and help us keep fighting.
+
+- We have an emergency. We need every hand. The bugs were killed, but there still a fire in the city.
+- But Captain $playerName, I've never been in a real Powered Armor Before
+- I know, but your progress in the simulator was perfect. You only killed civilians twice. Not even the General $reclutaLastName could have said that. I will guide you through it. Just remember that you have to ''walk normally'''
+//
+[[She Took the White Suit->Marauder][$marauderSuit to "white"]]
+[[She Took the Green Suit->Marauder][$marauderSuit to "green"]]
