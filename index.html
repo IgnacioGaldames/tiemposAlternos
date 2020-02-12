@@ -481,7 +481,7 @@ State.variables.mbtiJP = mbtiJP;
 
 &lt;&lt;set $emocional= ["Your family", "Your friends", "the love of Your life", "Your parents", "Your grandparents", "Your school friends", "Your pet"]; &gt;&gt;	
 
-&lt;&lt;set $peligro= ["A meteor fell from the sky","A bug cultist","An arachnid freed from his cage at a lab"];&gt;&gt;	
+&lt;&lt;set $peligro= ["a meteor that fell from the sky","a bug cultist","an Arachnid freed from his cage at a lab", "a plasma explosion", "a Federation ship that fell to earth"];&gt;&gt;	
 
 &lt;&lt;set $ataque= ["Only the legs remained","only a hand remained","They had to run and DNA sample to check who or what it was",];&gt;&gt;	
 
@@ -502,13 +502,16 @@ console.log(theReclutatres);
 if (tres === 'a' ||
     tres === 'e' ||
     tres === 'i' ||
-    tres === 'o' ||
     tres === 'u') {
     var theReclutatres = theReclutaName.slice(0, 2);
 };
-State.variables.reclutatres = theReclutatres;
+State.variables.reclutatres = theReclutatres + "i";
+if (tres === 'o') {
+    var theReclutatres = theReclutaName.slice(0, 2);
+    State.variables.reclutatres = theReclutatres;
+};
 &lt;&lt;/script&gt;&gt;
-&lt;&lt;set $reclutaApodo to $reclutatres + "i"&gt;&gt;
+&lt;&lt;set $reclutaApodo to $reclutatres &gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set $reclutaName to either($reclutaMaleNames);$reclutaLastName to either($reclutaLastNames);&gt;&gt;
 &lt;&lt;/if&gt;&gt;
@@ -603,7 +606,7 @@ $capital is where the forces gathered to coordinate the fight with the Bugs.&lt;
 &lt;&lt;timed 6s t8n&gt;&gt;&lt;&lt;nobr&gt;&gt;
 &lt;&lt;if  $playerIndiceSueno &lt; $playerIndiceSuenoOptimum &gt;&gt;[[Keep Sleeping-&gt;Inicio][$playerIndiceSueno = $playerIndiceSueno + 10]]&lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
-[[Open the door-&gt;Levantarse][$playerIndiceSueno = $playerIndiceSueno + 40]]
+[[Open the door-&gt;Levantarse][$playerIndiceSueno = $playerIndiceSueno + 100]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="Levantarse" tags="autosave" position="">&lt;&lt;set $playerRank to "Cap"&gt;&gt;
 //- Captain Les Heinz? Are you her?
 - No, I'm the new captain. She died on Tango Urilla. A bug ate her head and spit it on my lap. I was the next in the command line.
@@ -614,7 +617,7 @@ $capital is where the forces gathered to coordinate the fight with the Bugs.&lt;
 //</tw-passagedata><tw-passagedata pid="19" name="Abrir Puerta" tags="" position="">&lt;&lt;set $chapterName = "Chapter I: ''A new meatbag''"; &gt;&gt;
 //
 &lt;&lt;nobr&gt;&gt;
-- I'm Captain &lt;label&gt;&lt;&lt;textbox '$playerName' $playerName 'Abrir Puerta' autofocus&gt;&gt;&lt;/label&gt;
+- I'm Captain &lt;label&gt;&lt;&lt;if $playerName&gt;&gt; &lt;&lt;textbox '$playerName' $playerName 'Abrir Puerta' autofocus&gt;&gt; &lt;&lt;else&gt;&gt; &lt;&lt;textbox '$playerName' 'name''Abrir Puerta' autofocus&gt;&gt; &lt;&lt;/if&gt;&gt; &lt;/label&gt;&lt;small class="text-muted"&gt;write your name and press enter&lt;/small&gt;
 &lt;&lt;/nobr&gt;&gt;
 - I'm sorry, I'm new around here.
 - Who are you?
@@ -639,7 +642,11 @@ $capital is where the forces gathered to coordinate the fight with the Bugs.&lt;
 [[Start Training-&gt;Training]]
 //</tw-passagedata><tw-passagedata pid="21" name="Training" tags="" position="">&lt;&lt;set $chapterName = "Chapter II: ''Training''"; &gt;&gt;
 &lt;&lt;set  $miPosicionInterna = "barracks";&gt;&gt;
-//- You passed the basic physical training. Now I have to decide what is your next training.
+//- I didn't knew a teen like you could run so much before passing out. I think you might have set a new record!
+- What? I thought I had failed?
+- The test was not if you pass out in the desert. The test was ''when''.
+- I won't give up until I avenge my grandfather.
+- You passed the basic physical training. Now I have to decide what is your next training.
 - I thought I'll have a powered armor by now.
 //
 [[Basic Close Quarter Combat training-&gt;Train Knife]]
@@ -675,10 +682,9 @@ There were ten mannequins with small bugs around them.
 &lt;&lt;/linkreplace&gt;&gt;\</tw-passagedata><tw-passagedata pid="23" name="Train Morita" tags="" position="">&lt;&lt;set $trainedMorita to true&gt;&gt;
 //
 - $recluta. This is the standard Morita Mk I rifle.
-- I know this, sir.
-- Then, you know that you are holding it on the other side. And that the hot shells will be flying to your face! I don't care that your are left handed, The Federation does not care and the Bugs don't care either!
+- Everyone know this, sir.
+- Then, you know that you are holding it on the other side. And that the hot shells will be flying to your face! I don't care that your are left handed, The Federation does not care and the Bugs don't care either! This is not a Morita MK I ''Plasma Pulse''' Rifle.
 //
-
 She was good with the rifle, but excelled with the granade launcher. Once she killed two //tigers// with only one launch.
 
 When she finished her trainig, it was time to move on.
@@ -686,7 +692,7 @@ When she finished her trainig, it was time to move on.
 &lt;&lt;if $trainedKnife == false&gt;&gt;[[Basic Close Quarter Combat training-&gt;Train Knife]]
 &lt;&lt;else&gt;&gt;[[Marauder training-&gt;Train Marauder]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="Train Marauder" tags="" position="">The radio was on.
-//...It's a  good day to die when you know the reasons why... // Buy an Anorak signed hand granade today. &lt;small&gt;three of every four hand granades are guarantized to not blow before deploying. Anorak's sign and handwriting may vary.&lt;/small&gt;
+//...It's a  good day to die when you know the reasons why...  Buy an Anorak signed hand granade today. &lt;small&gt;three of every four hand granades are guarantized to not blow before deploying. Anorak's sign and handwriting may vary.&lt;/small&gt;
 
 Tonight, eat your dinner watching the public feeding on the Arachnids with religious disidents. Their god won't protect them from those scary jaws.
 
@@ -694,34 +700,31 @@ In other news, theres was an attack 6 km. outside $capital. We won the battle an
 
 - We have an emergency. We need every hand. The bugs were killed, but there still a fire in the city.
 - But Captain $playerName, I've never been in a real Powered Armor Before
-- I know, but your progress in the simulator was perfect. You only killed civilians twice. Not even the General $reclutaLastName could have said that. I will guide you through it. Just remember that you have to ''walk normally'''
+- I know, but your progress in the simulator was perfect. You only killed civilians twice. Not even the General $reclutaLastName could have said that. I will guide you through it. Just remember that you have to ''walk normally''
 //
 [[She Took the White Suit-&gt;Marauder][$marauderSuit to "white"]]
-[[She Took the Green Suit-&gt;Marauder][$marauderSuit to "green"]]</tw-passagedata><tw-passagedata pid="25" name="Marauder" tags="" position="">&lt;&lt;set $miPosicionExterna = "6km outside $capital"; $miPosicionInterna = "near a burning building";&gt;&gt;
-&lt;&lt;if $marauderSuit == "white"&gt;&gt;
+[[She Took the Green Suit-&gt;Marauder][$marauderSuit to "green"]]</tw-passagedata><tw-passagedata pid="25" name="Marauder" tags="" position="">&lt;&lt;if $marauderSuit == "white"&gt;&gt;
 $recluta took the $marauderSuit Powered Armor.
 //- The white is for training. You must choose the green one.//
 [[ Take the Green Suit-&gt;Marauder][$marauderSuit to "green"]]
-&lt;&lt;else&gt;&gt;//-Good, now watch your CO2 levels. You go there, put down the fire and then you come back.//
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;//-Good, now watch your CO2 levels. Go there, put down the fire and then come back. As simple as that//
+[[ Go on-&gt;Marauder b][$marauderSuit to "green"]]
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="Marauder b" tags="" position="">&lt;&lt;set $miPosicionExterna = "6km outside $capital"; $miPosicionInterna = "near a burning building";&gt;&gt;
 She went to the city. Two other Powered Suits were there.
 
-The fire engulfed an entire building. Suddenly, a big metal chunk fell over a soldier. 
+//- Walk normal. Check your fuel. Go to the building in the southwest. Our soldiers are there.//
 
-She went closer. One suit was destroyed. The other soldier had his legs destroyed. But she heard a scream inside the building. She leaned closer and saw a person, under the Powered Armor. SHe emptied her CO2 tanks.
+The fire engulfed the entire building. Suddenly, a big metal chunk fell over a soldier. 
+
+She went closer. One suit was destroyed. The other soldier had his legs destroyed. But she heard a scream inside the building. She leaned closer and saw a person, under the Powered Armor. She emptied her CO2 tanks.
 
 //- Sir, there's a civilian here.
 - Save the soldier, $recluta. The civilian is not even a citizen.
 - But the soldier was protecting him. 
-- Forget them and come back. The mission is over. You are empty. I wont lose three soldiers today.
+- Forget them and come back. The mission is over. You are empty. I won't lose three soldiers today.
 //
 &lt;&lt;link '$recluta chose the civilian' "Rescue"&gt;&gt;&lt;&lt;set $rescued = "civilian"; &gt;&gt;&lt;&lt;/link&gt;&gt;
-&lt;&lt;link '$recluta chose the soldier' "Rescue"&gt;&gt;&lt;&lt;set $rescued = "soldier"; &gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="26" name="Rescue" tags="" position="">&lt;&lt;set $miPosicionExterna = "Training facility"; $miPosicionInterna = "field";&gt;&gt;
-//- $recluta. You dissobeyed me. I'm obligated by law to punish you.
-- But I was doing the right thing!
-- I know.//
-&lt;&lt;if $rescued == "civilian"&gt;&gt;
-- He wasn't a citizen. You can't put his life over the lives of your brothers
+&lt;&lt;link '$recluta chose the soldier' "Rescue"&gt;&gt;&lt;&lt;set $rescued = "soldier"; &gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="27" name="Rescue" tags="" position="">&lt;&lt;set $miPosicionExterna = "Training facility"; $miPosicionInterna = "field";&gt;&gt;//&lt;&lt;if $rescued == "civilian"&gt;&gt;- He wasn't a citizen. You can't put his life over the lives of your brothers
 - But aren't we supposed to save them?Aren't we fighting a war to save the civilians?
 - A war, yes. But one soldier is worth as one hundred civilians.
 - If a life is not worth as other life, then maybe we are not better than the bugs.
@@ -732,7 +735,7 @@ She went closer. One suit was destroyed. The other soldier had his legs destroye
 - yes, sir. But I deserved it. I couldn't save the civilian.
 - His life wasn't as worth as your brother's life.
 - If not every life has the same value, then we not so different from the bugs.
-&lt;&lt;/if&gt;&gt;
+&lt;&lt;/if&gt;&gt; //
 In the training facility, everyone watched the public whipping. The radio started it's announces.
 
 //Join the Federation. Travel to beautiful planets...//
@@ -743,10 +746,10 @@ It was noon. She was whipped under the hot air.
 
 The body of the $rescued was buried in a mass grave.
 
-//And fight for the liberty!//</tw-passagedata><tw-passagedata pid="27" name="PassageFooter" tags="" position="">&lt;hr&gt;&lt;footer class='text-capitalize text-muted'&gt;&lt;small&gt;&lt;&lt;nobr&gt;&gt;
+//And fight for the liberty!//</tw-passagedata><tw-passagedata pid="28" name="PassageFooter" tags="" position="">&lt;hr&gt;&lt;footer class='text-capitalize text-muted'&gt;&lt;small&gt;&lt;&lt;nobr&gt;&gt;
 &lt;&lt;if $capital&gt;&gt;$capital, &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $miPosicionExterna &amp;&amp; $miPosicionInterna&gt;&gt;&lt;span class='posicionExterna'&gt;&lt;/span&gt;&lt;span&gt;/&lt;/span&gt;&lt;span class='posicionInterna'&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;
-&lt;&lt;/nobr&gt;&gt;&lt;/small&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="28" name="Widgets" tags="widget" position="">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/nobr&gt;&gt;&lt;/small&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="29" name="Widgets" tags="widget" position="">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;widget "he"&gt;&gt;
 &lt;&lt;if $playerGender eq "male"&gt;&gt;el
 &lt;&lt;elseif $playerGender eq "female"&gt;&gt;la

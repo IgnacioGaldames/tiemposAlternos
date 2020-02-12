@@ -2,7 +2,7 @@
 <<set $chapterName = "Chapter I: ''A new meatbag''"; >>
 //
 <<nobr>>
-- I'm Captain <label><<textbox '$playerName' $playerName 'Abrir Puerta' autofocus>></label>
+- I'm Captain <label><<if $playerName>> <<textbox '$playerName' $playerName 'Abrir Puerta' autofocus>> <<else>> <<textbox '$playerName' 'name''Abrir Puerta' autofocus>> <</if>> </label><small class="text-muted">write your name and press enter</small>
 <</nobr>>
 - I'm sorry, I'm new around here.
 - Who are you?

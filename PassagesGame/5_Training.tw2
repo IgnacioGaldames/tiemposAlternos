@@ -1,7 +1,11 @@
 ::Training[]
 <<set $chapterName = "Chapter II: ''Training''"; >>
 <<set  $miPosicionInterna = "barracks";>>
-//- You passed the basic physical training. Now I have to decide what is your next training.
+//- I didn't knew a teen like you could run so much before passing out. I think you might have set a new record!
+- What? I thought I had failed?
+- The test was not if you pass out in the desert. The test was ''when''.
+- I won't give up until I avenge my grandfather.
+- You passed the basic physical training. Now I have to decide what is your next training.
 - I thought I'll have a powered armor by now.
 //
 [[Basic Close Quarter Combat training->Train Knife]]

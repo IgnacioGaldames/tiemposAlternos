@@ -5,5 +5,5 @@ KNOCK-KNOCK-KNOCK <<if $playerIndiceSueno >= $playerIndiceSuenoLow >> KNOCK-KNOC
 <<timed 6s t8n>><<nobr>>
 <<if  $playerIndiceSueno < $playerIndiceSuenoOptimum >>[[Keep Sleeping->Inicio][$playerIndiceSueno = $playerIndiceSueno + 10]]<</if>>
 <</nobr>>
-[[Open the door->Levantarse][$playerIndiceSueno = $playerIndiceSueno + 40]]
+[[Open the door->Levantarse][$playerIndiceSueno = $playerIndiceSueno + 100]]
 <</timed>>

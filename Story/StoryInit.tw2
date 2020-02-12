@@ -12,7 +12,7 @@
 
 <<set $emocional= ["Your family", "Your friends", "the love of Your life", "Your parents", "Your grandparents", "Your school friends", "Your pet"]; >>	
 
-<<set $peligro= ["A meteor fell from the sky","A bug cultist","An arachnid freed from his cage at a lab"];>>	
+<<set $peligro= ["a meteor that fell from the sky","a bug cultist","an Arachnid freed from his cage at a lab", "a plasma explosion", "a Federation ship that fell to earth"];>>	
 
 <<set $ataque= ["Only the legs remained","only a hand remained","They had to run and DNA sample to check who or what it was",];>>	
 
@@ -33,13 +33,16 @@ console.log(theReclutatres);
 if (tres === 'a' ||
     tres === 'e' ||
     tres === 'i' ||
-    tres === 'o' ||
     tres === 'u') {
     var theReclutatres = theReclutaName.slice(0, 2);
 };
-State.variables.reclutatres = theReclutatres;
+State.variables.reclutatres = theReclutatres + "i";
+if (tres === 'o') {
+    var theReclutatres = theReclutaName.slice(0, 2);
+    State.variables.reclutatres = theReclutatres;
+};
 <</script>>
-<<set $reclutaApodo to $reclutatres + "i">>
+<<set $reclutaApodo to $reclutatres >>
 <<else>>
 <<set $reclutaName to either($reclutaMaleNames);$reclutaLastName to either($reclutaLastNames);>>
 <</if>>

@@ -1,6 +1,6 @@
 ::Train Marauder[]
 The radio was on.
-//...It's a  good day to die when you know the reasons why... // Buy an Anorak signed hand granade today. <small>three of every four hand granades are guarantized to not blow before deploying. Anorak's sign and handwriting may vary.</small>
+//...It's a  good day to die when you know the reasons why...  Buy an Anorak signed hand granade today. <small>three of every four hand granades are guarantized to not blow before deploying. Anorak's sign and handwriting may vary.</small>
 
 Tonight, eat your dinner watching the public feeding on the Arachnids with religious disidents. Their god won't protect them from those scary jaws.
 
@@ -8,7 +8,7 @@ In other news, theres was an attack 6 km. outside $capital. We won the battle an
 
 - We have an emergency. We need every hand. The bugs were killed, but there still a fire in the city.
 - But Captain $playerName, I've never been in a real Powered Armor Before
-- I know, but your progress in the simulator was perfect. You only killed civilians twice. Not even the General $reclutaLastName could have said that. I will guide you through it. Just remember that you have to ''walk normally'''
+- I know, but your progress in the simulator was perfect. You only killed civilians twice. Not even the General $reclutaLastName could have said that. I will guide you through it. Just remember that you have to ''walk normally''
 //
 [[She Took the White Suit->Marauder][$marauderSuit to "white"]]
 [[She Took the Green Suit->Marauder][$marauderSuit to "green"]]

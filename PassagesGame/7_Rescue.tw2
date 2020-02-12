@@ -1,7 +1,5 @@
 ::Rescue[]
-<<set $miPosicionExterna = "Training facility"; $miPosicionInterna = "field";>>//
-<<if $rescued == "civilian">>
-- He wasn't a citizen. You can't put his life over the lives of your brothers
+<<set $miPosicionExterna = "Training facility"; $miPosicionInterna = "field";>>//<<if $rescued == "civilian">>- He wasn't a citizen. You can't put his life over the lives of your brothers
 - But aren't we supposed to save them?Aren't we fighting a war to save the civilians?
 - A war, yes. But one soldier is worth as one hundred civilians.
 - If a life is not worth as other life, then maybe we are not better than the bugs.
@@ -12,8 +10,7 @@
 - yes, sir. But I deserved it. I couldn't save the civilian.
 - His life wasn't as worth as your brother's life.
 - If not every life has the same value, then we not so different from the bugs.
-<</if>>
-//
+<</if>> //
 In the training facility, everyone watched the public whipping. The radio started it's announces.
 
 //Join the Federation. Travel to beautiful planets...//
