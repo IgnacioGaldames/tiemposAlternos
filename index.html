@@ -583,6 +583,7 @@ if (tres === 'a' ||
     var theReclutatres = theReclutaName.slice(0, 2);
 };
 State.variables.reclutatres = theReclutatres;
+console.log(theReclutaName);
 &lt;&lt;/script&gt;&gt;
 &lt;&lt;set $reclutaApodo to $reclutatres + "i"&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -699,7 +700,7 @@ La ''gran'' guerra contra las máquinas...&lt;&lt;/timed&gt;&gt;
 &lt;/label&gt;//
 &lt;&lt;else&gt;&gt;//- Zero murió. Soy &lt;&lt;he&gt;&gt; &lt;&lt;rank&gt;&gt;&lt;label&gt;&lt;&lt;textbox '$playerName' 'Nombre' 'Abrir Puerta' autofocus&gt;&gt;&lt;/label&gt;//&lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
-//- Lo siento. Soy nueva.//
+//- Lo siento. Soy nuev&lt;&lt;heR&gt;&gt;.//
 //- ¿Quién eres tú?//
 //- Soy $reclutaName $reclutaLastName&lt;&lt;if $reclutaApodo&gt;&gt;, pero puedes decirme $reclutaApodo&lt;&lt;/if&gt;&gt;// &lt;&lt;if $reclutaApodo&gt;&gt;//&lt;&lt;link '- $reclutaApodo? Me gusta.' "Presentación"&gt;&gt; &lt;&lt;set  $recluta to $reclutaApodo;&gt;&gt; &lt;&lt;/link&gt;&gt; //
 //&lt;&lt;link '- Prefiero $reclutaName' "Presentación"&gt;&gt; &lt;&lt;set  $recluta to $reclutaName;&gt;&gt; &lt;&lt;/link&gt;&gt; //&lt;&lt;else&gt;&gt;
@@ -717,6 +718,11 @@ La ''gran'' guerra contra las máquinas...&lt;&lt;/timed&gt;&gt;
 &lt;&lt;if $playerGender eq "male" &amp;&amp; $playerRank eq "Cap"&gt;&gt;capitán
 &lt;&lt;elseif $playerGender eq "female" &amp;&amp; $playerRank eq "Cap"&gt;&gt;capitana
 &lt;&lt;else&gt;&gt;$playerRank
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/widget&gt;&gt;
+&lt;&lt;widget "heR"&gt;&gt;
+&lt;&lt;if $reclutaGender eq "male"&gt;&gt;o
+&lt;&lt;elseif $reclutaGender eq "female"&gt;&gt;a
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/widget&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata></tw-storydata>
