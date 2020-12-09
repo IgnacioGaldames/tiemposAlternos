@@ -572,15 +572,15 @@ var theReclutatres = theReclutaName.slice(0, 3);
 var tres = theReclutatres.charAt(2);
 console.log(tres);
 if (tres === 'z'){
-    var theReclutatres = theReclutaName.slice(0, 2) + 'c';
+		var theReclutatres = theReclutaName.slice(0, 2) + 'c';
 }
 console.log(theReclutatres);
 if (tres === 'a' ||
-    tres === 'e' ||
-    tres === 'i' ||
-    tres === 'o' ||
-    tres === 'u') {
-    var theReclutatres = theReclutaName.slice(0, 2);
+		tres === 'e' ||
+		tres === 'i' ||
+		tres === 'o' ||
+		tres === 'u') {
+		var theReclutatres = theReclutaName.slice(0, 2);
 };
 State.variables.reclutatres = theReclutatres;
 console.log(theReclutaName);
@@ -622,7 +622,7 @@ Dicultad: &lt;strong&gt;&lt;&lt;print settings.difficulty &gt;&gt;&lt;/strong&gt
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;script&gt;&gt;console.log("Passage Done")&lt;&lt;/script&gt;&gt;
 &lt;&lt;if $playerIndiceSueno gte $playerIndiceSuenoMax&gt;&gt;
-    &lt;&lt;set $playerIndiceSueno to $playerIndiceSuenoMax&gt;&gt;
+		&lt;&lt;set $playerIndiceSueno to $playerIndiceSuenoMax&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Start" tags="" position="">&lt;h1 class='d-block d-md-none display-4 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-md-block d-lg-none display-3 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-lg-block display-1 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h2 class='text-break font-weight-light'&gt;&lt;span class="chapter" id="subtitulo"&gt;&lt;/span&gt;&lt;/h2&gt;&lt;hr&gt;&lt;form&gt;&lt;div class='form-row'&gt;&lt;div class='col-md-6'&gt;&lt;label for='lista-paises'&gt;Selecciona tu país&lt;/label&gt;&lt;select class='form-control form-control-sm bg-light' id='lista-paises'&gt;&lt;/select&gt;&lt;/div&gt;&lt;/div&gt;&lt;/form&gt;&lt;hr&gt;&lt;&lt;nobr&gt;&gt;
 &lt;&lt;if Save.autosave.has()&gt;&gt;&lt;btn class='btn btn-success mt-2 mr-2 font-weight-light' id='btn-continuar'&gt;&lt;&lt;link "Autoguardado"&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.autosave.has()){Save.autosave.load();}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if Save.ok() &amp;&amp; Save.slots.has(0)&gt;&gt;&lt;btn class='btn btn-success mt-2 mr-2 font-weight-light' id='btn-cargar'&gt;&lt;&lt;link "Último Guardado"&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.slots.has(0)) { Save.slots.load(0);}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
@@ -698,11 +698,13 @@ La ''gran'' guerra contra las máquinas...&lt;&lt;/timed&gt;&gt;
 &lt;label&gt;
 &lt;&lt;textbox '$playerName' $playerName 'Abrir Puerta'&gt;&gt;
 &lt;/label&gt;//
-&lt;&lt;else&gt;&gt;//- Zero murió. Soy &lt;&lt;he&gt;&gt; &lt;&lt;rank&gt;&gt;&lt;label&gt;&lt;&lt;textbox '$playerName' 'Nombre' 'Abrir Puerta' autofocus&gt;&gt;&lt;/label&gt;//&lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;//- Zero murió. Soy &lt;&lt;he&gt;&gt; &lt;&lt;rank&gt;&gt;&lt;label&gt;&lt;&lt;textbox '$playerName' 'Nombre' 'Abrir Puerta' [autofocus]&gt;&gt;&lt;/label&gt;//&lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
-//- Lo siento. Soy nuev&lt;&lt;heR&gt;&gt;.//
+//- Lo siento. Soy &lt;&lt;nuev&gt;&gt; aquí.//
 //- ¿Quién eres tú?//
-//- Soy $reclutaName $reclutaLastName&lt;&lt;if $reclutaApodo&gt;&gt;, pero puedes decirme $reclutaApodo&lt;&lt;/if&gt;&gt;// &lt;&lt;if $reclutaApodo&gt;&gt;//&lt;&lt;link '- $reclutaApodo? Me gusta.' "Presentación"&gt;&gt; &lt;&lt;set  $recluta to $reclutaApodo;&gt;&gt; &lt;&lt;/link&gt;&gt; //
+//- Soy $reclutaName $reclutaLastName&lt;&lt;if $reclutaApodo&gt;&gt;, pero puedes decirme $reclutaApodo si quieres. Todos lo hacen.&lt;&lt;/if&gt;&gt;//
+
+//&lt;&lt;if $reclutaApodo&gt;&gt;//&lt;&lt;link '- $reclutaApodo? Me gusta.' "Presentación"&gt;&gt; &lt;&lt;set  $recluta to $reclutaApodo;&gt;&gt; &lt;&lt;/link&gt;&gt; //
 //&lt;&lt;link '- Prefiero $reclutaName' "Presentación"&gt;&gt; &lt;&lt;set  $recluta to $reclutaName;&gt;&gt; &lt;&lt;/link&gt;&gt; //&lt;&lt;else&gt;&gt;
 //&lt;&lt;link '- Mucho gusto, $reclutaName' "Presentación"&gt;&gt; &lt;&lt;set  $recluta to $reclutaName;&gt;&gt; &lt;&lt;/link&gt;&gt; //
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="Presentación" tags="" position="">$recluta</tw-passagedata><tw-passagedata pid="21" name="PassageFooter" tags="" position="">&lt;hr&gt;&lt;footer class='text-capitalize text-muted'&gt;&lt;small&gt;&lt;&lt;nobr&gt;&gt;
@@ -720,9 +722,10 @@ La ''gran'' guerra contra las máquinas...&lt;&lt;/timed&gt;&gt;
 &lt;&lt;else&gt;&gt;$playerRank
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/widget&gt;&gt;
-&lt;&lt;widget "heR"&gt;&gt;
-&lt;&lt;if $reclutaGender eq "male"&gt;&gt;o
-&lt;&lt;elseif $reclutaGender eq "female"&gt;&gt;a
+&lt;&lt;widget "nuev"&gt;&gt;
+&lt;&lt;if $reclutaGender eq "male"&gt;&gt;nuevo
+&lt;&lt;elseif $reclutaGender eq "female"&gt;&gt;nueva
+&lt;&lt;else&gt;&gt;nueve
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/widget&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata></tw-storydata>

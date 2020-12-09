@@ -27,15 +27,15 @@ var theReclutatres = theReclutaName.slice(0, 3);
 var tres = theReclutatres.charAt(2);
 console.log(tres);
 if (tres === 'z'){
-    var theReclutatres = theReclutaName.slice(0, 2) + 'c';
+		var theReclutatres = theReclutaName.slice(0, 2) + 'c';
 }
 console.log(theReclutatres);
 if (tres === 'a' ||
-    tres === 'e' ||
-    tres === 'i' ||
-    tres === 'o' ||
-    tres === 'u') {
-    var theReclutatres = theReclutaName.slice(0, 2);
+		tres === 'e' ||
+		tres === 'i' ||
+		tres === 'o' ||
+		tres === 'u') {
+		var theReclutatres = theReclutaName.slice(0, 2);
 };
 State.variables.reclutatres = theReclutatres;
 console.log(theReclutaName);

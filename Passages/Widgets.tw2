@@ -11,9 +11,10 @@
 <<else>>$playerRank
 <</if>>
 <</widget>>
-<<widget "heR">>
-<<if $reclutaGender eq "male">>o
-<<elseif $reclutaGender eq "female">>a
+<<widget "nuev">>
+<<if $reclutaGender eq "male">>nuevo
+<<elseif $reclutaGender eq "female">>nueva
+<<else>>nueve
 <</if>>
 <</widget>>
 <</nobr>>

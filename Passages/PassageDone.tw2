@@ -10,5 +10,5 @@
 <</if>>
 <<script>>console.log("Passage Done")<</script>>
 <<if $playerIndiceSueno gte $playerIndiceSuenoMax>>
-    <<set $playerIndiceSueno to $playerIndiceSuenoMax>>
+		<<set $playerIndiceSueno to $playerIndiceSuenoMax>>
 <</if>>
