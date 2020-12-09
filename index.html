@@ -499,7 +499,7 @@ function btnLista() {
 		$("#nuevoJuego").removeClass("disabled btn-secondary").addClass("btn-primary");
 		$("#juegoNuevo").attr('disabled', false);
 		$("#nuevoJuego").attr('disabled', false);
-		console.log('btnLista')
+		//console.log('btnLista')
 	});
 }
 
@@ -525,9 +525,20 @@ function getCountries() {
 			$.each(data, function (index, val) {
 				var name = val.name;
 				var population = val.population;
+				console.log(population);
 				var capital = val.capital;
 				var deathPopulation = Math.round(((population / 1000000) / 4) * 3);
-				State.variables.deathPopulation = deathPopulation;
+				console.log(deathPopulation);
+				if (deathPopulation == 0) {
+					State.variables.deathPopulation = "tres cuartos de la población";
+				}
+				else if (deathPopulation == 1) {
+					State.variables.deathPopulation = "1 millón de personas";
+				}
+				else {
+					State.variables.deathPopulation = deathPopulation + " millones de personas";
+				}
+				//State.variables.deathPopulation = deathPopulation;
 				State.variables.capital = capital;
 			});
 		});
@@ -718,7 +729,7 @@ Nivel de sueño: $playerIndiceSueno
 &lt;&lt;timed 10s t8n&gt;&gt;-------------
 &lt;&lt;print either($apocalipsis)&gt;&gt;.&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 12s t8n&gt;&gt;
-$deathPopulation millones de personas muertas.&lt;&lt;/timed&gt;&gt;
+$deathPopulation fallecidas.&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 14s t8n&gt;&gt;-------------
 La ''gran'' guerra contra las máquinas...&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 18s&gt;&gt;&lt;&lt;goto "Despertar";&gt;&gt;&lt;&lt;set $miPosicionExterna = "Refugio Subterráneo"; $miPosicionInterna = "dormitorio"; $playerIndiceSueno = $playerIndiceSueno + 10 &gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="Despertar" tags="bookmark" position="">TOC-TOC-TOC &lt;&lt;if $playerIndiceSueno &gt;= $playerIndiceSuenoLow &gt;&gt; TOC-TOC-TOC&lt;&lt;/if&gt;&gt; &lt;&lt;if $playerIndiceSueno &gt;= $playerIndiceSuenoHigh &gt;&gt; &lt;strong&gt;TOC-TOC-TOC!&lt;/strong&gt;&lt;&lt;/if&gt;&gt; 

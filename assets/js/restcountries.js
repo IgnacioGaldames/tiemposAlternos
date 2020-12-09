@@ -11,7 +11,7 @@ function btnLista() {
 		$("#nuevoJuego").removeClass("disabled btn-secondary").addClass("btn-primary");
 		$("#juegoNuevo").attr('disabled', false);
 		$("#nuevoJuego").attr('disabled', false);
-		console.log('btnLista')
+		//console.log('btnLista')
 	});
 }
 
@@ -37,9 +37,20 @@ function getCountries() {
 			$.each(data, function (index, val) {
 				var name = val.name;
 				var population = val.population;
+				console.log(population);
 				var capital = val.capital;
 				var deathPopulation = Math.round(((population / 1000000) / 4) * 3);
-				State.variables.deathPopulation = deathPopulation;
+				console.log(deathPopulation);
+				if (deathPopulation == 0) {
+					State.variables.deathPopulation = "tres cuartos de la población";
+				}
+				else if (deathPopulation == 1) {
+					State.variables.deathPopulation = "1 millón de personas";
+				}
+				else {
+					State.variables.deathPopulation = deathPopulation + " millones de personas";
+				}
+				//State.variables.deathPopulation = deathPopulation;
 				State.variables.capital = capital;
 			});
 		});
