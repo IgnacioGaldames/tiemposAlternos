@@ -5,6 +5,5 @@
 [[-No, soy la nueva capitana->Abrir Puerta][; $playerGender to "female";]]
 [[-No, soy el nuevo capitán->Abrir Puerta][; $playerGender to "male";]]
 
-[[-Si, soy ella->Abrir Puerta][$playerName to "Zero"; $playerGender to "female";]]
 [[-Si, soy él->Abrir Puerta][$playerName to "Zero"; $playerGender to "male";]]
 //

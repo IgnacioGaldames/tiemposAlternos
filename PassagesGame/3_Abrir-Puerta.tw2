@@ -4,7 +4,7 @@
 <<if $playerName == "Zero">>
 //- Si, soy yo. Pero puedes decirme 
 <label>
-<<textbox '$playerName' $playerName 'Abrir Puerta' autofocus>>
+<<textbox '$playerName' $playerName 'Abrir Puerta' autofocus required>>
 </label>//
 <<elseif $playerName>>
 //- Zero murió. Soy <<he>> <<rank>>
