@@ -703,25 +703,26 @@ La ''gran'' guerra contra las máquinas...&lt;&lt;/timed&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 [[Levantarse-&gt;Levantarse][$playerIndiceSueno = $playerIndiceSueno + 40]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="Levantarse" tags="autosave" position="">&lt;&lt;set $playerRank to "Cap"&gt;&gt;
-//- Es usted la capitana Zero?
+//- Es usted el famoso capitán Zero?
 
 [[-No, soy la nueva capitana-&gt;Abrir Puerta][; $playerGender to "female";]]
 [[-No, soy el nuevo capitán-&gt;Abrir Puerta][; $playerGender to "male";]]
 
 [[-Si, soy él-&gt;Abrir Puerta][$playerName to "Zero"; $playerGender to "male";]]
+&lt;div class="small"&gt;Capitán Zero, caucásico. 50 años.&lt;/div&gt;
 //</tw-passagedata><tw-passagedata pid="19" name="Abrir Puerta" tags="" position="">&lt;&lt;set $chapterName = "Capitulo I: ''À terre''"; &gt;&gt;
 &lt;&lt;nobr&gt;&gt;
 &lt;&lt;if $playerName == "Zero"&gt;&gt;
 //- Si, soy yo. Pero puedes decirme 
 &lt;label&gt;
-&lt;&lt;textbox '$playerName' $playerName 'Abrir Puerta' autofocus required&gt;&gt;
+&lt;&lt;textbox '$playerName' $playerName 'Abrir Puerta' autofocus&gt;&gt;
 &lt;/label&gt;//
 &lt;&lt;elseif $playerName&gt;&gt;
 //- Zero murió. Soy &lt;&lt;he&gt;&gt; &lt;&lt;rank&gt;&gt;
 &lt;label&gt;
 &lt;&lt;textbox '$playerName' $playerName 'Abrir Puerta'&gt;&gt;
 &lt;/label&gt;//
-&lt;&lt;else&gt;&gt;//- Zero murió. Soy &lt;&lt;he&gt;&gt; &lt;&lt;rank&gt;&gt;&lt;label&gt;&lt;&lt;textbox '$playerName' 'Nombre' 'Abrir Puerta' [autofocus]&gt;&gt;&lt;/label&gt;//&lt;&lt;/if&gt;&gt;
+&lt;&lt;else&gt;&gt;//- Zero murió. Soy &lt;&lt;he&gt;&gt; &lt;&lt;rank&gt;&gt;&lt;label&gt;&lt;&lt;textbox '$playerName' 'Nombre' 'Abrir Puerta' autofocus&gt;&gt;&lt;/label&gt;//&lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 //- Lo siento. Soy &lt;&lt;nuev&gt;&gt; aquí.//
 //- ¿Quién eres tú?//

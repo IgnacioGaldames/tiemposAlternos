@@ -1,9 +1,10 @@
 ::Levantarse[autosave]
 <<set $playerRank to "Cap">>
-//- Es usted la capitana Zero?
+//- Es usted el famoso capitán Zero?
 
 [[-No, soy la nueva capitana->Abrir Puerta][; $playerGender to "female";]]
 [[-No, soy el nuevo capitán->Abrir Puerta][; $playerGender to "male";]]
 
 [[-Si, soy él->Abrir Puerta][$playerName to "Zero"; $playerGender to "male";]]
+<div class="small">Capitán Zero, caucásico. 50 años.</div>
 //
