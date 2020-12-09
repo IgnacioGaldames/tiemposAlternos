@@ -410,7 +410,7 @@ $(document).one(':passagedisplay', function(ev) {
   }
 });
 
-$(document).one(':passageend', function(ev) {
+$(document).on(':passageend', function(ev) {
   if (env === 'staging') {
     console.log('passage end');
   }
@@ -432,61 +432,78 @@ importStyles(googleFonts).then(function() {
 });
 
 $(document).on(':passageend', function (ev) {
-    (function () {
-        var cloudflare, letteringJs, lsLockLettering;
+	(function () {
+		var cloudflare, letteringJs, lsLockLettering;
 
-        lsLockLettering = LoadScreen.lock();
+		lsLockLettering = LoadScreen.lock();
 
-        cloudflare = "https://cdnjs.cloudflare.com/ajax/libs/";
+		cloudflare = "https://cdnjs.cloudflare.com/ajax/libs/";
 
-        letteringJs = [cloudflare + "lettering.js/0.7.0/jquery.lettering.min.js"];
+		letteringJs = [cloudflare + "lettering.js/0.7.0/jquery.lettering.min.js"];
 
-        importScripts(letteringJs).then(function () {
-            LoadScreen.unlock(lsLockLettering);
-            $(".lettering").lettering();
-            var indiceSueno = State.variables.playerIndiceSueno / 10;
-            var indiceBlur = 10 - indiceSueno;
-            var velocidadBlur = indiceBlur * 200;
-            var cssBlur = '0px 0px ' + indiceBlur + 'px rgba(255,255,255,1)';
-            var cssBlur2 = '0px 0px ' + (indiceBlur / 2) + 'px rgba(255,255,255,1)';
-            var totalSpan = $(".lettering").find("span").length;
-            var totalRandomBlur2 = Math.round((totalSpan / 3));
+		importScripts(letteringJs).then(function () {
+			LoadScreen.unlock(lsLockLettering);
+			$(".lettering").lettering();
+			var indiceSueno = State.variables.playerIndiceSueno / 10;
+			var indiceBlur = 10 - indiceSueno;
+			var velocidadBlur = indiceBlur * 200;
+			var cssBlur = '0px 0px ' + indiceBlur + 'px rgba(255,255,255,1)';
+			var cssBlur2 = '0px 0px ' + (indiceBlur / 2) + 'px rgba(255,255,255,1)';
+			var totalSpan = $(".lettering").find("span").length;
+			var totalRandomBlur2 = Math.round((totalSpan / 3));
 
-            function letteringLetters() {
-                $(".lettering span").css({
-                    'color': 'transparent',
-                    'text-shadow': cssBlur
-                });
-            }
-            function randomLetter() {
-                $(".lettering span:nth-child(" + (Math.floor(Math.random() * totalSpan) + 1) + ")").css({
-                    'color': 'transparent',
-                    'text-shadow': cssBlur2
-                });
-                setTimeout(randomLetter, velocidadBlur);
-            }
+			function letteringLetters() {
+				$(".lettering span").css({
+					'color': 'transparent',
+					'text-shadow': cssBlur
+				});
+			}
+			function randomLetter() {
+				$(".lettering span:nth-child(" + (Math.floor(Math.random() * totalSpan) + 1) + ")").css({
+					'color': 'transparent',
+					'text-shadow': cssBlur2
+				});
+				setTimeout(randomLetter, velocidadBlur);
+			}
 
-            letteringLetters();
-            randomLetter();
+			letteringLetters();
+			randomLetter();
 
-            if (env == 'staging') {
-                console.log("velocidad blur " + velocidadBlur);
-                console.log("random " + random);
-                console.log("total spans " + totalSpan);
-                console.log("total random blur " + totalRandomBlur2);
-                console.log("indice sueño " + indiceSueno);
-                console.log("indice blur " + indiceBlur);
-                console.log("css blur " + cssBlur);
-            }
-            if (env === 'staging') {
-                console.log('letteringJs cargado');
-            }
-        })["catch"](function (err) {
-            console.log(err);
-        });
-    }).call(this);
+			if (env == 'staging') {
+				console.log("velocidad blur " + velocidadBlur);
+				console.log("random " + random);
+				console.log("total spans " + totalSpan);
+				console.log("total random blur " + totalRandomBlur2);
+				console.log("indice sueño " + indiceSueno);
+				console.log("indice blur " + indiceBlur);
+				console.log("css blur " + cssBlur);
+			}
+			if (env === 'staging') {
+				console.log('letteringJs cargado');
+			}
+		})["catch"](function (err) {
+			console.log(err);
+		});
+	}).call(this);
 });
-jQuery(document).ready(function ($) {
+function btnLista() {
+	if ($('#lista-paises').val()) {
+		$("#juegoNuevo").attr('disabled', true);
+		$("#nuevoJuego").attr('disabled', true);
+	} else {
+		$("#juegoNuevo").attr('disabled', false);
+		$("#nuevoJuego").attr('disabled', false);
+	}
+	$('#lista-paises').on('change', function () {
+		$("#juegoNuevo").removeClass("disabled btn-secondary").addClass("btn-primary");
+		$("#nuevoJuego").removeClass("disabled btn-secondary").addClass("btn-primary");
+		$("#juegoNuevo").attr('disabled', false);
+		$("#nuevoJuego").attr('disabled', false);
+		console.log('btnLista')
+	});
+}
+
+function getCountries() {
 	$.get('https://restcountries.eu/rest/v2/region/americas?fields=name;translations', function (data) {
 		$.each(data, function (index, val) {
 			var name = val.name;
@@ -517,21 +534,24 @@ jQuery(document).ready(function ($) {
 
 	});
 
-	if($('#lista-paises').val()){
-		$("#juegoNuevo").attr('disabled',true);
-		$("#nuevoJuego").attr('disabled',true);
-	} else {
-		$("#juegoNuevo").attr('disabled',false);
-		$("#nuevoJuego").attr('disabled',false);
-	}
-	
-	$('#lista-paises').on('change', function()
-	{
-		$("#juegoNuevo").removeClass( "disabled btn-secondary" ).addClass( "btn-primary" );
-		$("#nuevoJuego").removeClass( "disabled btn-secondary" ).addClass( "btn-primary" );
-		$("#juegoNuevo").attr('disabled',false);
-		$("#nuevoJuego").attr('disabled',false);
-	});
+}
+jQuery(document).ready(function ($) {
+	getCountries();
+	btnLista();
+});
+$(document).on(':passagestart', function (ev) {
+	getCountries();
+	btnLista();
+});
+$(document).on(':passagerender', function (ev) {
+	/* JavaScript code */
+	getCountries();
+	btnLista();
+});
+$(document).on(':passageend', function (ev) {
+	/* JavaScript code */
+	getCountries();
+	btnLista();
 });
 State.variables.reclutaMaleNames = ['Adolfo', 'Adrian', 'Adrián', 'Agustín', 'Albert', 'Alex', 'Alfonso', 'Alfredo', 'Armando', 'Bautista', 'Benito', 'Camilo', 'CarlosAlberto', 'Daniel', 'David', 'Dennis', 'Diego', 'Domingo', 'Edgar', 'Eduardo', 'Emilio', 'Enrique', 'Fabio', 'Federico', 'Felipe', 'Fernando', 'Francisco José', 'Félix', 'Gabriel', 'Germán', 'Gilberto', 'Gregorio', 'Guillermo', 'Hernando', 'Humberto', 'Héctor', 'Isidro', 'Iván', 'Jaime', 'Javier', 'Jesús', 'Joan', 'John', 'Jorge Alberto', 'José', 'José Alberto', 'José Alfredo', 'José Angel', 'José Antonio', 'José Francisco', 'José Luis', 'José Manuel', 'José María', 'José Miguel', 'José Ramón', 'Juan', 'Juan Carlos', 'Juan Luis', 'Julio', 'Julio César', 'Lautaro', 'Lucas', 'Luis Alberto', 'Manuel', 'Marco', 'Marco Antonio', 'Mariano', 'Mario', 'Martín', 'Miguel', 'Miguel Ángel', 'Moisés', 'Omar', 'Oscar', 'Pedro', 'Rafael', 'Ramiro', 'Ramón', 'Ricardo', 'Rigoberto', 'Roberto', 'Rodolfo', 'Rubén', 'Salvador', 'Samuel', 'Santiago', 'Sebastián', 'Sergio', 'Thiago', 'Tomás', 'Vicente', 'Víctor', 'Víctor Manuel', 'Walter', 'Xavier', 'Álex', 'Álvaro', 'Ángel',];
 
@@ -545,9 +565,9 @@ State.variables.reclutaColorPelo = ['naranjo','café claro','café obscuro','neg
 State.variables.reclutaColorAltura = ['baja',];
 State.variables.reclutaColorContextura = ['delgada',];
 $("#textbox-playername").change(function () {
-    var textboxPlayername = $("#textbox-playername").val();
-    State.variables.playerName = textboxPlayername;
-    console.log(textboxPlayername);
+	var textboxPlayername = $("#textbox-playername").val();
+	State.variables.playerName = textboxPlayername;
+	console.log(textboxPlayername);
 });
 var mbtiEI = ['e','i']; // Extroversion - Introversion
 var mbtiSN = ['s','n']; // Sensing - iNtuition
@@ -667,7 +687,13 @@ if (Save.autosave.has()) { State.variables.slotA = true } else { State.variables
     return console.log("CoffeScript Log");
   });
 &lt;/script&gt;
-</tw-passagedata><tw-passagedata pid="12" name="Inventory" tags="bookmark" position="">!$nameInventory</tw-passagedata><tw-passagedata pid="13" name="Market" tags="bookmark" position="">!$nameMarket</tw-passagedata><tw-passagedata pid="14" name="Log" tags="bookmark log" position="">&lt;&lt;back&gt;&gt;&lt;h1&gt;$nameLog &lt;&lt;if $playerName&gt;&gt;de $playerName&lt;&lt;/if&gt;&gt;&lt;/h1&gt;&lt;div id='log'&gt;lorem ipsum dolor sit amet&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="Player" tags="" position="">&lt;&lt;back &gt;&gt;&lt;br&gt;
+</tw-passagedata><tw-passagedata pid="12" name="Inventory" tags="bookmark" position="">!$nameInventory</tw-passagedata><tw-passagedata pid="13" name="Market" tags="bookmark" position="">!$nameMarket</tw-passagedata><tw-passagedata pid="14" name="Log" tags="bookmark log" position="">&lt;&lt;back&gt;&gt;&lt;h1&gt;$nameLog &lt;&lt;if $playerName&gt;&gt;de $playerName&lt;&lt;/if&gt;&gt;&lt;/h1&gt;&lt;div id='log'&gt;lorem ipsum dolor sit amet&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="Player" tags="" position="">&lt;&lt;nobr&gt;&gt;
+&lt;div class="btn btn-primary btn-sm"&gt;
+  &lt;i class="fas fa-chevron-left"&gt;&lt;/i&gt;
+  &lt;&lt;back Volver&gt;&gt;&lt;br&gt;
+&lt;/div&gt;
+&lt;&lt;/nobr&gt;&gt;
+
 &lt;&lt;nobr&gt;&gt;
 &lt;&lt;rank&gt;&gt;
 &lt;strong&gt;

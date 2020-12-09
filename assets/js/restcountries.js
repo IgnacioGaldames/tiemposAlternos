@@ -1,4 +1,21 @@
-jQuery(document).ready(function ($) {
+function btnLista() {
+	if ($('#lista-paises').val()) {
+		$("#juegoNuevo").attr('disabled', true);
+		$("#nuevoJuego").attr('disabled', true);
+	} else {
+		$("#juegoNuevo").attr('disabled', false);
+		$("#nuevoJuego").attr('disabled', false);
+	}
+	$('#lista-paises').on('change', function () {
+		$("#juegoNuevo").removeClass("disabled btn-secondary").addClass("btn-primary");
+		$("#nuevoJuego").removeClass("disabled btn-secondary").addClass("btn-primary");
+		$("#juegoNuevo").attr('disabled', false);
+		$("#nuevoJuego").attr('disabled', false);
+		console.log('btnLista')
+	});
+}
+
+function getCountries() {
 	$.get('https://restcountries.eu/rest/v2/region/americas?fields=name;translations', function (data) {
 		$.each(data, function (index, val) {
 			var name = val.name;
@@ -29,19 +46,22 @@ jQuery(document).ready(function ($) {
 
 	});
 
-	if($('#lista-paises').val()){
-		$("#juegoNuevo").attr('disabled',true);
-		$("#nuevoJuego").attr('disabled',true);
-	} else {
-		$("#juegoNuevo").attr('disabled',false);
-		$("#nuevoJuego").attr('disabled',false);
-	}
-	
-	$('#lista-paises').on('change', function()
-	{
-		$("#juegoNuevo").removeClass( "disabled btn-secondary" ).addClass( "btn-primary" );
-		$("#nuevoJuego").removeClass( "disabled btn-secondary" ).addClass( "btn-primary" );
-		$("#juegoNuevo").attr('disabled',false);
-		$("#nuevoJuego").attr('disabled',false);
-	});
+}
+jQuery(document).ready(function ($) {
+	getCountries();
+	btnLista();
+});
+$(document).on(':passagestart', function (ev) {
+	getCountries();
+	btnLista();
+});
+$(document).on(':passagerender', function (ev) {
+	/* JavaScript code */
+	getCountries();
+	btnLista();
+});
+$(document).on(':passageend', function (ev) {
+	/* JavaScript code */
+	getCountries();
+	btnLista();
 });

@@ -1,5 +1,11 @@
 ::Player
-<<back >><br>
+<<nobr>>
+<div class="btn btn-primary btn-sm">
+  <i class="fas fa-chevron-left"></i>
+  <<back Volver>><br>
+</div>
+<</nobr>>
+
 <<nobr>>
 <<rank>>
 <strong>
