@@ -31,11 +31,11 @@ if (tres === 'z'){
 }
 console.log(theReclutatres);
 if (tres === 'a' ||
-		tres === 'e' ||
-		tres === 'i' ||
-		tres === 'o' ||
-		tres === 'u') {
-		var theReclutatres = theReclutaName.slice(0, 2);
+	tres === 'e' ||
+	tres === 'i' ||
+	tres === 'o' ||
+	tres === 'u') {
+	var theReclutatres = theReclutaName.slice(0, 2);
 };
 State.variables.reclutatres = theReclutatres;
 console.log(theReclutaName);
