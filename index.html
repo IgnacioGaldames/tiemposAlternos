@@ -658,7 +658,7 @@ if (Save.autosave.has()) { State.variables.slotA = true } else { State.variables
 &lt;&lt;/script&gt;&gt;
 &lt;&lt;if $slot0 == false &amp;&amp; $slotA == false&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;if $_init is true &gt;&gt;&lt;btn class='btn btn-secondary mt-2 mr-3 font-weight-light disabled' id='nuevoJuegp'&gt;&lt;&lt;link "Nuevo Juego" &gt;&gt; &lt;&lt;script&gt;&gt;Engine.restart();&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
+&lt;&lt;if $_init is true &gt;&gt;&lt;btn class='btn btn-secondary mt-2 mr-3 font-weight-light disabled' id='nuevoJuego'&gt;&lt;&lt;link "Nuevo Juego" &gt;&gt; &lt;&lt;script&gt;&gt;Engine.restart();&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $_init is false &gt;&gt;&lt;btn class='btn btn-secondary mt-2 mr-3 font-weight-light disabled' disabled='' id='juegoNuevo'&gt;&lt;&lt;link [[Nuevo Juego|Inicio]]&gt;&gt; &lt;&lt;script&gt;&gt;if (Save.autosave.has()){Save.autosave.delete();}&lt;&lt;/script&gt;&gt; &lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;if $slot0 is true or $slotA is true&gt;&gt;&lt;btn class='btn btn-danger mt-2 mr-4 font-weight-light' id='btn-reiniciar'&gt;&lt;&lt;link "Reiniciar"&gt;&gt;&lt;&lt;script&gt;&gt;Engine.restart();&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;btn class='btn btn-danger mt-2 mr-2 font-weight-light' id='btn-reiniciar'&gt;&lt;&lt;link "Borrar todo"&gt;&gt;&lt;&lt;script&gt;&gt;Save.autosave.delete();Save.slots.delete(0);Engine.restart();&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
