@@ -1,6 +1,10 @@
 %form
 	.form-row
 		.col-md-6
+			%label{:for => "lista-regiones"} Selecciona tu región
+			%select#lista-regiones.form-control.form-control-sm.bg-light
+	.form-row
+		.col-md-6
 			%label{:for => "lista-paises"} Selecciona tu país
 			%select#lista-paises.form-control.form-control-sm.bg-light
 %hr

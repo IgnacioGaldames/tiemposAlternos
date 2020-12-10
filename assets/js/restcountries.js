@@ -14,17 +14,36 @@ function btnLista() {
 		//console.log('btnLista')
 	});
 }
-
-function getCountries() {
-	$.get('https://restcountries.eu/rest/v2/region/americas?fields=name;translations', function (data) {
+function setRegiones() {
+	var misRegiones = {
+		africa: "Africa",
+		americas: "America",
+		asia: "Asia", 
+		europe: "Europe", 
+		oceania: "Oceania",
+	};
+	$.each(misRegiones, function (index, val) {
+		var nameRegion = index;
+		var region = val;
+		var htmlRegiones = '<option data-pais=' + nameRegion + '>' + region + '</option>';
+		$('#lista-regiones').append(htmlRegiones);
+	});
+	$("#lista-regiones").change(function () {
+		var regionName = $(this).children("option:selected").data("pais")
+		$('#lista-paises').html();
+		getCountries(regionName);
+	});
+}
+function getCountries(regionName) {
+	$.get('https://restcountries.eu/rest/v2/region/' + regionName +'?fields=name;translations', function (data) {
 		$.each(data, function (index, val) {
-			var name = val.name;
+			var namePais = val.name;
 			var es = val.translations.es;
 			if (val.translations.es == null) {
 				es = name;
 			}
-			var html = '<option data-pais=' + name + '>' + es + '</option>';
-			$('#lista-paises').append(html);
+			var htmlPaises = '<option data-pais=' + namePais + '>' + es + '</option>';
+			$('#lista-paises').append(htmlPaises);
 		});
 	});
 	$("#lista-paises").change(function () {
@@ -56,23 +75,25 @@ function getCountries() {
 		});
 
 	});
-
 }
 jQuery(document).ready(function ($) {
-	getCountries();
+	//getCountries();
 	btnLista();
 });
 $(document).on(':passagestart', function (ev) {
-	getCountries();
+	setRegiones();
+	//getCountries();
 	btnLista();
 });
 $(document).on(':passagerender', function (ev) {
 	/* JavaScript code */
-	getCountries();
+	setRegiones();
+	//getCountries();
 	btnLista();
 });
 $(document).on(':passageend', function (ev) {
 	/* JavaScript code */
-	getCountries();
+	setRegiones();
+	//getCountries();
 	btnLista();
 });
