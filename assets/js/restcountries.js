@@ -30,7 +30,7 @@ function setRegiones() {
 	});
 	$("#lista-regiones").change(function () {
 		var regionName = $(this).children("option:selected").data("pais")
-		$('#lista-paises').html();
+		$('#lista-paises').empty();
 		getCountries(regionName);
 	});
 }

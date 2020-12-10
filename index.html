@@ -516,9 +516,9 @@ function setRegiones() {
 		var htmlRegiones = '<option data-pais=' + nameRegion + '>' + region + '</option>';
 		$('#lista-regiones').append(htmlRegiones);
 	});
-	$("#lista-regiones").change(function () {
+	$("#lista-regiones").click(function () {
 		var regionName = $(this).children("option:selected").data("pais")
-		$('#lista-paises').html();
+		$('#lista-paises').empty();
 		getCountries(regionName);
 	});
 }
@@ -531,7 +531,7 @@ function getCountries(regionName) {
 				es = name;
 			}
 			var htmlPaises = '<option data-pais=' + namePais + '>' + es + '</option>';
-			$('#lista-paises').html(htmlPaises);
+			$('#lista-paises').append(htmlPaises);
 		});
 	});
 	$("#lista-paises").change(function () {
