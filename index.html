@@ -516,7 +516,7 @@ function setRegiones() {
 		var htmlRegiones = '<option data-pais=' + nameRegion + '>' + region + '</option>';
 		$('#lista-regiones').append(htmlRegiones);
 	});
-	$("#lista-regiones").click(function () {
+	$("#lista-regiones").change(function () {
 		var regionName = $(this).children("option:selected").data("pais")
 		$('#lista-paises').empty();
 		getCountries(regionName);
