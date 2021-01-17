@@ -227,7 +227,9 @@ span[data-text]:after {
 
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">var bootstrapJs, cloudflare, env, fontawesomeAPi, googleFonts, googlefontURL, letteringJs, lsLockBootstrap, lsLockCSS, lsLockFontAwesome, lsLockLettering, lsLockMoment, momentJs;
 
-env = 'production';
+env = 'staging';
+
+State.variables.env = env;
 
 !(function() {
   l10nStrings.identity = 'juego';
@@ -599,7 +601,9 @@ State.variables.reclutaColorContextura = ['delgada',];
 $("#textbox-playername").change(function () {
 	var textboxPlayername = $("#textbox-playername").val();
 	State.variables.playerName = textboxPlayername;
-	console.log(textboxPlayername);
+	if (env == 'staging') {
+		console.log(textboxPlayername);
+	}	
 });
 var mbtiEI = ['e','i']; // Extroversion - Introversion
 var mbtiSN = ['s','n']; // Sensing - iNtuition
@@ -607,13 +611,15 @@ var mbtiTF = ['t','f']; // Thinking - Feeling
 var mbtiJP = ['j','p']; // Judment - Perception
 
 function rndm() {
-    var rndvalEI = mbtiEI[Math.floor(Math.random()*mbtiEI.length)];
-    var rndvalSN = mbtiSN[Math.floor(Math.random()*mbtiSN.length)];
-    var rndvalTF = mbtiTF[Math.floor(Math.random()*mbtiTF.length)];
-    var rndvalJP = mbtiJP[Math.floor(Math.random()*mbtiJP.length)];
-    var rndmMBTI = rndvalEI + rndvalSN + rndvalTF + rndvalJP;
-    State.variables.rndmMBTI = rndmMBTI;
-    console.log(rndmMBTI);
+	var rndvalEI = mbtiEI[Math.floor(Math.random()*mbtiEI.length)];
+	var rndvalSN = mbtiSN[Math.floor(Math.random()*mbtiSN.length)];
+	var rndvalTF = mbtiTF[Math.floor(Math.random()*mbtiTF.length)];
+	var rndvalJP = mbtiJP[Math.floor(Math.random()*mbtiJP.length)];
+	var rndmMBTI = rndvalEI + rndvalSN + rndvalTF + rndvalJP;
+	State.variables.rndmMBTI = rndmMBTI;
+	if (env == 'staging') {
+		console.log(rndmMBTI);
+	}	
 }
 rndm();
 
@@ -646,11 +652,15 @@ State.variables.mbtiJP = mbtiJP;
 var theReclutaName = State.variables.reclutaName;
 var theReclutatres = theReclutaName.slice(0, 3); 
 var tres = theReclutatres.charAt(2);
-console.log(tres);
+if (env == 'staging') {
+	console.log('letra tres =' + tres);
+}	
 if (tres === 'z'){
-		var theReclutatres = theReclutaName.slice(0, 2) + 'c';
+	var theReclutatres = theReclutaName.slice(0, 2) + 'c';
 }
-console.log(theReclutatres);
+if (env == 'staging') {
+	console.log(theReclutatres);
+}	
 if (tres === 'a' ||
 	tres === 'e' ||
 	tres === 'i' ||
@@ -659,7 +669,9 @@ if (tres === 'a' ||
 	var theReclutatres = theReclutaName.slice(0, 2);
 };
 State.variables.reclutatres = theReclutatres;
-console.log(theReclutaName);
+if (env == 'staging') {
+	console.log(theReclutaName);
+}	
 &lt;&lt;/script&gt;&gt;
 &lt;&lt;set $reclutaApodo to $reclutatres + "i"&gt;&gt;
 &lt;&lt;else&gt;&gt;
@@ -696,7 +708,7 @@ Dicultad: &lt;strong&gt;&lt;&lt;print settings.difficulty &gt;&gt;&lt;/strong&gt
 &lt;&lt;if $miPosicionInterna&gt;&gt;
 &lt;&lt;append ".posicionInterna"&gt;&gt; $miPosicionInterna &lt;&lt;/append&gt;&gt;
 &lt;&lt;/if&gt;&gt;
-&lt;&lt;script&gt;&gt;console.log("Passage Done")&lt;&lt;/script&gt;&gt;
+&lt;&lt;script&gt;&gt;console.log("PassageDone")&lt;&lt;/script&gt;&gt;
 &lt;&lt;if $playerIndiceSueno gte $playerIndiceSuenoMax&gt;&gt;
 		&lt;&lt;set $playerIndiceSueno to $playerIndiceSuenoMax&gt;&gt;
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="11" name="Start" tags="" position="">&lt;h1 class='d-block d-md-none display-4 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-md-block d-lg-none display-3 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h1 class='d-none d-lg-block display-1 font-weight-bold text-break'&gt;&lt;span sc-eval:data-text="Story.title" class="titulo"&gt;&lt;/span&gt;&lt;/h1&gt;&lt;h2 class='text-break font-weight-light'&gt;&lt;span class="chapter" id="subtitulo"&gt;&lt;/span&gt;&lt;/h2&gt;&lt;hr&gt;&lt;form&gt;&lt;div class='form-row'&gt;&lt;div class='col-md-6'&gt;&lt;label for='lista-regiones'&gt;Selecciona tu región&lt;/label&gt;&lt;select class='form-control form-control-sm bg-light' id='lista-regiones'&gt;&lt;/select&gt;&lt;/div&gt;&lt;/div&gt;&lt;div class='form-row'&gt;&lt;div class='col-md-6'&gt;&lt;label for='lista-paises'&gt;Selecciona tu país&lt;/label&gt;&lt;select class='form-control form-control-sm bg-light' id='lista-paises'&gt;&lt;/select&gt;&lt;/div&gt;&lt;/div&gt;&lt;/form&gt;&lt;hr&gt;&lt;&lt;nobr&gt;&gt;
@@ -715,9 +727,7 @@ if (Save.autosave.has()) { State.variables.slotA = true } else { State.variables
 &lt;&lt;if $slot0 is true or $slotA is true&gt;&gt;&lt;btn class='btn btn-danger mt-2 mr-4 font-weight-light' id='btn-reiniciar'&gt;&lt;&lt;link "Reiniciar"&gt;&gt;&lt;&lt;script&gt;&gt;Engine.restart();&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;btn class='btn btn-danger mt-2 mr-2 font-weight-light' id='btn-reiniciar'&gt;&lt;&lt;link "Borrar todo"&gt;&gt;&lt;&lt;script&gt;&gt;Save.autosave.delete();Save.slots.delete(0);Engine.restart();&lt;&lt;/script&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/btn&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 &lt;script&gt;
-  $(function() {
-    return console.log("CoffeScript Log");
-  });
+  
 &lt;/script&gt;
 </tw-passagedata><tw-passagedata pid="12" name="Inventory" tags="bookmark" position="">!$nameInventory</tw-passagedata><tw-passagedata pid="13" name="Market" tags="bookmark" position="">!$nameMarket</tw-passagedata><tw-passagedata pid="14" name="Log" tags="bookmark log" position="">&lt;&lt;back&gt;&gt;&lt;h1&gt;$nameLog &lt;&lt;if $playerName&gt;&gt;de $playerName&lt;&lt;/if&gt;&gt;&lt;/h1&gt;&lt;div id='log'&gt;lorem ipsum dolor sit amet&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="Player" tags="" position="">&lt;&lt;nobr&gt;&gt;
 &lt;div class="btn btn-primary btn-sm"&gt;

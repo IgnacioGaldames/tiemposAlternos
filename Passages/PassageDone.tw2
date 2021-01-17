@@ -8,7 +8,7 @@
 <<if $miPosicionInterna>>
 <<append ".posicionInterna">> $miPosicionInterna <</append>>
 <</if>>
-<<script>>console.log("Passage Done")<</script>>
+<<script>>console.log("PassageDone")<</script>>
 <<if $playerIndiceSueno gte $playerIndiceSuenoMax>>
 		<<set $playerIndiceSueno to $playerIndiceSuenoMax>>
 <</if>>

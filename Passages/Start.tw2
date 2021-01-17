@@ -12,5 +12,3 @@
 ::@include Includes/selector-paises.tw2
 ::@include Includes/botones-start.tw2
 :coffeescript
-	$ ->
-		console.log "CoffeScript Log"

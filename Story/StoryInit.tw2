@@ -25,11 +25,15 @@
 var theReclutaName = State.variables.reclutaName;
 var theReclutatres = theReclutaName.slice(0, 3); 
 var tres = theReclutatres.charAt(2);
-console.log(tres);
+if (env == 'staging') {
+	console.log('letra tres =' + tres);
+}	
 if (tres === 'z'){
-		var theReclutatres = theReclutaName.slice(0, 2) + 'c';
+	var theReclutatres = theReclutaName.slice(0, 2) + 'c';
 }
-console.log(theReclutatres);
+if (env == 'staging') {
+	console.log(theReclutatres);
+}	
 if (tres === 'a' ||
 	tres === 'e' ||
 	tres === 'i' ||
@@ -38,7 +42,9 @@ if (tres === 'a' ||
 	var theReclutatres = theReclutaName.slice(0, 2);
 };
 State.variables.reclutatres = theReclutatres;
-console.log(theReclutaName);
+if (env == 'staging') {
+	console.log(theReclutaName);
+}	
 <</script>>
 <<set $reclutaApodo to $reclutatres + "i">>
 <<else>>

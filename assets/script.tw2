@@ -1,7 +1,7 @@
 ::CoffeScript [coffee script]
-env = 'production'
-#env = 'staging'
-
+#env = 'production'
+env = 'staging'
+State.variables.env = env
 ::@include assets/coffee/es.coffee
 ::@include assets/coffee/config.coffee
 ::@include assets/coffee/settings.coffee
