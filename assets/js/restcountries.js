@@ -16,6 +16,7 @@ function btnLista() {
 }
 function setRegiones() {
 	var misRegiones = {
+		null: "",
 		africa: "Africa",
 		americas: "America",
 		asia: "Asia", 

@@ -505,6 +505,7 @@ function btnLista() {
 }
 function setRegiones() {
 	var misRegiones = {
+		null: "",
 		africa: "Africa",
 		americas: "America",
 		asia: "Asia", 
@@ -651,15 +652,9 @@ State.variables.mbtiJP = mbtiJP;
 var theReclutaName = State.variables.reclutaName;
 var theReclutatres = theReclutaName.slice(0, 3); 
 var tres = theReclutatres.charAt(2);
-if (env == 'staging') {
-	console.log('letra tres =' + tres);
-}	
 if (tres === 'z'){
 	var theReclutatres = theReclutaName.slice(0, 2) + 'c';
 }
-if (env == 'staging') {
-	console.log(theReclutatres);
-}	
 if (tres === 'a' ||
 	tres === 'e' ||
 	tres === 'i' ||
@@ -669,6 +664,8 @@ if (tres === 'a' ||
 };
 State.variables.reclutatres = theReclutatres;
 if (env == 'staging') {
+	console.log('letra tres =' + tres);
+	console.log(theReclutatres);
 	console.log(theReclutaName);
 }	
 &lt;&lt;/script&gt;&gt;
