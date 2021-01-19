@@ -36,11 +36,11 @@ if (tres === 'a' ||
 	var theReclutatres = theReclutaName.slice(0, 2);
 };
 State.variables.reclutatres = theReclutatres;
-if (env == 'staging') {
+/*if (env == 'staging') {
 	console.log('letra tres =' + tres);
 	console.log(theReclutatres);
 	console.log(theReclutaName);
-}	
+}	*/
 <</script>>
 <<set $reclutaApodo to $reclutatres + "i">>
 <<else>>

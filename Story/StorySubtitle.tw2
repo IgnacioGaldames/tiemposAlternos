@@ -1,2 +1,3 @@
 ::StorySubtitle
-Version 1.0
+Version $version
+<<if $env=='staging'>><small>$env</small><</if>>

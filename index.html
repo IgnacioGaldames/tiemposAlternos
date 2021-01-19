@@ -225,11 +225,19 @@ span[data-text]:after {
   background-clip: text;
   color: transparent; }
 
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">var bootstrapJs, cloudflare, env, fontawesomeAPi, googleFonts, googlefontURL, letteringJs, lsLockBootstrap, lsLockCSS, lsLockFontAwesome, lsLockLettering, lsLockMoment, momentJs;
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">var bootstrapJs, cloudflare, env, fontawesomeAPi, googleFonts, googlefontURL, letteringJs, lsLockBootstrap, lsLockCSS, lsLockFontAwesome, lsLockLettering, lsLockMoment, momentJs, setStaging, version;
 
 env = 'staging';
 
-State.variables.env = env;
+version = '1.1';
+
+setStaging = function() {
+  State.variables.env = env;
+  State.variables.version = version;
+  return console.log(env + ' ' + version);
+};
+
+setStaging();
 
 !(function() {
   l10nStrings.identity = 'juego';
@@ -663,16 +671,17 @@ if (tres === 'a' ||
 	var theReclutatres = theReclutaName.slice(0, 2);
 };
 State.variables.reclutatres = theReclutatres;
-if (env == 'staging') {
+/*if (env == 'staging') {
 	console.log('letra tres =' + tres);
 	console.log(theReclutatres);
 	console.log(theReclutaName);
-}	
+}	*/
 &lt;&lt;/script&gt;&gt;
 &lt;&lt;set $reclutaApodo to $reclutatres + "i"&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set $reclutaName to either($reclutaMaleNames);$reclutaLastName to either($reclutaLastNames);&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryBanner" tags="" position="">&lt;img src="https://twinery.org/homepage/img/logo.svg" width="64" height="64"&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryAuthor" tags="" position="">!!I. A. Galdames</tw-passagedata><tw-passagedata pid="4" name="StorySubtitle" tags="" position="">Version 1.0</tw-passagedata><tw-passagedata pid="5" name="StoryCaption" tags="" position="">&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryBanner" tags="" position="">&lt;img src="https://twinery.org/homepage/img/logo.svg" width="64" height="64"&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryAuthor" tags="" position="">!!I. A. Galdames</tw-passagedata><tw-passagedata pid="4" name="StorySubtitle" tags="" position="">Version $version
+&lt;&lt;if $env=='staging'&gt;&gt;&lt;small&gt;$env&lt;/small&gt;&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="StoryCaption" tags="" position="">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;if $chapterName&gt;&gt; &lt;&lt;print $chapterName&gt;&gt;&lt;hr&gt;&lt;&lt;/if&gt;&gt;
 &lt;span id="playerName"&gt;
 &lt;&lt;if $playerName&gt;&gt;
@@ -756,7 +765,7 @@ Nivel de sueño: $playerIndiceSueno
 &lt;&lt;timed 10s t8n&gt;&gt;-------------
 &lt;&lt;print either($apocalipsis)&gt;&gt;.&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 12s t8n&gt;&gt;
-$deathPopulation fallecidas.&lt;&lt;/timed&gt;&gt;
+$deathPopulation fallecidas en $pais.&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 14s t8n&gt;&gt;-------------
 La ''gran'' guerra contra las máquinas...&lt;&lt;/timed&gt;&gt;
 &lt;&lt;timed 18s&gt;&gt;&lt;&lt;goto "Despertar";&gt;&gt;&lt;&lt;set $miPosicionExterna = "Refugio Subterráneo"; $miPosicionInterna = "dormitorio"; $playerIndiceSueno = $playerIndiceSueno + 10 &gt;&gt;&lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="17" name="Despertar" tags="bookmark" position="">TOC-TOC-TOC &lt;&lt;if $playerIndiceSueno &gt;= $playerIndiceSuenoLow &gt;&gt; TOC-TOC-TOC&lt;&lt;/if&gt;&gt; &lt;&lt;if $playerIndiceSueno &gt;= $playerIndiceSuenoHigh &gt;&gt; &lt;strong&gt;TOC-TOC-TOC!&lt;/strong&gt;&lt;&lt;/if&gt;&gt; 
