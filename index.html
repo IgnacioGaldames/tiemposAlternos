@@ -776,6 +776,10 @@ La ''gran'' guerra contra las máquinas...&lt;&lt;/timed&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;
 [[Levantarse-&gt;Levantarse][$playerIndiceSueno = $playerIndiceSueno + 40]]
 &lt;&lt;/timed&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="Levantarse" tags="autosave" position="">&lt;&lt;set $playerRank to "Cap"&gt;&gt;
+&lt;&lt;nobr&gt;&gt;
+&lt;span class="text-capitalize"&gt;&lt;&lt;une&gt;&gt;&lt;/span&gt; joven recluta está de pie en el pasillo, mirándote con curiosidad.
+&lt;&lt;/nobr&gt;&gt;
+
 //- Es usted el famoso capitán Zero?
 
 [[-No, soy la nueva capitana-&gt;Abrir Puerta][; $playerGender to "female";]]
@@ -800,7 +804,6 @@ La ''gran'' guerra contra las máquinas...&lt;&lt;/timed&gt;&gt;
 //- Lo siento. Soy &lt;&lt;nuev&gt;&gt; aquí.//
 //- ¿Quién eres tú?//
 //- Soy $reclutaName $reclutaLastName&lt;&lt;if $reclutaApodo&gt;&gt;, pero puedes decirme $reclutaApodo si quieres. Todos lo hacen.&lt;&lt;/if&gt;&gt;//
-
 //&lt;&lt;if $reclutaApodo&gt;&gt;//&lt;&lt;link '- $reclutaApodo? Me gusta.' "Presentación"&gt;&gt; &lt;&lt;set  $recluta to $reclutaApodo;&gt;&gt; &lt;&lt;/link&gt;&gt; //
 //&lt;&lt;link '- Prefiero $reclutaName' "Presentación"&gt;&gt; &lt;&lt;set  $recluta to $reclutaName;&gt;&gt; &lt;&lt;/link&gt;&gt; //&lt;&lt;else&gt;&gt;
 //&lt;&lt;link '- Mucho gusto, $reclutaName' "Presentación"&gt;&gt; &lt;&lt;set  $recluta to $reclutaName;&gt;&gt; &lt;&lt;/link&gt;&gt; //
@@ -823,6 +826,12 @@ La ''gran'' guerra contra las máquinas...&lt;&lt;/timed&gt;&gt;
 &lt;&lt;if $reclutaGender eq "male"&gt;&gt;nuevo
 &lt;&lt;elseif $reclutaGender eq "female"&gt;&gt;nueva
 &lt;&lt;else&gt;&gt;nueve
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;/widget&gt;&gt;
+&lt;&lt;widget "une"&gt;&gt;
+&lt;&lt;if $reclutaGender eq "male"&gt;&gt;un
+&lt;&lt;elseif $reclutaGender eq "female"&gt;&gt;una
+&lt;&lt;else&gt;&gt;une
 &lt;&lt;/if&gt;&gt;
 &lt;&lt;/widget&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;</tw-passagedata></tw-storydata>

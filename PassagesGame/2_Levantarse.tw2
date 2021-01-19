@@ -1,5 +1,9 @@
 ::Levantarse[autosave]
 <<set $playerRank to "Cap">>
+<<nobr>>
+<span class="text-capitalize"><<une>></span> joven recluta está de pie en el pasillo, mirándote con curiosidad.
+<</nobr>>
+
 //- Es usted el famoso capitán Zero?
 
 [[-No, soy la nueva capitana->Abrir Puerta][; $playerGender to "female";]]

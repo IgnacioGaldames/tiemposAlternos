@@ -17,4 +17,10 @@
 <<else>>nueve
 <</if>>
 <</widget>>
+<<widget "une">>
+<<if $reclutaGender eq "male">>un
+<<elseif $reclutaGender eq "female">>una
+<<else>>une
+<</if>>
+<</widget>>
 <</nobr>>

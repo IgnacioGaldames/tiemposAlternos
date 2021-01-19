@@ -16,7 +16,6 @@
 //- Lo siento. Soy <<nuev>> aquí.//
 //- ¿Quién eres tú?//
 //- Soy $reclutaName $reclutaLastName<<if $reclutaApodo>>, pero puedes decirme $reclutaApodo si quieres. Todos lo hacen.<</if>>//
-
 //<<if $reclutaApodo>>//<<link '- $reclutaApodo? Me gusta.' "Presentación">> <<set  $recluta to $reclutaApodo;>> <</link>> //
 //<<link '- Prefiero $reclutaName' "Presentación">> <<set  $recluta to $reclutaName;>> <</link>> //<<else>>
 //<<link '- Mucho gusto, $reclutaName' "Presentación">> <<set  $recluta to $reclutaName;>> <</link>> //
