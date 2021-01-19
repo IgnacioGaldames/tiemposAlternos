@@ -5,6 +5,7 @@ Twee2::build_config.story_ifid = '8cca3ea1-bb76-4fdf-aab7-bf031c0ef8a5'
 Twee2::build_config.story_format = './storyFormats/sugarcube-2'
 
 ::StoryIncludes
+assets/script.tw2
 Story/StoryInit.tw2
 Story/StoryBanner.tw2
 Story/StoryAuthor.tw2
@@ -35,4 +36,3 @@ Passages/PassageFooter.tw2
 
 Passages/Widgets.tw2
 assets/stylesheet.tw2
-assets/script.tw2
