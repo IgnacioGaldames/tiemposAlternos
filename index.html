@@ -680,7 +680,8 @@ State.variables.reclutatres = theReclutatres;
 &lt;&lt;set $reclutaApodo to $reclutatres + "i"&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;set $reclutaName to either($reclutaMaleNames);$reclutaLastName to either($reclutaLastNames);&gt;&gt;
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryBanner" tags="" position="">&lt;img src="https://twinery.org/homepage/img/logo.svg" width="64" height="64"&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryAuthor" tags="" position="">!!I. A. Galdames</tw-passagedata><tw-passagedata pid="4" name="StorySubtitle" tags="" position="">Version $version
+&lt;&lt;/if&gt;&gt;
+&lt;&lt;set $reclutaMBTI to $rndmMBTI&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="StoryBanner" tags="" position="">&lt;img src="https://twinery.org/homepage/img/logo.svg" width="64" height="64"&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryAuthor" tags="" position="">!!I. A. Galdames</tw-passagedata><tw-passagedata pid="4" name="StorySubtitle" tags="" position="">Version $version
 &lt;&lt;if $env=='staging'&gt;&gt;&lt;small&gt;$env&lt;/small&gt;&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="StoryCaption" tags="" position="">&lt;&lt;nobr&gt;&gt;
 &lt;&lt;if $chapterName&gt;&gt; &lt;&lt;print $chapterName&gt;&gt;&lt;hr&gt;&lt;&lt;/if&gt;&gt;
 &lt;span id="playerName"&gt;
@@ -807,7 +808,7 @@ La ''gran'' guerra contra las máquinas...&lt;&lt;/timed&gt;&gt;
 //&lt;&lt;if $reclutaApodo&gt;&gt;//&lt;&lt;link '- $reclutaApodo? Me gusta.' "Presentación"&gt;&gt; &lt;&lt;set  $recluta to $reclutaApodo;&gt;&gt; &lt;&lt;/link&gt;&gt; //
 //&lt;&lt;link '- Prefiero $reclutaName' "Presentación"&gt;&gt; &lt;&lt;set  $recluta to $reclutaName;&gt;&gt; &lt;&lt;/link&gt;&gt; //&lt;&lt;else&gt;&gt;
 //&lt;&lt;link '- Mucho gusto, $reclutaName' "Presentación"&gt;&gt; &lt;&lt;set  $recluta to $reclutaName;&gt;&gt; &lt;&lt;/link&gt;&gt; //
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="Presentación" tags="" position="">$recluta</tw-passagedata><tw-passagedata pid="21" name="PassageFooter" tags="" position="">&lt;hr&gt;&lt;footer class='text-capitalize text-muted'&gt;&lt;small&gt;&lt;&lt;nobr&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="20" name="Presentación" tags="" position="">$recluta $reclutaMBTI $rndmMBTI</tw-passagedata><tw-passagedata pid="21" name="PassageFooter" tags="" position="">&lt;hr&gt;&lt;footer class='text-capitalize text-muted'&gt;&lt;small&gt;&lt;&lt;nobr&gt;&gt;
 &lt;&lt;if $capital&gt;&gt;$capital, &lt;&lt;/if&gt;&gt;
 &lt;&lt;if $miPosicionExterna &amp;&amp; $miPosicionInterna&gt;&gt;&lt;span class='posicionExterna'&gt;&lt;/span&gt;&lt;span&gt;/&lt;/span&gt;&lt;span class='posicionInterna'&gt;&lt;/span&gt;&lt;&lt;/if&gt;&gt;
 &lt;&lt;/nobr&gt;&gt;&lt;/small&gt;&lt;/footer&gt;</tw-passagedata><tw-passagedata pid="22" name="Widgets" tags="widget" position="">&lt;&lt;nobr&gt;&gt;

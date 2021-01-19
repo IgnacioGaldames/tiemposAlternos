@@ -46,3 +46,4 @@ State.variables.reclutatres = theReclutatres;
 <<else>>
 <<set $reclutaName to either($reclutaMaleNames);$reclutaLastName to either($reclutaLastNames);>>
 <</if>>
+<<set $reclutaMBTI to $rndmMBTI>>
