@@ -33,6 +33,7 @@ function setRegiones() {
 		var regionName = $(this).children("option:selected").data("pais")
 		$('#lista-paises').empty();
 		getCountries(regionName);
+		$('#lista-paises').prepend('<option data-pais=""></option>');
 	});
 }
 function getCountries(regionName) {
